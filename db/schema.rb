@@ -58,8 +58,6 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.datetime "attachment_updated_at"
     t.integer  "attachment_width"
     t.integer  "attachment_height"
-    t.string   "name"
-    t.text     "description"
     t.text     "alt"
   end
 
@@ -294,7 +292,7 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
   add_index "product_scopes", ["product_group_id"], :name => "index_product_scopes_on_product_group_id"
 
   create_table "products", :force => true do |t|
-    t.string   "name",                                               :default => "",    :null => false
+    t.string   "name",                 :default => "", :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -305,26 +303,11 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.datetime "deleted_at"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.integer  "count_on_hand",                                      :default => 0,     :null => false
-    t.boolean  "can_be_part",                                        :default => false, :null => false
-    t.boolean  "individual_sale",                                    :default => true,  :null => false
-    t.boolean  "discontinued",                                       :default => false
-    t.text     "specifications"
-    t.text     "warnings"
-    t.boolean  "has_rebate",                                         :default => false
-    t.date     "rebate_valid_from"
-    t.date     "rebate_valid_to"
-    t.decimal  "rebate_amount",        :precision => 8, :scale => 2, :default => 0.0
-    t.boolean  "hidden",                                             :default => false
-    t.decimal  "special_price",        :precision => 8, :scale => 2, :default => 0.0
-    t.boolean  "exclude_reporting",                                  :default => false
-    t.integer  "total_sales"
+    t.integer  "count_on_hand",        :default => 0,  :null => false
   end
 
   add_index "products", ["available_on"], :name => "index_products_on_available_on"
   add_index "products", ["deleted_at"], :name => "index_products_on_deleted_at"
-  add_index "products", ["description"], :name => "description"
-  add_index "products", ["meta_keywords"], :name => "meta_keywords"
   add_index "products", ["name"], :name => "index_products_on_name"
   add_index "products", ["permalink"], :name => "index_products_on_permalink"
 
@@ -339,7 +322,6 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
   create_table "products_taxons", :id => false, :force => true do |t|
     t.integer "product_id"
     t.integer "taxon_id"
-    t.string  "name2"
   end
 
   add_index "products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
@@ -505,10 +487,10 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
   end
 
   create_table "taxons", :force => true do |t|
-    t.integer  "taxonomy_id",                            :null => false
+    t.integer  "taxonomy_id",                      :null => false
     t.integer  "parent_id"
-    t.integer  "position",            :default => 0
-    t.string   "name",                                   :null => false
+    t.integer  "position",          :default => 0
+    t.string   "name",                             :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
@@ -519,15 +501,6 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.text     "description"
-    t.boolean  "hidden",              :default => false
-    t.boolean  "disabled",            :default => false
-    t.string   "short_name"
-    t.boolean  "homepage",            :default => false
-    t.string   "display_style"
-    t.string   "banner_file_name"
-    t.string   "banner_content_type"
-    t.integer  "banner_file_size"
-    t.datetime "banner_updated_at"
   end
 
   add_index "taxons", ["parent_id"], :name => "index_taxons_on_parent_id"
@@ -595,7 +568,6 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
-  add_index "variants", ["sku"], :name => "sku"
 
   create_table "zone_members", :force => true do |t|
     t.integer  "zone_id"

@@ -29,6 +29,7 @@ gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced
 # end
 
 gem 'spree_email_to_friend'
+gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
 
 group :development, :test do
   gem 'factory_girl_rails'

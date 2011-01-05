@@ -7,6 +7,7 @@ gem 'rails', '3.0.3'
 
 gem 'mysql'
 gem 'spree', '0.40.0'
+gem 'aws-s3'
 
 gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
 

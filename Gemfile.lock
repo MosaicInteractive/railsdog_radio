@@ -39,6 +39,7 @@ GEM
       builder
     builder (2.1.2)
     cancan (1.4.1)
+    columnize (0.3.2)
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.2)
@@ -52,6 +53,7 @@ GEM
     jquery-rails (0.2.6)
       rails (~> 3.0)
       thor (~> 0.14.4)
+    linecache (0.43)
     mail (2.2.13)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -88,6 +90,12 @@ GEM
     rd_searchlogic (3.0.0)
       activerecord (>= 3.0.0)
     rd_unobtrusive_date_picker (0.1.0)
+    recaptcha (0.3.1)
+    ruby-debug (0.10.4)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.4.0)
+    ruby-debug-base (0.10.4)
+      linecache (>= 0.3)
     spree (0.40.0)
       spree_api (= 0.40.0)
       spree_auth (= 0.40.0)
@@ -118,6 +126,10 @@ GEM
       will_paginate (>= 3.0.pre2)
     spree_dash (0.40.0)
       spree_core (= 0.40.0)
+    spree_email_to_friend (1.0.0)
+      recaptcha (>= 0.3.1)
+      spree_auth (>= 0.30.1)
+      spree_core (>= 0.30.1)
     spree_promo (0.40.0)
       spree_core (= 0.40.0)
     spree_sample (0.40.0)
@@ -138,5 +150,7 @@ PLATFORMS
 
 DEPENDENCIES
   rails (= 3.0.3)
+  ruby-debug
   spree (= 0.40.0)
+  spree_email_to_friend
   sqlite3-ruby

@@ -23,3 +23,13 @@ gem 'spree', '0.40.0'
 # end
 
 gem 'spree_email_to_friend'
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda'
+  gem "rspec-rails", ">= 2.0.1"
+  gem "cucumber-rails", ">= 0.3.2"
+  gem "capybara", "= 0.4.0"
+  gem "launchy", ">= 0.3.7"
+end

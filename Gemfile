@@ -8,6 +8,8 @@ gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'spree', '0.40.0'
 
+gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
+
 # Deploy with Capistrano
 # gem 'capistrano'
 

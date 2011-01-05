@@ -43,3 +43,5 @@ module RailsdogRadio
     config.filter_parameters += [:password]
   end
 end
+
+require 'railsdog_radio_hooks'

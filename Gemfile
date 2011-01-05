@@ -5,7 +5,7 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'mysql'
 gem 'spree', '0.40.0'
 
 gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
@@ -35,3 +35,4 @@ group :development, :test do
   gem "capybara", "= 0.4.0"
   gem "launchy", ">= 0.3.7"
 end
+

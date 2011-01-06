@@ -226,7 +226,7 @@ button {  width: auto; overflow: visible; }
 	Primary Styles
   Author: John Dilts
 */
-body#home {background: #fff url('../images/header_bkgd.jpg') repeat-x 10px 0;}
+body#home {background: #fff url('/images/dogradio/header_bkgd.jpg') repeat-x 10px 0;}
 header nav, footer div#secondary, div#container {width: 1080px; margin: 0 auto;}
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
@@ -236,7 +236,7 @@ header a, div[role='banner-nav'] ul li a {
 	text-decoration: none;
 }
 
-footer {background: #DDD url('../images/footer_bkgd.gif') repeat-x 0 0; margin: 55px 0 0;}
+footer {background: #DDD url('/images/dogradio/footer_bkgd.gif') repeat-x 0 0; margin: 55px 0 0;}
 footer div#secondary img {position:relative; top: -51px;}
 
 div[role='banner'] section {vertical-align: top;background-color: #C00; padding: 4px 0 0;}

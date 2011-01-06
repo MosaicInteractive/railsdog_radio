@@ -388,6 +388,7 @@ div[role='checkout'] div#tabs li {
 	float: left;
 	text-align: center;
 	background-color: #eceded;
+	border-radius: 0px;
 	border-top: 5px solid #eceded;
 	border-right: 5px solid #eceded;
 	border-bottom: 5px solid #b7cbe9;
@@ -411,9 +412,8 @@ div[role='checkout'] div#tabs li.active span {
 }
 
 div[role='checkout'] div#tabs li.next {
-/*	border-right: 3px solid #fff;*/
-	margin-right: 3px;
-	border-left: 0;
+	border-right: 5px solid #fff;
+	width: 208px;
 	
 }
 
@@ -456,7 +456,8 @@ div[role='content'] p {
 	color: #747474;
 }
 
-div[role='content'] a.button {
+div[role='content'] input.button {
+	border: 0px;
 	font: 18px Georgia, "Times New Roman", Times, serif;
 	padding: 10px 36px;
 	text-decoration: none;
@@ -473,13 +474,13 @@ div[role='content'] p {
 	padding: 40px 0px;
 
 }
-a.blue {
+input.blue {
 	color: #fff;
 	background-color: #0095da;
 	
 }
 
-a.red {
+input.red {
 	color: #fff;
 	background-color: #e41e1e;	
 }

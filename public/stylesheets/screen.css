@@ -507,7 +507,7 @@ div[role='content'] hr {
 
 div[role='content'] ul.fields li {
 	padding: 0px 0 10px 0;
-	text-align: right;
+	text-align: middle;
 }
 
 div[role='content'] ul.fields input {

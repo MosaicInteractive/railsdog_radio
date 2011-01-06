@@ -1,0 +1,9 @@
+<!-- START TAB CONTENT -->
+  <% if controller.action_name == 'registration' %>
+	  <%= render 'registration' %>
+  <% else %>
+    <%= render @order.state, :form => form %>
+  <% end %>
+</div>
+<!-- END TAB CONTENT -->
+

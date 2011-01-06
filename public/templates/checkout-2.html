@@ -1,0 +1,155 @@
+<!doctype html>  
+<!--[if lt IE 7 ]><html lang=en class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html lang=en class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html lang=en class="no-js ie8"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title></title>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="../stylesheets/screen.css">
+  <link rel="stylesheet" href="../stylesheets/jquery.mobile-1.0a2.css">
+
+  <script src="javascripts/libs/modernizr-1.6.min.js"></script>
+
+</head>
+
+<body id="checkout">
+  
+  <header>
+    <nav id="core-nav">
+      <img src="../images/logo.png" width="300" height="58" alt="Logo S1">
+      <form action="#" >
+        <input type="search" id="s1" placeholder="Search">
+      </form>
+      <a href="#">products</a>
+      <a href="#">help</a>
+      <a href="#">my account</a>
+      <a href="#">cart($0.00)</a>
+    </nav>
+  </header>
+  
+  <div id="container">
+	
+	<div id="checkout" role="checkout" class="clear">
+		<div id="title" role="title">CHECKOUT</div>
+		<!-- START MAIN CONTENT -->
+		<div id="main-content" role="main-content">
+			<!-- START TABS -->
+			<div id="tabs" role="tabs">
+				<ul>
+					<li><span class="number">1</span><span class="title">Create an Account</span></li>
+					<li class="active"><span class="number">2</span><span class="title">Shipping &amp; Billing</span></li>
+					<li><span class="number">3</span><span class="title">Place Order</span></li>
+				</ul>
+			</div>
+	    	<!-- END TABS -->
+			<!-- START TAB CONTENT -->
+		  	<div id="content" role="content">
+				<p>Enter your Shipping Information</p>
+				<ul>
+					<li class="short">First name<br/><input type="text"></input></li>
+					<li>Last name<br/><input type="text"></input></li>
+					<li>Shipping address<br/><input type="text"></input></li>
+					<li>Shipping address 2<br/><input type="text"></input></li>
+					<li>City<br/><input type="text"></input></li>
+					<li>State<br/><select><option value="MN">Minnesota</option></select></li>
+					<li>Postal code<br/><input type="text"></input></li>
+					<li>Country<br/><input type="text"></input></li>
+					<li>Phone<br/><input type="text"></input><span><a href="#">Why ask?</a></span></li>					
+				</ul>
+				<hr/>
+				<p>Enter your Billing Information</p>
+				<ul>
+					<li><input type="checkbox"/><label for="">Use my shipping address</label></li>
+					<li class="short">First name<br/><input type="text"></input></li>
+					<li>Last name<br/><input type="text"></input></li>
+					<li>Shipping address<br/><input type="text"></input></li>
+					<li>Shipping address 2<br/><input type="text"></input></li>
+					<li>City<br/><input type="text"></input></li>
+					<li>State<br/><select><option value="MN">Minnesota</option></select></li>
+					<li>Postal code<br/><input type="text"></input></li>
+					<li>Country<br/><input type="text"></input></li>
+					<li>Phone<br/><input type="text"></input><span><a href="#">Why ask?</a></span></li>
+					<li class="credit_card">VISA IMAGES</li>
+					<li class="short">Credit card number<br/><input type="text"></input></li>					
+					<li class="short">Security Code<br/><input type="text"></input><span class="tooltip">(?)</span></li>
+					<li class="short">Expiration<br/><select><option></option></select><span class="tooltip">(?)</span>
+				</ul>
+				<div class="submit"><input type="submit" class="button blue" value="REVIEW YOUR ORDER &#8227;"/></div>
+			</div>
+			<!-- END TAB CONTENT -->
+		</div>
+		<!-- END MAIN CONTENT -->
+		<!-- START SIDE BAR -->
+		<div id="aside" role="aside">
+			<div id="order" role="order">
+				<span id="title" class="clear">ORDER SUMMARY</span>
+				<table class="items">
+					<tr>
+						<td class="qty">( 1 )</td>
+						<td class="description">Sirius Universal Plug and Play Boombox SUBX2</td>
+						<td class="price">$89.00</td>
+					</tr>
+					<tr>
+						<td class="qty">( 1 )</td>
+						<td class="description">Sirius Universal Plug and Play Boombox SUBX2</td>
+						<td class="price">$89.00</td>
+					</tr>
+				</table>
+				<table class="total">
+					<tr>
+						<th>Subtotal</td>
+						<td>$89.99</td>
+					</tr>
+					<tr>						
+						<th>Shipping</td>
+						<td>$10.00</td>
+					</tr>
+					<tr>
+						<th>Coupon</td>
+						<td>$0.00</td>
+					</tr>
+					<tr>
+						<th>Sales Tax</td>
+						<td>$0.00</td>
+					</tr>
+					<tr class="total">
+						<th>Total</td>
+						<td>$99.99</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+		<!-- END SIDE BAR -->
+	</div>
+  </div> 
+  <!-- END CONTAINER -->
+  <footer>
+    <div id="secondary">
+      <img src="../images/kid_s1.gif" width="204" height="413" alt="Kid S1">
+    </div>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+  <script>!window.jQuery&&document.write(unescape('%3Cscript src="js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'));</script>
+  <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
+  <script>!$.mobile&&document.write(unescape('%3Cscript src="js/libs/jquery.mobile-1.0a2.min.js"%3E%3C/script%3E'));</script>
+  <!-- Add Custom Scripts Here
+    <script src='js/scripts.min.js'></script> 
+  -->
+  <!--[if lt IE 7 ]><script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg");</script><![endif]-->
+  <script>var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];(function(e,a){var c=e.createElement(a),b=e.getElementsByTagName(a)[0];c.async=true;c.src=("https:"==location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";b.parentNode.insertBefore(c,b)})(document,"script");</script>
+
+</body>
+</html>

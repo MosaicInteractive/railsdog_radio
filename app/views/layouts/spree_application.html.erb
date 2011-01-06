@@ -26,14 +26,19 @@
 
   <header>
     <nav id="core-nav">
-      <img src="/images/dogradio/logo.png" width="300" height="58" alt="Logo S1">
+      <%= link_to image_tag("dogradio/logo.png", :width => "300", :height => "56", :alt => "Rails Dog Radio"), root_url %>
       <form action="#" >
         <input type="search" id="s1" placeholder="Search">
       </form>
-      <a href="#">products</a>
+      <%= link_to "products", products_url %>
       <a href="#">help</a>
-      <a href="#" class='cart'>my account</a>
-      <a href="#" class='cart'>cart($0.00)</a>
+      <% if current_user %>
+        <%= link_to t('my_account'), account_path, :class => "cart" %>
+        <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
+      <% else %>
+        <%= link_to t('log_in'), login_path, :class => "cart" %>
+      <% end %>
+      <%= link_to_cart %>
     </nav>
   </header>
 
@@ -44,7 +49,7 @@
 
   <footer>
     <div id="secondary">
-      <img src="/images/dogradio/kid.jpg" width="204" height="413" alt="Kid S1">
+      <img src="/images/dogradio/kid_s1.gif" width="204" height="413" alt="Kid S1">
     </div>
   </footer>
 

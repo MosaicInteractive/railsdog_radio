@@ -114,7 +114,6 @@ a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 
 
-ul, ol { margin-left: 2em; }
 ol { list-style-type: decimal; }
 
 /* remove margins for navigation lists */
@@ -227,6 +226,7 @@ button {  width: auto; overflow: visible; }
   Author: John Dilts
 */
 body#home {background: #fff url('/images/dogradio/header_bkgd.jpg') repeat-x 10px 0;}
+body#checkout {background: #fff;}
 header nav, footer div#secondary, div#container {width: 1080px; margin: 0 auto;}
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
@@ -328,7 +328,238 @@ div[role='contact'] h2.phone {
 
 
 
+/* Styles for Checkout pages */
+/* ul, ol { margin-left: 2em; } */
 
+ul, ol { 
+	margin-left: 0em;
+	list-style: none;
+}
+
+.clear {
+	display: inline-block;
+}
+
+.clear {
+	display: block;
+}
+
+.clear:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+div[role='main-content'] {
+	float:left;
+}
+
+div[role='checkout'] {
+	vertical-align:top;
+	padding: 0 0 100px 0;
+	width: 980px;
+}
+
+div[role='checkout'] div[role='title'] {
+	margin: 40px 0 20px 0;
+	letter-spacing:2px;
+	color: #d4d4d4;
+	font: 40px Georgia, "Times New Roman", Times, serif;
+
+}
+
+div[role='checkout'] div#tabs {
+
+	font: 18px Georgia, "Times New Roman", Times, serif;
+	float: left;
+	z-index: 99;
+	background-color: #fff;
+	width:660px;
+}
+
+div[role="checkout"] div#tabs ul {
+ 	margin-left: 0;
+}
+
+div[role='checkout'] div#tabs li {
+	display: inline;
+	float: left;
+	text-align: center;
+	background-color: #eceded;
+	border-top: 5px solid #eceded;
+	border-right: 5px solid #eceded;
+	border-bottom: 5px solid #b7cbe9;
+	border-left: 5px solid #eceded;
+	width: 210px;
+	height: 45px;
+	padding: 10px 0 10px 0;
+}
+
+div[role='checkout'] div#tabs li.active {
+
+	background-color: #fff;
+	border-top: 5px solid #b7cbe9;
+	border-right: 5px solid #b7cbe9;
+	border-left: 5px solid #b7cbe9;
+	border-bottom: 5px solid #fff;
+}
+
+div[role='checkout'] div#tabs li.active span {	
+	background-color: #fff;
+}
+
+div[role='checkout'] div#tabs li.next {
+/*	border-right: 3px solid #fff;*/
+	margin-right: 3px;
+	border-left: 0;
+	
+}
+
+div[role='checkout'] div#tabs li span.number {
+	color: #bfbfbf;
+	width: 30px;
+	font-size: 54px;
+	padding: 0 5px 0px 16px;
+}
+
+div[role='checkout'] div#tabs li.active span.number {
+	color: #324781;
+}
+
+
+div[role='checkout'] div#tabs li span.title {
+	color: #bfbfbf;
+	font-size: 18px;
+	width: 10px;
+}
+
+div[role='checkout'] div#tabs li.active span.title {
+	color: #758ed0;
+	width: 10px;
+}
+
+div[role='content'] {
+	border: 5px solid #b7cbe9;
+	font-size: 18px;
+	color: #A0A0A0;
+	width: 448px;
+	
+/*	margin: 50px 0 50px 0px;*/
+	padding: 50px 100px 50px 100px;
+
+}
+
+div[role='content'] p {
+	font-size: 18px;
+	color: #747474;
+}
+
+div[role='content'] a.button {
+	font: 18px Georgia, "Times New Roman", Times, serif;
+	padding: 10px 36px;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+div[role='content'] div.submit {
+	padding-top: 20px;
+	text-align: center;
+}
+
+div[role='content'] p {
+	font-size: 28px;
+	padding: 40px 0px;
+
+}
+a.blue {
+	color: #fff;
+	background-color: #0095da;
+	
+}
+
+a.red {
+	color: #fff;
+	background-color: #e41e1e;	
+}
+
+div[role='content'] hr {
+	margin-top: 50px;
+}
+
+div[role='content'] ul.fields li {
+	padding: 0px 0 10px 0;
+	text-align: right;
+}
+
+div[role='content'] ul.fields input {
+	margin-left:10px;
+	border: 2px solid #A0A0A0;
+	border-radius:2px;
+}
+
+div[role='aside'] {
+	border: 3px solid #eceded;
+	width: 270px;
+	float: right;
+	padding: 10px;
+	color: #7f7f7f;
+	font-size: 14px;
+}
+
+
+div[role='aside'] div[role='order'] span#title {
+	color: #0095da;
+	font: 24px Georgia, "Times New Roman", Times, serif;
+	margin: 10px 5px 10px 15px;
+	padding: 0 0 10px 0;
+}
+
+div[role='aside'] div[role='order'] table td {
+	padding-right: 10px;
+}
+
+
+div[role='aside'] div[role='order'] table.total {
+	margin-top:20px;
+	width: 100%;
+	text-align: right;
+}
+
+div[role='aside'] div[role='order'] th {
+	font-weight: normal;
+}
+
+div[role='aside'] div[role='order'] table.items td {
+	padding-bottom: 10px;
+}
+
+div[role='aside'] div[role='order'] table.total td {
+	padding-bottom: 5px;
+}
+
+
+div[role='aside'] div[role='order'] tr.total th, div[role='aside'] div[role='order'] tr.total td {
+	font-weight: bold;
+}
+
+
+div[role='aside'] div[role='order'] tr td.qty {
+	width: 36px;
+}
+
+div[role='aside'] div[role='order'] tr td.description {
+	width: 160px;
+}
+
+
+div[role='aside'] div[role='order'] tr td.price {
+	width: 36px;
+}
+
+
+/* End Styles for Checkout page */
 
 
 

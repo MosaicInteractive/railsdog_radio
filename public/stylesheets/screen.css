@@ -235,6 +235,23 @@ header a, div[role='banner-nav'] ul li a {
 	text-transform: uppercase;
 	text-decoration: none;
 }
+header nav form, header nav a {
+	position: relative;
+	top: -14px;
+}
+header nav form {width: 30%; text-align: center;}
+header nav form input[type='search'] {
+	width: 50%;
+	vertical-align: middle;
+}
+header nav a {
+	margin: 0 12px 0 0; 
+	text-align: right;
+	font: normal normal normal 1.1em/1.6em serif;
+	color: #fff;
+}
+
+header nav a.cart {color: #B30000;}
 
 footer {background: #DDD url('/images/dogradio/footer_bkgd.gif') repeat-x 0 0; margin: 55px 0 0;}
 footer div#secondary img {position:relative; top: -51px;}

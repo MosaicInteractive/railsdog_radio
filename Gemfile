@@ -11,6 +11,9 @@ gem 'aws-s3'
 
 gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
 
+gem 'advanced_reporting', :git => 'https://github.com/neerajdotname/spree-advanced-reporting', :branch => 'rails3'
+
+
 # Deploy with Capistrano
 # gem 'capistrano'
 

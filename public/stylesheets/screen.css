@@ -397,47 +397,43 @@ div[role='checkout'] div#tabs {
 }
 
 div[role="checkout"] div#tabs ul {
- 	margin-left: 0;
+	font: 45px "Arial", sans-serif;
 }
 
 div[role='checkout'] div#tabs li {
 	display: inline;
 	float: left;
-	text-align: center;
 	background-color: #eceded;
-	border-radius: 0px;
 	border-top: 5px solid #eceded;
 	border-right: 5px solid #eceded;
 	border-bottom: 5px solid #b7cbe9;
 	border-left: 5px solid #eceded;
+
 	width: 210px;
-	height: 45px;
-	padding: 10px 0 10px 0;
+	height: 60px;
+
 }
 
 div[role='checkout'] div#tabs li.active {
-
 	background-color: #fff;
 	border-top: 5px solid #b7cbe9;
 	border-right: 5px solid #b7cbe9;
 	border-left: 5px solid #b7cbe9;
 	border-bottom: 5px solid #fff;
+	
+	
 }
 
-div[role='checkout'] div#tabs li.active span {	
-	background-color: #fff;
-}
-
-div[role='checkout'] div#tabs li.next {
-	border-right: 5px solid #fff;
-	width: 208px;
+div[role='checkout'] div#tabs li.end {
+	border-right: 3px solid #eceded;
 }
 
 div[role='checkout'] div#tabs li span.number {
 	color: #bfbfbf;
 	width: 30px;
-	font-size: 54px;
-	padding: 0 5px 0px 16px;
+	font-size: 60px;
+	padding: 0 0 0 30px;
+	display: inline-block;
 }
 
 div[role='checkout'] div#tabs li.active span.number {
@@ -448,12 +444,13 @@ div[role='checkout'] div#tabs li.active span.number {
 div[role='checkout'] div#tabs li span.title {
 	color: #bfbfbf;
 	font-size: 18px;
-	width: 10px;
+	width: 90px;
+	padding: 0 0 0 10px;
+	display: inline-block;	
 }
 
 div[role='checkout'] div#tabs li.active span.title {
 	color: #758ed0;
-	width: 10px;
 }
 
 div[role='content'] {
@@ -461,9 +458,7 @@ div[role='content'] {
 	font-size: 18px;
 	color: #A0A0A0;
 	width: 448px;
-	
-/*	margin: 50px 0 50px 0px;*/
-	padding: 50px 100px 50px 100px;
+	padding: 100px 100px 50px 100px;
 
 }
 
@@ -507,7 +502,7 @@ div[role='content'] hr {
 
 div[role='content'] ul.fields li {
 	padding: 0px 0 10px 0;
-	text-align: middle;
+	text-align: left;
 }
 
 div[role='content'] ul.fields input {

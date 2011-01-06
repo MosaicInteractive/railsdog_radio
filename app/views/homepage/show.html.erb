@@ -53,8 +53,8 @@
         <h3>
           <%= link_to taxon.name, seo_url(taxon) %>
         </h3>
-        <a href="#"><img src="/images/dogradio/slingbox_s1.gif" width="269" height="82" alt="Slingbox S1" class="image"></a>
-        <a href="#"><img src="/images/dogradio/buttons/view-more-button.png" width="151" height="36" alt="View More" class="button"></a>
+        <%= link_to image_tag("dogradio/slingbox_s1.gif", :class => "image", :alt => taxon.name), seo_url(taxon) %>
+        <%= link_to image_tag("dogradio/view-more-button.png", :class => "button", :alt => "View More"), seo_url(taxon) %>
       </div>
     <% end %>
   </div>

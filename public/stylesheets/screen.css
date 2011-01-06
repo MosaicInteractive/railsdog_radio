@@ -253,10 +253,10 @@ header nav a {
 
 header nav a.cart {color: #B30000;}
 
-footer {background: #DDD url('/images/dogradio/footer_bkgd.gif') repeat-x 0 0; margin: 55px 0 0;}
+footer {background: #DDD url('/images/dogradio/footer_bkgd.jpg') repeat-x 0 0; margin: 55px 0 0;}
 footer div#secondary img {position:relative; top: -51px;}
 
-div[role='banner'] section {vertical-align: top;background-color: #C00; padding: 4px 0 0;}
+div[role='banner'] section {vertical-align: top; padding: 4px 0 0;}
 div[role='banner'] img {display:inline; vertical-align: top; float: left;}
 div[role='banner'] div {display: inline;}
 div[role="banner"] div.image {margin: 0;}

@@ -165,7 +165,6 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
-    shoulda (2.11.3)
     spree (0.40.0)
       spree_api (= 0.40.0)
       spree_auth (= 0.40.0)
@@ -232,7 +231,6 @@ DEPENDENCIES
   rails (= 3.0.3)
   rspec-rails (>= 2.0.1)
   ruby-debug
-  shoulda
   spree (= 0.40.0)
   spree_email_to_friend
   spree_recently_viewed!

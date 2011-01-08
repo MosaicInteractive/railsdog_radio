@@ -369,17 +369,28 @@ ul, ol {
 	visibility: hidden;
 }
 
-div[role='main-content'] {
+input.blue {
+	color: #fff;
+	background-color: #0095da;
+	
+}
+
+input.red {
+	color: #fff;
+	background-color: #e41e1e;	
+}
+
+body#checkout div[role='main-content'] {
 	float:left;
 }
 
-div[role='checkout'] {
+body#checkout div[role='checkout'] {
 	vertical-align:top;
 	padding: 0 0 100px 0;
 	width: 980px;
 }
 
-div[role='checkout'] div[role='title'] {
+body#checkout div[role='checkout'] div[role='title'] {
 	margin: 40px 0 20px 0;
 	letter-spacing:2px;
 	color: #d4d4d4;
@@ -387,7 +398,7 @@ div[role='checkout'] div[role='title'] {
 
 }
 
-div[role='checkout'] div#tabs {
+body#checkout div[role='checkout'] div#tabs {
 
 	font: 18px Georgia, "Times New Roman", Times, serif;
 	float: left;
@@ -396,11 +407,11 @@ div[role='checkout'] div#tabs {
 	width:660px;
 }
 
-div[role="checkout"] div#tabs ul {
+body#checkout div[role="checkout"] div#tabs ul {
 	font: 45px "Arial", sans-serif;
 }
 
-div[role='checkout'] div#tabs li {
+body#checkout div[role='checkout'] div#tabs li {
 	display: inline;
 	float: left;
 	background-color: #eceded;
@@ -414,7 +425,7 @@ div[role='checkout'] div#tabs li {
 
 }
 
-div[role='checkout'] div#tabs li.active {
+body#checkout div[role='checkout'] div#tabs li.active {
 	background-color: #fff;
 	border-top: 5px solid #b7cbe9;
 	border-right: 5px solid #b7cbe9;
@@ -424,11 +435,11 @@ div[role='checkout'] div#tabs li.active {
 	
 }
 
-div[role='checkout'] div#tabs li.end {
+body#checkout div[role='checkout'] div#tabs li.end {
 	border-right: 3px solid #eceded;
 }
 
-div[role='checkout'] div#tabs li span.number {
+body#checkout div[role='checkout'] div#tabs li span.number {
 	color: #bfbfbf;
 	width: 30px;
 	font-size: 60px;
@@ -436,12 +447,12 @@ div[role='checkout'] div#tabs li span.number {
 	display: inline-block;
 }
 
-div[role='checkout'] div#tabs li.active span.number {
+body#checkout div[role='checkout'] div#tabs li.active span.number {
 	color: #324781;
 }
 
 
-div[role='checkout'] div#tabs li span.title {
+body#checkout div[role='checkout'] div#tabs li span.title {
 	color: #bfbfbf;
 	font-size: 18px;
 	width: 90px;
@@ -449,11 +460,11 @@ div[role='checkout'] div#tabs li span.title {
 	display: inline-block;	
 }
 
-div[role='checkout'] div#tabs li.active span.title {
+body#checkout div[role='checkout'] div#tabs li.active span.title {
 	color: #758ed0;
 }
 
-div[role='content'] {
+body#checkout div[role='content'] {
 	border: 5px solid #b7cbe9;
 	font-size: 18px;
 	color: #A0A0A0;
@@ -462,12 +473,12 @@ div[role='content'] {
 
 }
 
-div[role='content'] p {
+body#checkout div[role='content'] p {
 	font-size: 18px;
 	color: #747474;
 }
 
-div[role='content'] input.button {
+body#checkout div[role='content'] input.button {
 	border: 0px;
 	font: 18px Georgia, "Times New Roman", Times, serif;
 	padding: 10px 36px;
@@ -475,43 +486,35 @@ div[role='content'] input.button {
 	border-radius: 5px;
 }
 
-div[role='content'] div.submit {
+body#checkout div[role='content'] div.submit {
 	padding-top: 20px;
 	text-align: center;
 }
 
-div[role='content'] p {
+body#checkout div[role='content'] p {
 	font-size: 28px;
 	padding: 40px 0px;
 
 }
-input.blue {
-	color: #fff;
-	background-color: #0095da;
-	
-}
 
-input.red {
-	color: #fff;
-	background-color: #e41e1e;	
-}
 
-div[role='content'] hr {
+
+body#checkout div[role='content'] hr {
 	margin-top: 50px;
 }
 
-div[role='content'] ul.fields li {
+body#checkout div[role='content'] ul.fields li {
 	padding: 0px 0 10px 0;
 	text-align: left;
 }
 
-div[role='content'] ul.fields input {
+body#checkout div[role='content'] ul.fields input {
 	margin-left:10px;
 	border: 2px solid #A0A0A0;
 	border-radius:2px;
 }
 
-div[role='aside'] {
+body#checkout div[role='aside'] {
 	border: 3px solid #eceded;
 	width: 270px;
 	float: right;
@@ -521,59 +524,133 @@ div[role='aside'] {
 }
 
 
-div[role='aside'] div[role='order'] span#title {
+body#checkout div[role='aside'] div[role='order'] span#title {
 	color: #0095da;
 	font: 24px Georgia, "Times New Roman", Times, serif;
 	margin: 10px 5px 10px 15px;
 	padding: 0 0 10px 0;
 }
 
-div[role='aside'] div[role='order'] table td {
+body#checkout div[role='aside'] div[role='order'] table td {
 	padding-right: 10px;
 }
 
 
-div[role='aside'] div[role='order'] table.total {
+body#checkout div[role='aside'] div[role='order'] table.total {
 	margin-top:20px;
 	width: 100%;
 	text-align: right;
 }
 
-div[role='aside'] div[role='order'] th {
+body#checkout div[role='aside'] div[role='order'] th {
 	font-weight: normal;
 }
 
-div[role='aside'] div[role='order'] table.items td {
+body#checkout div[role='aside'] div[role='order'] table.items td {
 	padding-bottom: 10px;
 }
 
-div[role='aside'] div[role='order'] table.total td {
+body#checkout div[role='aside'] div[role='order'] table.total td {
 	padding-bottom: 5px;
 }
 
 
-div[role='aside'] div[role='order'] tr.total th, div[role='aside'] div[role='order'] tr.total td {
+body#checkout div[role='aside'] div[role='order'] tr.total th, div[role='aside'] div[role='order'] tr.total td {
 	font-weight: bold;
 }
 
 
-div[role='aside'] div[role='order'] tr td.qty {
+body#checkout div[role='aside'] div[role='order'] tr td.qty {
 	width: 36px;
 }
 
-div[role='aside'] div[role='order'] tr td.description {
+body#checkout div[role='aside'] div[role='order'] tr td.description {
 	width: 160px;
 }
 
 
-div[role='aside'] div[role='order'] tr td.price {
+body#checkout div[role='aside'] div[role='order'] tr td.price {
 	width: 36px;
 }
 
 
 /* End Styles for Checkout page */
 
+/* Styles for Taxonomy */
 
+body#taxonomy div[role="banner"] {
+	font: 60px Georgia, "Times New Roman", Times, serif;
+	color: #fff;
+	overflow: hidden;
+	width: 100%;
+	height: 140px;
+	background: #a11919;
+	float:left;
+}
+
+body#taxonomy div[role="banner"] img {
+	margin: 20px 50px 0 0;
+	float:right;
+}
+
+body#taxonomy div[role="banner"] span {
+	margin:100px;
+}
+
+body#taxonomy div[role='main'] {
+	width: 600px;
+}
+
+body#taxonomy div[role='main'] div {
+	display: inline-block;
+	float: left;
+	width: 600px;
+}
+
+body#taxonomy div[role='main'] div.last:after {
+	clear:both;
+	display: block;
+}
+
+
+body#taxonomy div[role='aside'] {
+	background-color: #f3f3f3;
+	color: #666666;
+	border-radius: 10px;
+	padding: 30px 25px 30px 25px;
+}
+
+body#taxonomy div[role='aside'] hr {
+	color: #666666;
+}
+
+body#taxonomy div[role='aside'] h2 {
+	color: #354b88;
+	font-size: 18px;
+
+}
+
+body#taxonomy div[role="aside"] {
+	
+	width:300px;
+	float:right;
+}
+
+body#taxonomy div[role="aside"] li {
+	padding-bottom: 15px;
+}
+
+body#taxonomy div[role='aside'] a {
+	color: #666666;
+	text-decoration:none;
+}
+
+body#taxonomy div[role='aside'] a:hover {
+	text-decoration:underline;
+}
+
+
+/* End Styles for Taxonomy */
 
 
 

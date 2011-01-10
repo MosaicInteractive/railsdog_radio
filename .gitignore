@@ -4,5 +4,6 @@ log/*.log
 tmp/**/*
 *.swp
 .DS_Store
+.rvmrc
 db/schema.rb
 config/database.yml

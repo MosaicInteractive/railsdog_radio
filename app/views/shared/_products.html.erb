@@ -1,0 +1,40 @@
+<%
+  paginated_products = @searcher.products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+<% end %>
+ 
+<% if products.any? %>
+  <% products.each do |product| %>
+    <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+      <div class="product-list" role="product">
+      	<h3><a href="#">Sirius Universal Plug and Play Boombox SUBX2</a></h3>
+      	<ul>
+      		<li>
+      			<img src="/images/dogradio/boombox_s1.gif" width="266" height="92" alt="Boombox S1" class="image">
+      		</li>
+      		<li>
+      			<h2>IN STOCK</h2>
+      			<h3><span>$99.99</span> $89.99</h3>
+      			<a href="#">VIEW MORE</a>
+      		</li>
+      	</ul>
+      	<div>Stylish, refined and versatile, the SIRIUS Speaker Dock is compatible with most Dock &amp; Play radios with universal docking capability and delivers SIRIUS Satellite Radio in crisp, dynamic stereo sound. The Speaker Dock is an elegant addition to any home or office ––and a concealed handle and battery, .... <a href="#">...more</a></div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+ 
+<% if paginated_products.respond_to?(:total_pages)
+      params.delete(:search)
+      params.delete(:taxon)
+      
+%><%= will_paginate(paginated_products,
+                    :previous_label => "&#171; #{t('previous')}",
+                    :next_label => "#{t('next')} &#187;") %>
+<% end %>
+

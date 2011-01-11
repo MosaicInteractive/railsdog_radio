@@ -1,0 +1,25 @@
+<div id="banner" role="banner">
+  <span><%= @taxon.name %></span>
+  <img src="/images/dogradio/radio_s1.gif" width="383" alt="Satellite Radios">
+</div>
+<div id="main" role="main">
+  <div id="products" role="products">
+
+    <% content_for :sidebar do %>
+      <%= hook :taxon_sidebar_navigation do %>
+        <%= render :partial => "shared/taxonomies" %>
+        <%= render(:partial => "shared/filters") if @taxon.children.empty? %>
+      <% end %>
+    <% end %>
+
+    <% if @taxon.children.empty? || !params[:keywords].blank? %>
+      <%= hook :taxon_products do %>
+        <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+      <% end %>
+    <% else %>
+      <%= hook :taxon_children do %>
+        <%= render :partial => "taxon", :collection => @taxon.children %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

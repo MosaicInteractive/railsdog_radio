@@ -171,8 +171,8 @@ input:invalid, textarea:invalid {
 /* These selection declarations have to be separate.
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink. */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+::-moz-selection{ background: #0095da; color:#fff; text-shadow: none; }
+::selection { background:#0095da; color:#fff; text-shadow: none; }
 
 /*  j.mp/webkit-tap-highlight-color */
 a:link { -webkit-tap-highlight-color: #FF5E99; }
@@ -220,7 +220,8 @@ button {  width: auto; overflow: visible; }
 .clearfix:after { clear: both; }
 /* fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
 .clearfix { zoom: 1; }
-
+/* Textual Styles */
+span.bold {font-weight: bold;}
 /* 
 	Primary Styles
   Author: John Dilts
@@ -244,7 +245,7 @@ header nav form input[type='search'] {
 	width: 50%;
 	vertical-align: middle;
 }
-header nav a {
+header nav a, header nav a:active, header nav a:visited, header nav a:hover {
 	margin: 0 12px 0 0; 
 	text-align: right;
 	font: normal normal normal 1.1em/1.6em serif;
@@ -254,7 +255,10 @@ header nav a {
 header nav a.cart {color: #B30000;}
 
 footer {background: #DDD url('/images/dogradio/footer_bkgd.jpg') repeat-x 0 0; margin: 55px 0 0;}
-footer div#secondary img {position:relative; top: -51px;}
+footer div#secondary div img {position:relative; top: -51px;}
+footer div#secondary div {display: inline-block;}
+footer div#static {}
+ 
 
 div[role='banner'] section {vertical-align: top; padding: 4px 0 0;}
 div[role='banner'] img {display:inline; vertical-align: top; float: left;}
@@ -343,7 +347,62 @@ div[role='contact'] h2.phone {
 	color: #616161;
 }
 
+/* Styles for Taxonomy */
 
+body#taxonomy div[role="banner"] {
+	font: 60px Georgia, "Times New Roman", Times, serif;
+	color: #fff;
+	overflow: hidden;
+	width: 100%;
+	height: 140px;
+	background: #a11919;
+	float:left;
+}
+body#taxonomy div[role="banner"] img {
+	margin: 20px 50px 0 0;
+	float:right;
+}
+body#taxonomy div[role="banner"] span {
+	margin:100px;
+}
+
+body#taxonomy div[role='main'] {
+	width: 600px;
+}
+body#taxonomy div[role='main'] div {
+	display: inline-block;
+	float: left;
+	width: 600px;
+}
+body#taxonomy div[role='main'] div.last:after {
+	clear:both;
+	display: block;
+}
+
+body#taxonomy div[role='aside'] {
+	background-color: #f3f3f3;
+	color: #666666;
+	border-radius: 10px;
+	padding: 30px 25px 30px 25px;
+}
+body#taxonomy div[role='aside'] hr {color: #666666;}
+body#taxonomy div[role='aside'] h2 {
+	color: #354b88;
+	font-size: 18px;
+}
+body#taxonomy div[role="aside"] {	
+	width:300px;
+	float:right;
+}
+body#taxonomy div[role="aside"] li {padding-bottom: 15px;}
+body#taxonomy div[role='aside'] a {
+	color: #666666;
+	text-decoration:none;
+}
+body#taxonomy div[role='aside'] a:hover {text-decoration:underline;}
+
+
+/* End Styles for Taxonomy */
 
 /* Styles for Checkout pages */
 /* ul, ol { margin-left: 2em; } */
@@ -575,88 +634,6 @@ body#checkout div[role='aside'] div[role='order'] tr td.price {
 
 
 /* End Styles for Checkout page */
-
-/* Styles for Taxonomy */
-
-body#taxonomy div[role="banner"] {
-	font: 60px Georgia, "Times New Roman", Times, serif;
-	color: #fff;
-	overflow: hidden;
-	width: 100%;
-	height: 140px;
-	background: #a11919;
-	float:left;
-}
-
-body#taxonomy div[role="banner"] img {
-	margin: 20px 50px 0 0;
-	float:right;
-}
-
-body#taxonomy div[role="banner"] span {
-	margin:100px;
-}
-
-body#taxonomy div[role='main'] {
-	width: 600px;
-}
-
-body#taxonomy div[role='main'] div {
-	display: inline-block;
-	float: left;
-	width: 600px;
-}
-
-body#taxonomy div[role='main'] div.last:after {
-	clear:both;
-	display: block;
-}
-
-
-body#taxonomy div[role='aside'] {
-	background-color: #f3f3f3;
-	color: #666666;
-	border-radius: 10px;
-	padding: 30px 25px 30px 25px;
-}
-
-body#taxonomy div[role='aside'] hr {
-	color: #666666;
-}
-
-body#taxonomy div[role='aside'] h2 {
-	color: #354b88;
-	font-size: 18px;
-
-}
-
-body#taxonomy div[role="aside"] {
-	
-	width:300px;
-	float:right;
-}
-
-body#taxonomy div[role="aside"] li {
-	padding-bottom: 15px;
-}
-
-body#taxonomy div[role='aside'] a {
-	color: #666666;
-	text-decoration:none;
-}
-
-body#taxonomy div[role='aside'] a:hover {
-	text-decoration:underline;
-}
-
-
-/* End Styles for Taxonomy */
-
-
-
-
-
-
 
 /*
  * media queries for responsive design

@@ -7,3 +7,4 @@ tmp/**/*
 .rvmrc
 db/schema.rb
 config/database.yml
+.idea/*

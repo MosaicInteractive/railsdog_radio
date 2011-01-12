@@ -226,8 +226,8 @@ span.bold {font-weight: bold;}
 	Primary Styles
   Author: John Dilts
 */
-body#home {background: #fff url('/images/dogradio/header_bkgd.jpg') repeat-x 10px 0;}
-body#checkout {background: #fff;}
+body {background: #fff;}
+body#homepage {background: #fff url('/images/dogradio/header_bkgd.jpg') repeat-x 10px 0;}
 header nav, footer div#secondary, div#container {width: 1080px; margin: 0 auto;}
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
@@ -254,7 +254,7 @@ header nav a, header nav a:active, header nav a:visited, header nav a:hover {
 
 header nav a.cart {color: #B30000;}
 
-footer {background: #DDD url('/images/dogradio/footer_bkgd.jpg') repeat-x 0 0; margin: 55px 0 0;}
+footer {background: #DDD url('/images/dogradio/footer_bkgd.jpg') repeat-x 0 0; margin: 55px 0 0; clear: both;}
 footer div#secondary div img {position:relative; top: -51px;}
 footer div#secondary div {display: inline-block;}
 footer div#static {}
@@ -358,48 +358,46 @@ body#taxonomy div[role="banner"] {
 	background: #a11919;
 	float:left;
 }
-body#taxonomy div[role="banner"] img {
+body#taxons div[role="banner"] img, body#products div[role="banner"] img {
 	margin: 20px 50px 0 0;
 	float:right;
 }
-body#taxonomy div[role="banner"] span {
+body#taxons div[role="banner"] span, body#products div[role="banner"] span {
 	margin:100px;
 }
 
-body#taxonomy div[role='main'] {
+body#taxons div[role='main'], body#products div[role='main'] {
 	width: 600px;
 }
-body#taxonomy div[role='main'] div {
+body#taxons div[role='main'] div, body#products div[role='main'] div {
 	display: inline-block;
 	float: left;
 	width: 600px;
 }
-body#taxonomy div[role='main'] div.last:after {
+body#taxons div[role='main'] div.last:after, body#products div[role='main'] div.last:after {
 	clear:both;
 	display: block;
 }
 
-body#taxonomy div[role='aside'] {
+body#taxons div[role='aside'], body#products div[role='aside'] {
 	background-color: #f3f3f3;
 	color: #666666;
 	border-radius: 10px;
 	padding: 30px 25px 30px 25px;
+    width:300px;
+	float:right;
 }
-body#taxonomy div[role='aside'] hr {color: #666666;}
-body#taxonomy div[role='aside'] h2 {
+body#taxons div[role='aside'] hr, body#products div[role='aside'] hr {color: #666666;}
+body#taxons div[role='aside'] h2, body#products div[role='aside'] h2 {
 	color: #354b88;
 	font-size: 18px;
 }
-body#taxonomy div[role="aside"] {	
-	width:300px;
-	float:right;
-}
-body#taxonomy div[role="aside"] li {padding-bottom: 15px;}
-body#taxonomy div[role='aside'] a {
+body#taxons div[role="aside"] li, body#products div[role='aside'] li {padding-bottom: 15px;}
+body#taxons div[role='aside'] a, body#products div[role='aside'] a {
 	color: #666666;
 	text-decoration:none;
 }
-body#taxonomy div[role='aside'] a:hover {text-decoration:underline;}
+body#taxons div[role='aside'] a:hover, body#products div[role='aside'] a:hover {text-decoration:underline;}
 
 
 /* End Styles for Taxonomy */

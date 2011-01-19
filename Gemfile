@@ -45,5 +45,6 @@ group :development, :test do
   gem "cucumber-rails", ">= 0.3.2"
   gem "capybara", "= 0.4.0"
   gem "launchy", ">= 0.3.7"
+  gem 'faker'
 end
 

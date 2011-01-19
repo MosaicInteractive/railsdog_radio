@@ -1,18 +1,7 @@
-/* @override 
-	http://localhost:3000/stylesheets/screen.css?1295453328
-	http://localhost:3000/stylesheets/screen.css?1295460051
-	http://localhost:3000/stylesheets/screen.css?1295462189
-	http://localhost:3000/stylesheets/screen.css?1295462468
-	http://localhost:3000/stylesheets/screen.css?1295463074
-	http://localhost:3000/stylesheets/screen.css?1295472315
-*/
-
-/*
-Primary Styles
-Author: John Dilts & David
- */
 body {background: #fff;}
-header nav, footer div#secondary, div#container {width: 960px; margin: 0 auto;}
+
+header nav, #banner, #container, footer .inner {width: 960px; margin: 0 auto;}
+
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
 header {
@@ -44,19 +33,102 @@ header nav {
   top: 24px;
   text-align: right;
 }
-header nav a {
-  margin: 0 12px 0 0;
+header nav a, header nav a:hover {
+  margin: 0 0 0 12px;
   text-align: right;
-  font: normal normal normal 1.1em/1.6em Avro;
+  font: normal normal normal 1.1em/1.6em Arvo;
   color: #fff;
 }
 
 header nav a.cart {color: #B30000;}
 
-footer {background: #DDD url('/images/dogradio/footer_bkgd.jpg') repeat-x 0 0; margin: 55px 0 0; clear: both;}
-footer div#secondary div img {position:relative; top: -51px;}
-footer div#secondary div {display: inline-block;}
-footer div#static {}
+
+
+
+footer {
+  background: #fff url('/images/dogradio/footer_bkgd.jpg') repeat-x bottom left;
+  margin: 80px 0 0; clear: both;
+  font-family: Trebuchet MS;
+}
+footer .inner {
+  height: 520px;
+  position:  relative;
+}
+
+footer #kid {
+  position: absolute;
+  bottom: 60px;
+}
+footer #about-railsdog-radio {
+  position: absolute;
+  width: 710px;
+  left: 250px;
+  bottom: 0px;
+  height: 390px;
+  font-size: 150%;
+  line-height: 150%;
+  color: #666;
+}
+#more-about-railsdog-radio {
+  text-align: right;
+  font-size: 70%;
+}
+#more-about-railsdog-radio a {
+  text-decoration: none;
+}
+
+footer #about-railsdog-radio strong { color: #000; }
+footer #contact-us, footer #social, footer #menu {
+  width: 210px;
+  position: absolute;
+  bottom: 0;
+  height: 170px;
+}
+footer #contact-us a, footer #social a, footer #menu a { color: #797A7D; }
+footer #contact-us p, footer #social p, footer #menu p {
+  color: #797A7D;
+  line-height: 2.0em;
+  font-size: 1.2em;
+}
+footer #contact-us h3, footer #social h3, footer #menu h3 {
+  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+footer #contact-us {
+  left: 250px;
+}
+footer #social {
+  left: 500px;
+}
+footer #menu {
+  left: 750px;
+}
+footer #social a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+}
+footer #social a span { display: none; }
+footer #social #facebook { background-image: url(../images/dogradio/social/facebook.gif); }
+footer #social #rss { background-image: url(../images/dogradio/social/rss.gif); }
+footer #social #twitter { background-image: url(../images/dogradio/social/twitter.gif); }
+
+
+footer #copyright {
+  color: #797A7D;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+
+
+
+
+
 
 
 
@@ -65,12 +137,12 @@ div#banner {
   height: 340px;
 }
 div#banner div.button {
-	position: absolute;
-	top: 49px;
-	left: 640px;
+  position: absolute;
+  top: 49px;
+  left: 640px;
 }
 div#banner div.button img {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 div[role='main'] {

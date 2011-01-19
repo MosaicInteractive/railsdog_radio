@@ -33,7 +33,7 @@ nav[role='banner-nav'] ul li {
 nav[role='banner-nav'] ul li.first, nav[role='banner-nav'] ul li.last {width: 6%;}
 nav[role='banner-nav'] ul li a {
   font: normal normal bold 1.2em/2.2em Helvetica,Arial,sans-serif;
-  text-shadow: #DA2D2D 1px 1px 1px;
+  text-shadow: #CE2828 1px 1px 1px;
   color: #3E0303;
 }
 nav[role='banner-nav'] ul li.current a,

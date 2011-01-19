@@ -17,7 +17,7 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link  href="//fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
+  <link  href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
   <%= stylesheet_link_tag 'reset', 'typography', 'misc', 'screen', 'homepage', 'taxonomy', 'checkout' %>
   <link rel="stylesheet" href="/stylesheets/jquery.mobile-1.0a2.css">
 
@@ -48,18 +48,57 @@
 
     <%= yield %>
 
-    <footer>
-      <div id="secondary">
-        <div><img src="/images/dogradio/kid.jpg" width="204" height="413" alt="Kid"></div>
+  </div>
+
+
+
+  <footer>
+    <div class="inner">
+
+      <img src="/images/dogradio/kid.jpg" width="204" height="413" alt="Kid" id="kid">
+
+      <div id="about-railsdog-radio">
         <div>
-          <p><span class="bold">Railsdog Radio</span> has been selling the widest selection of satellite radio gear since 2004. With a passion for satellite radio products and programming, we have provided helpful service, fast shipping and a range of parts to over 250,000 happy customers.</p>
-          <a href="/about">More about Railsdog Radio ></a>
+          <p>
+            <strong>Railsdog Radio</strong> has been selling the widest selection of
+            satellite radio gear since 2004. With a passion for satellite radio products and programming,
+            we have provided helpful service, fast shipping and a range of parts to over 250,000 happy customers.
+          </p>
+          <p id="more-about-railsdog-radio">
+            <a href="/about">More about Railsdog Radio ></a>
+          </p>
         </div>
       </div>
-    </footer>
 
+      <div id="contact-us">
+        <h3>Contact Us</h3>
+        <p>
+        (301)560-2000<br>
+        <a href="mailto:sales@railsdogradio.com">sales@railsdogradio.com</a>
+        </p>
+      </div>
 
-  </div>
+      <div id="social">
+        <h3>Social</h3>
+        <p>
+        <a href="#" id="facebook"><span>Facebook</span></a>
+        <a href="#" id="rss"><span>RSS</span></a>
+        <a href="#" id="twitter"><span>Twitter</span></a>
+        </p>
+      </div>
+
+      <div id="menu">
+        <h3>Menu</h3>
+        <p>
+        <a href="#">About us</a><br />
+        <a href="#">Privacy policy</a>
+        </p>
+      </div>
+
+      <p id="copyright">&copy; Copyright 2010 Railsdog Radio. All rights reserved</p>
+
+    </div>
+  </footer>
 
 
 

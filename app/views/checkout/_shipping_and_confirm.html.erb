@@ -1,0 +1,53 @@
+<%# TODO: update shipping and order totals in Order Summary when new Shipping Method is selected %>
+<%# TODO: move inline css to stylesheets %>
+<div id="content" role="content">
+  <p>Choose A Shipping Method</p>
+  <ul class="fields">
+    <li><%= form.collection_select :shipping_method_id, @order.available_shipping_methods, :id, :name %></li>
+  </ul>
+  <p>Verify Order Details</p>
+
+  <div id="order-items" style="padding:0 30px 30px 0">
+    <h3>Items In Your Order</h3>
+    <ul>
+    <% @order.line_items.each do |line_item| %>
+      <li>
+        <%= line_item.quantity %> <%= line_item.variant.product.name %> for
+        <%= number_to_currency (line_item.price * line_item.quantity)-%>
+      </li>
+    <% end %>
+    </ul>
+    <%= link_to "edit", cart_path %>
+  </div>
+
+  <div id="order-email" style="padding:30px 30px 30px 0">
+    <h4>Your email address</h4>
+    <%= @order.email %>
+  </div>
+
+  <% ["ship", "bill"].each do |addr_type| %>
+    <% address = @order.send("#{addr_type}_address") %>
+    <div id="order-#{addr_type}_address" style="float:left; padding:30px 30px 30px 0">
+      <h4><%= addr_type.capitalize %> Address</h4>
+      <ul>
+        <li><%= address.firstname %></li>
+        <li><%= address.lastname %></li>
+        <li><%= address.address1 %></li>
+        <%= "<li>#{address.address2}</li>".html_safe if address.address2 %>
+        <%= "<li>#{address.city}, #{address.state.name} #{address.zipcode}</li>".html_safe %>
+      </ul>
+      <%= link_to "edit", checkout_state_path('address_and_payment') %>
+    </div>
+  <% end %>
+
+    <div id="order-payment" style="padding:30px 30px 30px 0; clear:both">
+      <h4>Credit card info</h4>
+      <%= @order.payment.source.name %><br />
+      <%= @order.payment.source.display_number %>
+      <%= link_to "edit", checkout_state_path('address_and_payment') %>
+    </div>
+  <div>
+
+  </div>
+  <div class="submit"><input type="submit" class="button blue" value="PLACE YOUR ORDER &#8227;"/></div>
+</div>

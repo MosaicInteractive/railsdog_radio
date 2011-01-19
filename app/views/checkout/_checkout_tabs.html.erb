@@ -3,7 +3,7 @@
 	<ul>
 		<li <%= controller.action_name == "registration" ? "class='active'" : "" %>><span class="number">1</span><span class="title">Create an Account</span></li>
 		<li <%= @order.address_and_payment?  && controller.action_name != "registration" ? "class='active'" : "" %>><span class="number">2</span><span class="title">Shipping &amp; Billing</span></li>
-		<li <%= @order.shipping_and_confirm? && controller.action_name == "registration" ? "class='active number'" : "class=number" %>><span class="number">3</span><span class="title">Place Order</span></li>
+		<li <%= @order.shipping_and_confirm? && controller.action_name != "registration" ? "class='active number'" : "class=number" %>><span class="number">3</span><span class="title">Place Order</span></li>
 	</ul>
 </div>
 <!-- END TABS -->

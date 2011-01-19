@@ -1,16 +1,16 @@
 <div id="banner" role="banner">
-    <section role="new-arrivals">
-      <div class="image">
-        <img src="/images/dogradio/new_arrivals.jpg" width="691" height="298" alt="New Arrivals">
-      </div>
-      <div class="button">
-        <img src="/images/dogradio/arrivals_new.jpg" width="373" height="173" alt="Arrivals New">
-        <img src="/images/dogradio/accessory_btn.jpg" width="373" height="125" alt="Accessory Btn">
-      </div>
-    </section>
+  <section>
+    <div class="image">
+      <img src="/images/dogradio/homepage/new-products.jpg" alt="New Arrivals">
+    </div>
+    <div class="button" class="clearfix">
+      <img src="/images/dogradio/homepage/all-new.png" alt="All New. Get the latest Sirrus/XM products for your home and car"><br>
+      <a href="#"><img src="/images/dogradio/homepage/shop-new-products.png" alt="Shop new products"></a>
+    </div>
+  </section>
   <!-- WIP - Slides to be >>
-    <section role="car-stereos">
-      <div class="image">
+  <section role="car-stereos">
+    <div class="image">
 
       </div>
       <div class="button">
@@ -33,19 +33,19 @@
 
       </div>
     </section>
-<< -->
-  </div>
-
-  <div id="banner-nav" role="banner-nav">
+  << -->
+  <nav id="banner-nav" role="banner-nav">
     <ul>
       <li class="first"><a href="#">&#9664;</a></li>
-      <li><a href="#">new arrivals</a></li>
+      <li class="current"><a href="#">new arrivals</a></li>
       <li><a href="#">car stereos</a></li>
       <li><a href="#">accessory sale</a></li>
       <li><a href="#">clearance event</a></li>
       <li class="last"><a href="#">&#9654;</a></li>
     </ul>
-  </div>
+  </nav>
+
+</div>
 
   <div id="main" role="main">
     <% @taxons.each do |taxon| %>

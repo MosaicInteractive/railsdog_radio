@@ -1,4 +1,5 @@
 <!doctype html>
+
 <!--[if lt IE 7 ]><html lang=en class="no-js ie6"><![endif]-->
 <!--[if IE 7 ]><html lang=en class="no-js ie7"><![endif]-->
 <!--[if IE 8 ]><html lang=en class="no-js ie8"><![endif]-->
@@ -7,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+  <title><%= @page_title %> | Railsdog Radio</title>
 
   <meta name="description" content="">
   <meta name="author" content="">
@@ -15,7 +16,9 @@
 
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="stylesheet" href="/stylesheets/screen.css">
+
+  <link  href="//fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
+  <%= stylesheet_link_tag 'reset', 'typography', 'misc', 'screen', 'homepage', 'taxonomy', 'checkout' %>
   <link rel="stylesheet" href="/stylesheets/jquery.mobile-1.0a2.css">
 
   <script src="/javascripts/libs/modernizr-1.6.min.js"></script>
@@ -23,38 +26,42 @@
 </head>
 
 <body id="<%= @body_id || controller.controller_name %>">
+  <div id="container">
 
-  <header>
-    <nav id="core-nav">
-      <%= link_to image_tag("dogradio/logo.jpg", :width => "300", :height => "58", :alt => "Rails Dog Radio"), root_url %>
+    <header>
+      <%= link_to image_tag("dogradio/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
       <form action="#" >
         <input type="search" id="s1" placeholder="Search">
       </form>
-      <%= link_to "products", products_url %>
-      <a href="#">help</a>
-      <% if current_user %>
-        <%= link_to t('my_account'), account_path, :class => "cart" %>
-        <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
-      <% else %>
-        <%= link_to t('log_in'), login_path, :class => "cart" %>
-      <% end %>
-      <%= link_to_cart %>
-    </nav>
-  </header>
+      <nav id="core-nav">
+        <%= link_to "products", products_url %>
+        <a href="#">help</a>
+        <% if current_user %>
+          <%= link_to t('my_account'), account_path, :class => "cart" %>
+          <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
+        <% else %>
+          <%= link_to t('log_in'), login_path, :class => "cart" %>
+        <% end %>
+        <%= link_to_cart %>
+      </nav>
+    </header>
 
-  <div id="container">
     <%= yield %>
+
+    <footer>
+      <div id="secondary">
+        <div><img src="/images/dogradio/kid.jpg" width="204" height="413" alt="Kid"></div>
+        <div>
+          <p><span class="bold">Railsdog Radio</span> has been selling the widest selection of satellite radio gear since 2004. With a passion for satellite radio products and programming, we have provided helpful service, fast shipping and a range of parts to over 250,000 happy customers.</p>
+          <a href="/about">More about Railsdog Radio ></a>
+        </div>
+      </div>
+    </footer>
+
+
   </div>
 
-  <footer>
-    <div id="secondary">
-      <div><img src="/images/dogradio/kid.jpg" width="204" height="413" alt="Kid"></div>
-      <div>
-        <p><span class="bold">Railsdog Radio</span> has been selling the widest selection of satellite radio gear since 2004. With a passion for satellite radio products and programming, we have provided helpful service, fast shipping and a range of parts to over 250,000 happy customers.</p>
-        <a href="/about">More about Railsdog Radio ></a>
-      </div>
-    </div>
-  </footer>
+
 
   <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
   <script>!window.jQuery&&document.write(unescape('%3Cscript src="js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'));</script>

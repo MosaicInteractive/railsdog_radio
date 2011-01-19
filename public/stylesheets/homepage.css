@@ -1,0 +1,45 @@
+/* @override 
+	http://localhost:3000/stylesheets/homepage.css?1295463076
+	http://localhost:3000/stylesheets/homepage.css?1295471767
+*/
+
+body#homepage {background: #fff url('../images/dogradio/homepage/bg.png') repeat-x;}
+
+
+
+#homepage #banner {
+  height: 340px;
+  background: url(../images/dogradio/homepage/homepage-banner-bg.jpg) no-repeat;
+}
+
+
+
+
+header a, nav[role='banner-nav'] ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav[role='banner-nav'] {
+  width: 100%;
+}
+nav[role='banner-nav'] ul {width:100%;}
+nav[role='banner-nav'] ul li {
+  width: 20%;
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+}
+nav[role='banner-nav'] ul li.first, nav[role='banner-nav'] ul li.last {width: 6%;}
+nav[role='banner-nav'] ul li a {
+  font: normal normal bold 1.2em/2.2em Helvetica,Arial,sans-serif;
+  text-shadow: #DA2D2D 1px 1px 1px;
+  color: #3E0303;
+}
+nav[role='banner-nav'] ul li.current a,
+nav[role='banner-nav'] ul li a:hover {
+  color:  #fff;
+  text-shadow: #3E0303 1px 1px 1px;
+}
+
+

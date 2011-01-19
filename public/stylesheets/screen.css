@@ -1,12 +1,18 @@
-/* @override http://localhost:3000/stylesheets/screen.css?1295453328 */
+/* @override 
+	http://localhost:3000/stylesheets/screen.css?1295453328
+	http://localhost:3000/stylesheets/screen.css?1295460051
+	http://localhost:3000/stylesheets/screen.css?1295462189
+	http://localhost:3000/stylesheets/screen.css?1295462468
+	http://localhost:3000/stylesheets/screen.css?1295463074
+	http://localhost:3000/stylesheets/screen.css?1295472315
+*/
 
 /*
 Primary Styles
-Author: John Dilts
+Author: John Dilts & David
  */
 body {background: #fff;}
-body#homepage {background: #fff url('/images/dogradio/homepage_header_bg.png') repeat-x;}
-header nav, footer div#secondary, div#container {width: 1080px; margin: 0 auto;}
+header nav, footer div#secondary, div#container {width: 960px; margin: 0 auto;}
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
 header {
@@ -16,40 +22,33 @@ header {
 }
 header form {
   position: absolute;
-  left: 340px;
-  top: 20px;
+  left: 350px;
+  top: 25px;
 }
+header form input[type='search'] {
+  width: 180px;
+  vertical-align: middle;
+}
+
+
 header #logo {
   position: absolute;
   left:  0; top: 11px;
 }
+
+
+
 header nav {
   position: absolute;
   right: 0;
-  top: 27px;
+  top: 24px;
   text-align: right;
 }
-
-header a, div[role='banner-nav'] ul li a {
-  text-transform: uppercase;
-  text-decoration: none;
-}
-header nav form {width: 30%; text-align: center;}
-header nav form input[type='search'] {
-  width: 50%;
-  vertical-align: middle;
-}
-header nav a, header nav a:active, header nav a:visited, header nav a:hover {
+header nav a {
   margin: 0 12px 0 0;
   text-align: right;
-  font: normal normal normal 1.1em/1.6em serif;
+  font: normal normal normal 1.1em/1.6em Avro;
   color: #fff;
-}
-
-#homepage #banner {
-  border: 1px solid #0f0;
-  height: 340px;
-  background: url(../images/dogradio/homepage/homepage-banner-bg.jpg) no-repeat;
 }
 
 header nav a.cart {color: #B30000;}
@@ -60,30 +59,19 @@ footer div#secondary div {display: inline-block;}
 footer div#static {}
 
 
-div[role='banner'] section {vertical-align: top;}
-div[role='banner'] img {display:inline; vertical-align: top; float: left;}
-div[role='banner'] div {display: inline;}
-div[role="banner"] div.image {margin: 0;}
-div[role="banner"] div.button {margin: 0;}
 
-div[role='banner-nav'] {
-  width: 100%;
-  background-color: #8C1717;
+div#banner {
+  position: relative;
+  height: 340px;
 }
-div[role='banner-nav'] ul {width:100%;}
-div[role='banner-nav'] ul li {
-  width: 20%;
-  list-style: none;
-  display: inline-block;
-  text-align: center;
+div#banner div.button {
+	position: absolute;
+	top: 49px;
+	left: 640px;
 }
-div[role='banner-nav'] ul li.first, div[role='banner-nav'] ul li.last {width: 6%;}
-div[role='banner-nav'] ul li a {
-  font: normal normal bold 1.2em/2.2em Arial, sans-serif;
-  text-shadow: rgb(255,255,255) 1px 1px 2px;
-  color: #3E0303;
+div#banner div.button img {
+	margin-bottom: 20px;
 }
-div[role='banner-nav'] a:hover {color: #fff;}
 
 div[role='main'] {
   padding: 1em;

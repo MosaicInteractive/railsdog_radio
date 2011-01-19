@@ -22,6 +22,19 @@ describe CheckoutController do
       order.state.should == "address_and_payment"
     end
 
+  end
+
+  describe "#edit" do
+
+    context "when in address_and_payment state" do
+
+      it "should create a billing and shipping address" do
+        controller.stub :check_authorization
+        controller.should_receive :before_address_and_payment
+        get :edit, { :state => 'address_and_payment' }
+      end
+
+    end
 
   end
 

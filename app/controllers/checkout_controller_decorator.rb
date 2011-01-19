@@ -18,4 +18,9 @@ CheckoutController.class_eval do
     @body_id = "checkout"
   end
 
+  def before_address_and_payment
+    @order.bill_address ||= Address.new(:country => default_country)
+    @order.ship_address ||= Address.new(:country => default_country)
+  end
+
 end

@@ -1,2 +1,36 @@
-<%= render 'address', :form => form %>
-<%= render 'payment', :form => form %>
+<div id="content" role="content">
+<p>Enter your Shipping Information</p>
+<%= form.fields_for :ship_address do |ship_form| %>
+<ul class="fields">
+	<li class="short">First name<br/><%= ship_form.text_field :firstname %></li>
+	<li>Last name<br/><%= ship_form.text_field :lastname %></li>
+	<li>Shipping address<br/><%= ship_form.text_field :address1 %></li>
+	<li>Shipping address 2<br/><%= ship_form.text_field :address2 %></li>
+	<li>City<br/><%= ship_form.text_field :city %></li>
+	<li>State<br/><%= ship_form.collection_select :state, Country.first.states, :id, :name %></li>
+	<li>Postal code<br/><%= ship_form.text_field :zipcode %></li>
+	<li>Country<br/><%= ship_form.collection_select :state, Country.all, :id, :name %></li>
+	<li>Phone<br/><%= ship_form.text_field :phone %><span><a href="#">Why ask?</a></span></li>
+</ul>
+<% end %>
+<hr/>
+<p>Enter your Billing Information</p>
+<%= form.fields_for :bill_address do |bill_form| %>
+<ul class="fields">
+	<li class="short">First name<br/><%= bill_form.text_field :firstname %></li>
+	<li>Last name<br/><%= bill_form.text_field :lastname %></li>
+	<li>Shipping address<br/><%= bill_form.text_field :address1 %></li>
+	<li>Shipping address 2<br/><%= bill_form.text_field :address2 %></li>
+	<li>City<br/><%= bill_form.text_field :city %></li>
+	<li>State<br/><%= bill_form.collection_select :state, Country.first.states, :id, :name %></li>
+	<li>Postal code<br/><%= bill_form.text_field :zipcode %></li>
+	<li>Country<br/><%= bill_form.collection_select :state, Country.all, :id, :name %></li>
+	<li>Phone<br/><%= bill_form.text_field :phone %><span><a href="#">Why ask?</a></span></li>
+	<li class="credit_card">VISA IMAGES</li>
+	<li class="short">Credit card number<br/><input type="text"></input></li>
+	<li class="clear">Security Code<br/><input type="text"></input><span class="tooltip"><a href="#">(?)</a></span></li>
+	<li class="short">Expiration<br/><select><option value="1">01 - January</option></select><select><option value="2010">2010</option></select></li>
+</ul>
+<% end %>
+<div class="submit"><input type="submit" class="button blue" value="REVIEW YOUR ORDER &#8227;"/></div>
+</div>

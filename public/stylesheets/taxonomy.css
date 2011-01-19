@@ -1,0 +1,55 @@
+/* Styles for Taxonomy */
+
+body#taxonomy div[role="banner"] {
+  font: 60px Georgia, "Times New Roman", Times, serif;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  height: 140px;
+  background: #a11919;
+  float:left;
+}
+body#taxons div[role="banner"] img, body#products div[role="banner"] img {
+  margin: 20px 50px 0 0;
+  float:right;
+}
+body#taxons div[role="banner"] span, body#products div[role="banner"] span {
+  margin:100px;
+}
+
+body#taxons div[role='main'], body#products div[role='main'] {
+  width: 600px;
+}
+body#taxons div[role='main'] div, body#products div[role='main'] div {
+  display: inline-block;
+  float: left;
+  width: 600px;
+}
+body#taxons div[role='main'] div.last:after, body#products div[role='main'] div.last:after {
+  clear:both;
+  display: block;
+}
+
+body#taxons div[role='aside'], body#products div[role='aside'] {
+  background-color: #f3f3f3;
+  color: #666666;
+  border-radius: 10px;
+  padding: 30px 25px 30px 25px;
+  width:300px;
+  float:right;
+}
+body#taxons div[role='aside'] hr, body#products div[role='aside'] hr {color: #666666;}
+body#taxons div[role='aside'] h2, body#products div[role='aside'] h2 {
+  color: #354b88;
+  font-size: 18px;
+}
+body#taxons div[role="aside"] li, body#products div[role='aside'] li {padding-bottom: 15px;}
+body#taxons div[role='aside'] a, body#products div[role='aside'] a {
+  color: #666666;
+  text-decoration:none;
+}
+body#taxons div[role='aside'] a:hover, body#products div[role='aside'] a:hover {text-decoration:underline;}
+
+
+/* End Styles for Taxonomy */
+

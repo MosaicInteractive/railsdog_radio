@@ -1,25 +1,42 @@
-<div id="banner" role="banner">
-  <span><%= @taxon.name %></span>
-  <img src="/images/dogradio/radio_s1.gif" width="383" alt="Satellite Radios">
+<% @body_id = 'product-list' %>
+
+<div id="banner" role="banner" style="background-image: url(/images/dogradio/taxon/satellite-radios-bg.jpg)">
+  <h1><%= @taxon.name %></h1>
 </div>
-<div id="main" role="main">
+
+<div id="main">
   <div id="products" role="products">
 
-    <% content_for :sidebar do %>
-      <%= hook :taxon_sidebar_navigation do %>
-        <%= render :partial => "shared/taxonomies" %>
-        <%= render(:partial => "shared/filters") if @taxon.children.empty? %>
-      <% end %>
-    <% end %>
+  <% if @taxon.children.empty? || !params[:keywords].blank? %>
+      <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+  <% else %>
+    <p class="breadcrumbs"><%= link_to 'Products', products_path %> &raquo; <%= @taxon.name %></p>
+    <%= render :partial => "shared/products", :locals => {:products => taxon_preview(@taxon), :taxon => @taxon} %>
+  <% end %>
 
-    <% if @taxon.children.empty? || !params[:keywords].blank? %>
-      <%= hook :taxon_products do %>
-        <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
-      <% end %>
-    <% else %>
-      <%= hook :taxon_children do %>
-        <%= render :partial => "taxon", :collection => @taxon.children %>
-      <% end %>
-    <% end %>
+  </div>
+</div>
+
+<div id="sidebar">
+  <div id="all-products">
+    <h2>All Products</h2>
+    <ul>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+    </ul>
   </div>
 </div>

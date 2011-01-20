@@ -1,3 +1,8 @@
+/* @override 
+	http://localhost:3000/stylesheets/typography.css?1295538654
+	http://localhost:3000/stylesheets/typography.css?1295547957
+*/
+
 /* fonts.css from the YUI Library: developer.yahoo.com/yui/
 refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
 
@@ -22,12 +27,9 @@ pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
 
 body, select, input, textarea {
-  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
-  color: #444;
-  /* set your base font here, to apply evenly */
-  /* font-family: Georgia, serif;  */
+  color: #222;
 }
-
+#main p {  line-height: 1.4em; }
 /* headers (h1,h2,etc) have no default font-size or margin,
 you'll want to define those yourself. */
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
@@ -117,4 +119,12 @@ code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-imag
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
 
-
+.prices {
+  font-size: 1.5em;
+}
+.prices .rrp {
+  color: #f00;
+}
+.prices .selling-price {
+  font-weight: bold;
+}

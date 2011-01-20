@@ -1,4 +1,12 @@
-body {background: #fff;}
+/* @override 
+	http://localhost:3000/stylesheets/screen.css?1295538659
+	http://localhost:3000/stylesheets/screen.css
+*/
+
+body {
+	background-color: #fff;
+	background-repeat: repeat-x;
+}
 
 header nav, #banner, #container, footer .inner {width: 960px; margin: 0 auto;}
 
@@ -125,6 +133,56 @@ footer #copyright {
   bottom: 20px;
   right: 0;
 }
+
+
+
+#sidebar #all-products {
+  width: 230px;
+  float: left;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding:  30px 30px 30px 30px;
+  color: #666;
+  font-family: Trebuchet MS;
+}
+
+#all-products {
+  padding-top: 30px; /* match #contact  */
+}
+#all-products h2 {
+	color: #364D8C;
+}
+#all-products h2, #homepage #contact h2 {
+  font-family: Arvo;
+  font-size: 200%;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 0.75em;
+  border-bottom: 1px solid #A3A3A3;
+  padding-bottom: 0.5em;
+}
+#all-products li {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+#all-products a {
+	color: #666;
+	text-decoration: none;
+}
+#all-products a:hover {
+	text-decoration: underline;
+}
+
+
+.breadcrumbs {
+  padding: 0 0 20px 0;
+}
+.pagination {
+  text-align: right;
+}
+
 
 
 

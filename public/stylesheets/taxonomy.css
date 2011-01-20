@@ -1,55 +1,59 @@
-/* Styles for Taxonomy */
+/* @override http://localhost:3000/stylesheets/taxonomy.css */
 
-body#taxonomy div[role="banner"] {
-  font: 60px Georgia, "Times New Roman", Times, serif;
+body#product-list {
+  background-image: url(../images/dogradio/taxon/bg.jpg);
+}
+body#product-list #banner {
+  height: 143px;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+body#product-list #banner h1 {
   color: #fff;
-  overflow: hidden;
-  width: 100%;
-  height: 140px;
-  background: #a11919;
-  float:left;
-}
-body#taxons div[role="banner"] img, body#products div[role="banner"] img {
-  margin: 20px 50px 0 0;
-  float:right;
-}
-body#taxons div[role="banner"] span, body#products div[role="banner"] span {
-  margin:100px;
+	font-family: Trebuchet MS;
+	font-size: 4em;
+	line-height: 140px;
+  text-shadow: rgba(0,0,0,1) 1px 1px 2px;
 }
 
-body#taxons div[role='main'], body#products div[role='main'] {
-  width: 600px;
-}
-body#taxons div[role='main'] div, body#products div[role='main'] div {
-  display: inline-block;
+
+body#product-list #main {
+  width:  600px;
   float: left;
-  width: 600px;
+  margin-right: 70px;
 }
-body#taxons div[role='main'] div.last:after, body#products div[role='main'] div.last:after {
-  clear:both;
-  display: block;
+body#product-list #sidebar {
+  width: 290px;
+  float: left;
 }
 
-body#taxons div[role='aside'], body#products div[role='aside'] {
-  background-color: #f3f3f3;
-  color: #666666;
-  border-radius: 10px;
-  padding: 30px 25px 30px 25px;
-  width:300px;
-  float:right;
+body#product-list .product {
+  padding: 30px 0 30px 0;
+  border-top: 1px solid #a3a3a3;
+  border-bottom: 1px solid #a3a3a3;
+  margin-top: -1px;
 }
-body#taxons div[role='aside'] hr, body#products div[role='aside'] hr {color: #666666;}
-body#taxons div[role='aside'] h2, body#products div[role='aside'] h2 {
-  color: #354b88;
-  font-size: 18px;
+body#product-list .product h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
-body#taxons div[role="aside"] li, body#products div[role='aside'] li {padding-bottom: 15px;}
-body#taxons div[role='aside'] a, body#products div[role='aside'] a {
-  color: #666666;
-  text-decoration:none;
+body#product-list .product .image {
+	width: 280px;
+	float: left;
+	margin-bottom: 20px;
 }
-body#taxons div[role='aside'] a:hover, body#products div[role='aside'] a:hover {text-decoration:underline;}
+body#product-list .product .details {
+	float: left;
+	width: 320px;
+}
+body#product-list .product .details p {
+	margin: 14px 0;
+	}
+body#product-list .product .description {
+	clear: left;
+	}
 
-
-/* End Styles for Taxonomy */
-
+body#product-list #main .list {
+  margin-bottom: 30px;
+}

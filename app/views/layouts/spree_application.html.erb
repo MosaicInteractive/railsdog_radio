@@ -34,7 +34,7 @@
         <input type="search" id="s1" placeholder="Search">
       </form>
       <nav>
-        <%= link_to "products", products_url %>
+        <%= link_to "products", products_path %>
         <a href="#">help</a>
         <% if current_user %>
           <%= link_to t('my_account'), account_path, :class => "cart" %>

@@ -23,6 +23,7 @@ header form input[type='search'] {
 header #logo {
   position: absolute;
   left:  0; top: 11px;
+  z-index: 99;
 }
 
 
@@ -33,7 +34,7 @@ header nav {
   top: 24px;
   text-align: right;
 }
-header nav a, header nav a:hover {
+header nav a, header nav a:visited,header nav a:hover {
   margin: 0 0 0 12px;
   text-align: right;
   font: normal normal normal 1.1em/1.6em Arvo;
@@ -125,86 +126,5 @@ footer #copyright {
   right: 0;
 }
 
-
-
-
-
-
-
-
-div#banner {
-  position: relative;
-  height: 340px;
-}
-div#banner div.button {
-  position: absolute;
-  top: 49px;
-  left: 640px;
-}
-div#banner div.button img {
-  margin-bottom: 20px;
-}
-
-div[role='main'] {
-  padding: 1em;
-}
-
-div[role='main'] div.product {
-  width: 33%;
-  display: inline-block;
-  text-align: center;
-  margin: 0;
-}
-div.product h3 a{
-  font: normal normal bold 1.2em/3em Arial, sans-serif;
-  color: #324781;
-  text-decoration: none;
-}
-div.product img.image, div.product img.button {
-  vertical-align: middle;
-  margin: 6% auto 10%;
-}
-div[role='main'] div.col {border-right: solid 1px #ccc;}
-div[role='main'] div.row {border-bottom: solid 1px #ccc;}
-
-div[role='all-products'] {width: 50%; display: inline-block;}
-div[role='all-products'] h2, div[role='contact'] h2 {
-  color: #324781;
-  text-transform: uppercase;
-  border-bottom: solid 1px #616161;
-  font: normal normal bold 1.2em/2.6em Arial, sans-serif;
-}
-div[role='all-products'] div.left,
-div[role='all-products'] div.right {
-  color: #616161;
-  width: 45%;
-  text-transform: uppercase;
-  font: normal normal bold 1em/2.2em Arial, sans-serif;
-  display: inline-block;
-}
-div[role='all-products'] div a {text-decoration: none;}
-div[role='all-products'] ul li {list-style: none;}
-div[role='all-products'], div[role='contact'] {margin: 22px 0 0;}
-
-div[role='contact'] {
-  width: 48%;
-  display: inline-block;
-  vertical-align: top;
-}
-div[role='contact'] div {
-  text-transform: uppercase;
-  text-decoration: none;
-  float: right;
-  width: 45%;
-  padding: 4px;
-  background-color: #F8F8F8;
-  border-radius: 15px;
-  -moz-border-radius: 15px;
-}
-
-div[role='contact'] h2.phone {
-  border: none;
-  color: #616161;
-}
 
 

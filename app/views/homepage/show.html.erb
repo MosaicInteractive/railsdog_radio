@@ -1,9 +1,7 @@
 <div id="banner" role="banner">
   <section>
-    <div class="image">
-      <img src="/images/dogradio/homepage/new-products.jpg" alt="New Arrivals">
-    </div>
-    <div class="button" class="clearfix">
+    <img src="/images/dogradio/homepage/new-products.jpg" alt="New Arrivals">
+    <div class="button">
       <img src="/images/dogradio/homepage/all-new.png" alt="All New. Get the latest Sirrus/XM products for your home and car"><br>
       <a href="#"><img src="/images/dogradio/homepage/shop-new-products.png" alt="Shop new products"></a>
     </div>
@@ -34,7 +32,7 @@
       </div>
     </section>
   << -->
-  <nav id="banner-nav" role="banner-nav">
+  <nav id="banner-nav">
     <ul>
       <li class="first"><a href="#">&#9664;</a></li>
       <li class="current"><a href="#">new arrivals</a></li>
@@ -48,19 +46,21 @@
 </div>
 
   <div id="main" role="main">
-    <% @taxons.each do |taxon| %>
-      <div class="product col row">
-        <h3>
-          <%= link_to taxon.name, seo_url(taxon) %>
-        </h3>
-        <%= link_to image_tag("dogradio/slingbox_s1.gif", :class => "image", :alt => taxon.name), seo_url(taxon) %>
-        <%= link_to image_tag("dogradio/buttons/view-more-button.png", :class => "button", :alt => "View More"), seo_url(taxon) %>
-      </div>
-    <% end %>
+    <div id="taxons" class="clearfix">
+      <% @taxons.each do |taxon| %>
+        <div class="taxon">
+          <h3><%= link_to taxon.name, seo_url(taxon) %></h3>
+          <%= link_to seo_url(taxon) do %>
+            <%= image_tag("dogradio/homepage/taxons/slingbox.jpg", :class => "image", :alt => taxon.name) %><br>
+            <%= image_tag("dogradio/buttons/view-more-button.png", :class => "button", :alt => "View More") %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div id="all-products" role="all-products">
-    <h2>all products</h2>
+  <div id="all-products">
+    <h2>All Products</h2>
     <div class="left">
       <ul>
         <li><a href="#">Holiday Sale Items</a></li>
@@ -87,16 +87,22 @@
     </div>
   </div>
 
-  <div id="contact" role="contact">
+  <div id="contact">
     <div>
-      <h2>contact us</h2>
-      <h2 class="phone">(301) 560-2000</h2>
-      <a href="mailto:#" class="email">sales@railsdogradio.com</a>
-      <ul>
-        <li>Mon-Fri<span>10am - 6pm cst</span></li>
-        <li>Sat<span>10am - 4pm cst</span></li>
-        <li>Sun<span>closed</span></li>
-      </ul>
+      <h2>Contact Us</h2>
+      <p class="phone">(301) 560-2000</p>
+      <p><a href="mailto:sales@railsdogradio.com" class="email">sales@railsdogradio.com</a>
+      <table>
+        <tr>
+          <td>Mon-Fri</td> <td>10am - 6pm CST</td>
+        </tr>
+        <tr>
+          <td>Sat</td> <td>10am - 4pm CST</td>
+        </tr>
+        <tr>
+          <td>Sun</td> <td>CLOSED</td>
+        </tr>
+      </table>
     </div>
   </div>
 

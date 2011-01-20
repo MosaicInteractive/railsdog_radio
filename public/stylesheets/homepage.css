@@ -1,45 +1,135 @@
-/* @override 
-	http://localhost:3000/stylesheets/homepage.css?1295463076
-	http://localhost:3000/stylesheets/homepage.css?1295471767
-*/
-
 body#homepage {background: #fff url('../images/dogradio/homepage/bg.png') repeat-x;}
-
 
 
 #homepage #banner {
   height: 340px;
   background: url(../images/dogradio/homepage/homepage-banner-bg.jpg) no-repeat;
+  position: relative;
+  height: 340px;
+  margin-bottom: 20px;
+}
+div#banner div.button {
+  position: absolute;
+  top: 49px;
+  left: 640px;
+}
+div#banner div.button img {
+  margin-bottom: 20px;
+}
+div#banner section {
+  height: 303px;
 }
 
-
-
-
-header a, nav[role='banner-nav'] ul li a {
+header a, #banner nav ul li a {
   text-transform: uppercase;
   text-decoration: none;
 }
 
-nav[role='banner-nav'] {
+#banner nav {
   width: 100%;
 }
-nav[role='banner-nav'] ul {width:100%;}
-nav[role='banner-nav'] ul li {
-  width: 20%;
+#banner nav ul {width:100%;}
+#banner nav ul li {
+  width: 210px;
   list-style: none;
   display: inline-block;
   text-align: center;
 }
-nav[role='banner-nav'] ul li.first, nav[role='banner-nav'] ul li.last {width: 6%;}
-nav[role='banner-nav'] ul li a {
+#banner nav ul li.first, #banner nav ul li.last {width: 50px;}
+#banner nav li.last {
+}
+#banner nav ul li a {
   font: normal normal bold 1.2em/2.2em Helvetica,Arial,sans-serif;
   text-shadow: #CE2828 1px 1px 1px;
   color: #3E0303;
 }
-nav[role='banner-nav'] ul li.current a,
-nav[role='banner-nav'] ul li a:hover {
+#banner nav ul li.current a,
+#banner nav ul li a:hover {
   color:  #fff;
   text-shadow: #3E0303 1px 1px 1px;
+}
+
+
+
+
+#homepage #taxons {
+  background: url(../images/dogradio/homepage/taxons-bg.png);
+  width: 960px;
+  margin-bottom: 30px;
+}
+#homepage #taxons div {
+  width: 318px;
+  padding: 1px;
+  height: 309px;
+  float: left;
+  text-align: center;
+}
+#homepage #taxons h3 {
+  font-size: 1.5em;
+  margin: 20px 0 10px 0;
+}
+#homepage #taxons h3 a {
+  text-decoration: none;
+}
+
+
+#homepage #all-products , #homepage #contact {
+  float: left;
+}
+
+#homepage #all-products {
+  width: 460px;
+  margin-right: 40px;
+  padding-top: 30px; /* match #contact  */
+}
+
+#homepage #all-products h2, #homepage #contact h2 {
+  font-family: Arvo;
+  font-size: 200%;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 0.75em;
+  border-bottom: 1px solid #A3A3A3;
+  padding-bottom: 0.5em;
+}
+#homepage #all-products h2 {
+}
+#homepage #all-products li {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+#homepage #all-products .left, #homepage #all-products .right {
+  width: 210px;
+  float: left;
+}
+#homepage #all-products .left {
+  margin-right: 40px;
+}
+
+#homepage #contact {
+  width: 400px;
+  float: left;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding:  30px 30px 60px 30px;
+  color: #666;
+  font-family: Trebuchet MS;
+}
+#homepage #contact h2 {
+  color: #D72A2A;
+}
+#homepage #contact p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+#homepage #contact table {
+  width: 100%;
+}
+#homepage #contact td {
+  font-size: 1.2em;
+  padding-bottom: 10px;
 }
 
 

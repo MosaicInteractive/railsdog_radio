@@ -47,7 +47,7 @@ describe Ability do
       end
 
       context "and resource does not belong to the user" do
-        before { resource.user = User.new }
+        before { resource.user = Factory(:user) }
 
         it "should not allow edit" do
           ability.should_not be_able_to(:edit, resource)

@@ -120,11 +120,14 @@ footer #social a {
   float: left;
   margin-right: 10px;
   background-repeat: no-repeat;
+  background-image: url(../images/dogradio/icons/social-icons.png);
 }
-footer #social a span { display: none; }
-footer #social #facebook { background-image: url(../images/dogradio/social/facebook.gif); }
-footer #social #rss { background-image: url(../images/dogradio/social/rss.gif); }
-footer #social #twitter { background-image: url(../images/dogradio/social/twitter.gif); }
+footer #social a:hover {
+  background-image: url(../images/dogradio/icons/social-icons-rollover.png);
+}
+footer #social a span    { display: none; }
+footer #social #rss      { background-position: -37px 0   }
+footer #social #twitter  { background-position: -75px 0  }
 
 
 footer #copyright {
@@ -175,13 +178,44 @@ footer #copyright {
 	text-decoration: underline;
 }
 
-
-.breadcrumbs {
+.breadcrumbs, .pagination {
+  font-size: 1.1em;
   padding: 0 0 20px 0;
 }
 .pagination {
   text-align: right;
 }
+
+
+
+
+
+button, a.button {
+	border: none;
+	background-color: #0095DA;
+	color: #fff;
+	padding: 10px 18px 9px 18px;
+	font-size: 16px;
+	font-family: Arvo;
+	text-transform: uppercase;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+a.button {  
+  text-decoration: none;
+  line-height: 37px;
+}
+button:hover, a.button:hover {
+  background-color: #0068B8;
+}
+
+
+
+
+
+
+
 
 
 

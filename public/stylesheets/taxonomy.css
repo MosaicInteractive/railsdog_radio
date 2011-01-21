@@ -1,29 +1,28 @@
-/* @override http://localhost:3000/stylesheets/taxonomy.css */
-
-body#product-list {
+body#product-list, body#product-details {
   background-image: url(../images/dogradio/taxon/bg.jpg);
 }
-body#product-list #banner {
+
+#banner.taxon {
   height: 143px;
   background-repeat: no-repeat;
   margin-bottom: 30px;
 }
 
-body#product-list #banner h1 {
+#banner.taxon h1 {
   color: #fff;
-	font-family: Trebuchet MS;
-	font-size: 4em;
-	line-height: 140px;
+  font-family: Trebuchet MS;
+  font-size: 4em;
+  line-height: 140px;
   text-shadow: rgba(0,0,0,1) 1px 1px 2px;
 }
 
-
-body#product-list #main {
-  width:  600px;
+body#product-list #main, body#product-details #main {
+  width: 600px;
   float: left;
   margin-right: 70px;
 }
-body#product-list #sidebar {
+
+#sidebar {
   width: 290px;
   float: left;
 }
@@ -34,26 +33,31 @@ body#product-list .product {
   border-bottom: 1px solid #a3a3a3;
   margin-top: -1px;
 }
+
 body#product-list .product h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
+
 body#product-list .product .image {
-	width: 280px;
-	float: left;
-	margin-bottom: 20px;
+  width: 280px;
+  float: left;
+  margin-bottom: 20px;
 }
+
 body#product-list .product .details {
-	float: left;
-	width: 320px;
+  float: left;
+  width: 320px;
 }
+
 body#product-list .product .details p {
-	margin: 14px 0;
-	}
+  margin: 14px 0;
+}
+
 body#product-list .product .description {
-	clear: left;
-	}
+  clear: left;
+}
 
 body#product-list #main .list {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }

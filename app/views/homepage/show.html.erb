@@ -52,8 +52,8 @@
           <h3><%= link_to taxon.name, seo_url(taxon) %></h3>
           <%= link_to seo_url(taxon) do %>
             <%= image_tag("dogradio/homepage/taxons/slingbox.jpg", :class => "image", :alt => taxon.name) %><br>
-            <%= image_tag("dogradio/buttons/view-more-button.png", :class => "button", :alt => "View More") %>
           <% end %>
+          <%= link_to 'View More', seo_url(taxon), :class => 'button' %>
         </div>
       <% end %>
     </div>

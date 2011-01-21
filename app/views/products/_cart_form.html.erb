@@ -1,0 +1,51 @@
+<%= form_for :order, :url => populate_orders_url do |f| %>
+<%= hook :inside_product_cart_form do %>
+
+  <% if product_price(@product) %>
+
+    <dl class="part-numbers clearfix">
+      <dt>PART NUMBERS</dt>
+      <dd>XXXXXX</dd>
+    </dl>
+    <dl class="prices clearfix">
+      <dt>Price</dt>
+      <dd><span class="price discounted">$xx.99</span></dd>
+      <dt>Sale Price</dt>
+      <dd><span class="price selling"><%= product_price(@product) %></span></dd>
+      <dt>after $xx.00 rebate</dt>
+      <dd><span class="price">$xx.99</span></dd>
+    </dl>
+    <dl class="shipping">
+      <dt>Shipping</dt>
+      <dd><span class="price">FREE</span></dd>
+    </dl>
+    <dl class="stock">
+      <dt>In Stock</dt>
+      <dd><span class="stock">YES</span></dd>
+    </dl>
+    <hr />
+
+  <% end %>
+
+  <div class="extras">
+    <% 3.times do %>
+    <p>
+      <input type="checkbox" name="" value="" />
+      <label for="">
+        Add this extra for $xx.99 (save $xx.99)
+      </label>
+    </p>
+    <% end %>
+  </div>
+
+  <hr />
+
+  <p><button type="submit">Add to cart</button></p>
+
+<% end %>
+<% end %>
+
+<% content_for :head do %>
+  <%= javascript_include_tag 'product' %>
+<% end %>
+

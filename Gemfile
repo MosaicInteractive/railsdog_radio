@@ -24,9 +24,12 @@ gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express
 
 gem 'hoe', '2.8.0' #prevents requirement of rubygem 1.4.0 - which is not supported by heroku
 
+gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
+gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced-reporting', :branch => 'rails3'
+gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
- gem 'ruby-debug'
+gem 'ruby-debug'
 # gem 'ruby-debug19'
 
 # Bundle gems for the local environment. Make sure to

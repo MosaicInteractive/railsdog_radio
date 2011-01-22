@@ -3,6 +3,10 @@ require "cancan/matchers"
 
 describe Ability do
 
+  # Make sure there is an admin user created explicitly, otherwise the first user to be created
+  # will have the admin role
+  before { Factory(:admin_user) }
+
   shared_examples_for "access_granted" do
     it "should allow edit" do
       ability.should be_able_to(:edit, resource)
@@ -61,7 +65,14 @@ describe Ability do
           ability.should be_able_to(:read, resource)
         end
       end
+    end
 
+    context "when resource is any Object" do
+      let(:resource) { User.new }
+
+      it "should allow admin" do
+        ability.should be_able_to(:admin, resource)
+      end
     end
   end
 
@@ -89,6 +100,15 @@ describe Ability do
         it_should_behave_like "access_denied"
       end
     end
+
+    context "when resource is any Object" do
+      let(:resource) { Object.new }
+
+      it "should not allow admin" do
+        ability.should_not be_able_to(:admin, resource)
+      end
+    end
+
   end
 
 end

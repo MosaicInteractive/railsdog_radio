@@ -12,46 +12,69 @@ body#cart p#cart-count {
   font: normal normal 2em Arvo;
 }
 
-
 table#cart-detail {
   width: 100%;
 }
+
 table#cart-detail th {
-  color: #666;
+  color: #777;
   font-weight: normal;
   text-align: left;
   padding-bottom: 5px;
 }
+
 table#cart-detail th, table#cart-detail td {
   border-bottom: 1px solid #D9D9D9;
 }
+
 table#cart-detail td {
-  padding: 20px 0;
+  padding: 10px 0;
   font-weight: bold;
   font-size: 1.2em;
+  vertical-align: middle;
+}
+
+table#cart-detail tr.totals td, table#cart-detail tr.actions td {
+  padding: 20px 0;
+}
+
+table#cart-detail tr.totals td, table#cart-detail td.actions {
+  text-align: right;
 }
 
 table#cart-detail td.image {
   width: 180px;
-      }
+}
 
-      table#cart-detail td.image img {
-        vertical-align: middle;
+table#cart-detail td.image img {
+  vertical-align: middle;
 }
 
 table#cart-detail td.description {
   width: 250px;
   padding-right: 50px;
-      }
-      table#cart-detail td.quantity {
-        width: 100px;
-        padding: 0;
 }
+
+table#cart-detail td.quantity {
+  width: 75px;
+  padding: 0;
+}
+
 table#cart-detail td.quantity input {
+  margin: 0!important;
   width: 75px;
   border: 1px solid #949494;
   padding: 4px;
 }
+
+table#cart-detail td.unit-price, table#cart-detail td.total {
+  width: 60px;
+}
+
+table#cart-detail td.actions {
+  width: 130px;
+}
+
 table#cart-detail td.operator {
   color: #999;
   font-weight: normal;
@@ -64,8 +87,6 @@ table#cart-detail a.delete {
   background-color: #333;
 }
 
-
-
 body#cart a.checkout {
   background-color: #E41E1E;
 }
@@ -74,8 +95,7 @@ body#cart p.actions {
   text-align: right;
   font-size: 1.20em;
 }
+
 body#cart p.actions, body#cart p.actions a {
   color: #999;
 }
-
-

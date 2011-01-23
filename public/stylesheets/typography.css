@@ -31,7 +31,7 @@ body, select, input, textarea {
 #main p {
   line-height: 1.4em;
 }
-#main p, #main h2, #main h3, #main dl, #main ul {
+#main p, #main h2, #main h3, #main dl, #main ul, #main table {
   margin-bottom: 1em;
 }
 #main h2 {

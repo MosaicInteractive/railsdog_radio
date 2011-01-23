@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link  href="http://fonts.googleapis.com/css?family=Arvo:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
-  <%= stylesheet_link_tag 'reset', 'typography', 'misc', 'screen', 'homepage', 'taxonomy', 'product', 'checkout' %>
+  <%= stylesheet_link_tag 'reset', 'typography', 'misc', 'screen', 'homepage', 'taxonomy', 'product', 'cart', 'checkout' %>
   <link rel="stylesheet" href="/stylesheets/jquery.mobile-1.0a2.css">
 
   <script src="/javascripts/libs/modernizr-1.6.min.js"></script>
@@ -46,7 +46,22 @@
       </nav>
     </header>
 
-    <%= yield %>
+    <% if content_for?(:banner) %>
+      <div id="banner" role="banner">
+        <%= yield :banner %>
+      </div>
+    <% end %>
+
+    <div id="main" role="main">
+      <%= yield %>
+    </div>
+
+    <% if content_for?(:sidebar) %>
+      <div id="sidebar" role="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    <% end %>
+
 
   </div>
 

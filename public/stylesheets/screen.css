@@ -1,11 +1,5 @@
-/* @override 
-	http://localhost:3000/stylesheets/screen.css?1295538659
-	http://localhost:3000/stylesheets/screen.css
-*/
-
 body {
-	background-color: #fff;
-	background-repeat: repeat-x;
+  background: #fff url(../images/dogradio/bg.png) repeat-x;
 }
 
 header nav, #banner, #container, footer .inner {width: 960px; margin: 0 auto;}
@@ -155,7 +149,7 @@ footer #copyright {
   padding-top: 30px; /* match #contact  */
 }
 #all-products h2 {
-	color: #364D8C;
+  color: #364D8C;
 }
 #all-products h2, #homepage #contact h2 {
   font-family: Arvo;
@@ -171,11 +165,11 @@ footer #copyright {
   line-height: 1.5em;
 }
 #all-products a {
-	color: #666;
-	text-decoration: none;
+  color: #666;
+  text-decoration: none;
 }
 #all-products a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .breadcrumbs, .pagination {
@@ -191,18 +185,19 @@ footer #copyright {
 
 
 button, a.button {
-	border: none;
-	background-color: #0095DA;
-	color: #fff;
-	padding: 10px 18px 9px 18px;
-	font-size: 16px;
-	font-family: Arvo;
-	text-transform: uppercase;
+  border: none;
+  background-color: #0095DA;
+  color: #fff!important;
+  padding: 10px 18px 9px 18px;
+  font-size: 16px;
+  font-family: Arvo;
+  text-transform: uppercase;
   border-radius: 4px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
+  font-weight: normal;
 }
-a.button {  
+a.button {
   text-decoration: none;
   line-height: 37px;
 }

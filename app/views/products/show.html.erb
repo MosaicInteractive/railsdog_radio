@@ -1,39 +1,40 @@
 <% @body_id = 'product-details' %>
 
-<div id="banner" class="taxon" style="background-image: url(/images/dogradio/taxon/satellite-radios-bg.jpg)">
+<% content_for :banner do %>
   <% if @product.taxons.any? %>
     <h1><%= @product.taxons.first.name %></h1>
+    <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
   <% end %>
-</div>
+<% end %>
 
-<div id="main">
-
-  <p class="breadcrumbs"><%= link_to 'Products', products_path %> &raquo; <%= @product.name %></p>
-
-  <h2><%= @product.name %></h2>
-
-  <div id="product-images">
-    <div id="main-image">
-      <%= render 'image' %>
-    </div>
-    <div id="thumbnails">
-      <%= render 'thumbnails', :product => @product %>
-    </div>
-  </div>
-
-  <div id="cart-form">
-    <%= render 'cart_form' %>
-  </div>
-
-  <div id="product-description">
-    <%= product_description(@product) rescue t("product_has_no_description") %>
-    <%= render 'properties' %>
-  </div>
-
-  <%= render 'taxons' %>
-
-</div>
-
-<div id="sidebar">
+<% content_for :sidebar do %>
   <%= render 'shared/all_products' %>
+<% end %>
+
+
+
+
+
+<p class="breadcrumbs"><%= link_to 'Products', products_path %> &raquo; <%= @product.name %></p>
+
+<h2><%= @product.name %></h2>
+
+<div id="product-images">
+  <div id="main-image">
+    <%= render 'image' %>
+  </div>
+  <div id="thumbnails">
+    <%= render 'thumbnails', :product => @product %>
+  </div>
 </div>
+
+<div id="cart-form">
+  <%= render 'cart_form' %>
+</div>
+
+<div id="product-description">
+  <%= product_description(@product) rescue t("product_has_no_description") %>
+  <%= render 'properties' %>
+</div>
+
+<%= render 'taxons' %>

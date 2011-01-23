@@ -1,22 +1,25 @@
 <% @body_id = 'product-list' %>
 
-<div id="banner" class="taxon" style="background-image: url(/images/dogradio/taxon/satellite-radios-bg.jpg)">
+<% content_for :banner do %>
   <h1><%= @taxon.name %></h1>
-</div>
+  <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
+<% end %>
 
-<div id="main">
-  <div id="products" role="products">
+<% content_for :sidebar do %>
+  <%= render 'shared/all_products' %>
+<% end %>
+
+
+
+
+
+<div id="products" role="products">
 
   <% if @taxon.children.empty? || !params[:keywords].blank? %>
-      <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
+    <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
   <% else %>
     <p class="breadcrumbs"><%= link_to 'Products', products_path %> &raquo; <%= @taxon.name %></p>
     <%= render :partial => "shared/products", :locals => {:products => taxon_preview(@taxon), :taxon => @taxon} %>
   <% end %>
 
-  </div>
-</div>
-
-<div id="sidebar">
-  <%= render 'shared/all_products' %>
 </div>

@@ -1,37 +1,28 @@
 <% @body_id = 'product-list' %>
 
-<div id="banner" role="banner">
+<% content_for :banner do %>
   <h1>Products</h1>
-</div>
+<% end %>
 
-<div id="main">
+<% content_for :sidebar do %>
+  <%= render 'shared/all_products' %>
+<% end %>
 
-  <% content_for :sidebar do %>
-    <%= hook :homepage_sidebar_navigation do %>
-      <% if "products" == @current_controller && @taxon %>
-        <%= render "shared/filters" %>
-      <% else %>
-        <%= render "shared/taxonomies" %>
-      <% end %>
-    <% end %>
-  <% end %>
 
-  <% if params[:keywords] %>
 
-    <%= hook :search_results do %>
-      <% if @products.empty? %>
-        <%= t(:no_products_found) %>
-      <% else %>
-        <%= render "shared/products", :products => @products, :taxon => @taxon %>
-      <% end %>
-    <% end %>
 
+
+<% if params[:keywords] %>
+
+  <% if @products.empty? %>
+    <%= t(:no_products_found) %>
   <% else %>
-
-    <%= hook :homepage_products do %>
-      <%= render "shared/products", :products => @products, :taxon => @taxon %>
-    <% end %>
-
+    <%= render "shared/products", :products => @products, :taxon => @taxon %>
   <% end %>
 
-</div>
+<% else %>
+
+  <%= render "shared/products", :products => @products, :taxon => @taxon %>
+
+<% end %>
+

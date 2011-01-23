@@ -1,4 +1,4 @@
-<div id="banner" role="banner">
+<% content_for :banner do %>
   <section>
     <img src="/images/dogradio/homepage/new-products.jpg" alt="New Arrivals">
     <div class="button">
@@ -43,66 +43,65 @@
     </ul>
   </nav>
 
+<% end %>
+
+
+<div id="taxons" class="clearfix">
+  <% @taxons.each do |taxon| %>
+    <div class="taxon">
+      <h3><%= link_to taxon.name, seo_url(taxon) %></h3>
+      <%= link_to seo_url(taxon) do %>
+        <%= image_tag("dogradio/homepage/taxons/slingbox.jpg", :class => "image", :alt => taxon.name) %><br>
+      <% end %>
+      <%= link_to 'View More', seo_url(taxon), :class => 'button' %>
+    </div>
+  <% end %>
 </div>
 
-  <div id="main" role="main">
-    <div id="taxons" class="clearfix">
-      <% @taxons.each do |taxon| %>
-        <div class="taxon">
-          <h3><%= link_to taxon.name, seo_url(taxon) %></h3>
-          <%= link_to seo_url(taxon) do %>
-            <%= image_tag("dogradio/homepage/taxons/slingbox.jpg", :class => "image", :alt => taxon.name) %><br>
-          <% end %>
-          <%= link_to 'View More', seo_url(taxon), :class => 'button' %>
-        </div>
-      <% end %>
-    </div>
+<div id="all-products">
+  <h2>All Products</h2>
+  <div class="left">
+    <ul>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+    </ul>
   </div>
+  <div class="right">
+    <ul>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+      <li><a href="#">Holiday Sale Items</a></li>
+    </ul>
+  </div>
+</div>
 
-  <div id="all-products">
-    <h2>All Products</h2>
-    <div class="left">
-      <ul>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-      </ul>
-    </div>
-    <div class="right">
-      <ul>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-        <li><a href="#">Holiday Sale Items</a></li>
-      </ul>
-    </div>
+<div id="contact">
+  <div>
+    <h2>Contact Us</h2>
+    <p class="phone">(301) 560-2000</p>
+    <p><a href="mailto:sales@railsdogradio.com" class="email">sales@railsdogradio.com</a>
+    <table>
+      <tr>
+        <td>Mon-Fri</td> <td>10am - 6pm CST</td>
+      </tr>
+      <tr>
+        <td>Sat</td> <td>10am - 4pm CST</td>
+      </tr>
+      <tr>
+        <td>Sun</td> <td>CLOSED</td>
+      </tr>
+    </table>
   </div>
-
-  <div id="contact">
-    <div>
-      <h2>Contact Us</h2>
-      <p class="phone">(301) 560-2000</p>
-      <p><a href="mailto:sales@railsdogradio.com" class="email">sales@railsdogradio.com</a>
-      <table>
-        <tr>
-          <td>Mon-Fri</td> <td>10am - 6pm CST</td>
-        </tr>
-        <tr>
-          <td>Sat</td> <td>10am - 4pm CST</td>
-        </tr>
-        <tr>
-          <td>Sun</td> <td>CLOSED</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+</div>
 

@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/screen.css */
+
 body {
   background: #fff url(../images/dogradio/bg.png) repeat-x;
 }
@@ -48,11 +50,35 @@ header nav a.cart {color: #B30000;}
 
 
 
+
+
 footer {
   background: #fff url('/images/dogradio/footer_bkgd.jpg') repeat-x bottom left;
   margin: 80px 0 0; clear: both;
   font-family: Trebuchet MS;
 }
+
+/* Push footer to bottom of page when there isn't much content */
+html, body {
+  height:100%
+}
+#container {
+  position:relative;
+  min-height:100%;
+  _height:100%; /* for IE6 as it doesnt understand min-height */
+}
+#content {
+  padding-bottom:520px;/* (the height of footer) */
+}
+#main {
+  padding-bottom:520px;
+}
+footer {
+  position: relative;
+  margin-top:-520px!important;
+}
+
+
 footer .inner {
   height: 520px;
   position:  relative;

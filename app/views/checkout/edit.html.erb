@@ -1,10 +1,11 @@
-<div id="checkout" role="checkout" class="clear">
-	<div id="title" role="title">CHECKOUT</div>
-	<!-- START MAIN CONTENT -->
-	<div id="main-content" role="main-content">
-		<%= render 'checkout_tabs' %>
-		<%= render 'checkout_tab_content' %>
-	</div>
-	<!-- END MAIN CONTENT -->
-	<%= render 'summary' %>
+<% content_for(:head, javascript_include_tag('checkout', '/states')) %>
+<div id="checkout" role="checkout" class="clearfix">
+  <div id="title" role="title">CHECKOUT</div>
+  <!-- START MAIN CONTENT -->
+  <div id="main-content" role="main-content">
+    <%= render 'checkout_tabs' %>
+    <%= render 'checkout_tab_content' %>
+  </div>
+  <!-- END MAIN CONTENT -->
+  <%= render 'summary' %>
 </div>

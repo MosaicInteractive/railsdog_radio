@@ -1,36 +1,28 @@
-<div id="banner" role="banner">
-  <span>Satellite Radios</span>
-  <img src="/images/dogradio/radio_s1.gif" width="383" alt="Satellite Radios">
-</div>
-<div id="main" role="main">
-  <div id="products" role="products">
+<% @body_id = 'product-list' %>
 
-    <% content_for :sidebar do %>
-      <%= hook :homepage_sidebar_navigation do %>
-        <% if "products" == @current_controller && @taxon %>
-          <%= render "shared/filters" %>
-        <% else %>
-          <%= render "shared/taxonomies" %>
-        <% end %>
-      <% end %>
-    <% end %>
+<% content_for :banner do %>
+  <h1>Products</h1>
+<% end %>
 
-    <% if params[:keywords] %>
+<% content_for :sidebar do %>
+  <%= render 'shared/all_products' %>
+<% end %>
 
-      <%= hook :search_results do %>
-        <% if @products.empty? %>
-          <%= t(:no_products_found) %>
-        <% else %>
-          <%= render "shared/products", :products => @products, :taxon => @taxon %>
-        <% end %>
-      <% end %>
 
-    <% else %>
 
-    <%= hook :homepage_products do %>
-      <%= render "shared/products", :products => @products, :taxon => @taxon %>
-    <% end %>
 
+
+<% if params[:keywords] %>
+
+  <% if @products.empty? %>
+    <%= t(:no_products_found) %>
+  <% else %>
+    <%= render "shared/products", :products => @products, :taxon => @taxon %>
   <% end %>
-  </div>
-</div>
+
+<% else %>
+
+  <%= render "shared/products", :products => @products, :taxon => @taxon %>
+
+<% end %>
+

@@ -6,26 +6,9 @@ ul, ol {
   list-style: none;
 }
 
-.clear {
-  display: inline-block;
-}
-
-.clear {
-  display: block;
-}
-
-.clear:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
 input.blue {
   color: #fff;
   background-color: #0095da;
-
 }
 
 input.red {
@@ -40,7 +23,7 @@ body#checkout div[role='main-content'] {
 body#checkout div[role='checkout'] {
   vertical-align:top;
   padding: 0 0 100px 0;
-  width: 980px;
+  width: 960px;
 }
 
 body#checkout div[role='checkout'] div[role='title'] {
@@ -52,7 +35,6 @@ body#checkout div[role='checkout'] div[role='title'] {
 }
 
 body#checkout div[role='checkout'] div#tabs {
-
   font: 18px Georgia, "Times New Roman", Times, serif;
   float: left;
   z-index: 99;
@@ -61,6 +43,7 @@ body#checkout div[role='checkout'] div#tabs {
 }
 
 body#checkout div[role="checkout"] div#tabs ul {
+  margin: 0;
   font: 45px "Arial", sans-serif;
 }
 
@@ -147,10 +130,7 @@ body#checkout div[role='content'] div.submit {
 body#checkout div[role='content'] p {
   font-size: 28px;
   padding: 40px 0px;
-
 }
-
-
 
 body#checkout div[role='content'] hr {
   margin-top: 50px;
@@ -169,17 +149,16 @@ body#checkout div[role='content'] ul.fields input {
 
 body#checkout div[role='aside'] {
   border: 3px solid #eceded;
-  width: 270px;
+  width: 250px;
   float: right;
   padding: 10px;
   color: #7f7f7f;
   font-size: 14px;
 }
 
-
-body#checkout div[role='aside'] div[role='order'] span#title {
+body#checkout div[role='aside'] h3 {
   color: #0095da;
-  font: 24px Georgia, "Times New Roman", Times, serif;
+  font: 24px Arvo;
   margin: 10px 5px 10px 15px;
   padding: 0 0 10px 0;
 }
@@ -187,7 +166,6 @@ body#checkout div[role='aside'] div[role='order'] span#title {
 body#checkout div[role='aside'] div[role='order'] table td {
   padding-right: 10px;
 }
-
 
 body#checkout div[role='aside'] div[role='order'] table.total {
   margin-top:20px;

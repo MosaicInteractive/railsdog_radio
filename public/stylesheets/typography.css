@@ -141,6 +141,7 @@ span.price {
 }
 span.price.discounted {
   color: #f00;
+  text-decoration: line-through;
 }
 span.price.selling {
   font-weight: bold;

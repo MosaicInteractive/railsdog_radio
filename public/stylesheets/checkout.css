@@ -5,6 +5,9 @@ ul, ol {
   margin-left: 0em;
   list-style: none;
 }
+body#checkout ul.fields {
+  list-style: none;
+}
 
 input.blue {
   color: #fff;
@@ -30,7 +33,7 @@ body#checkout div[role='checkout'] div[role='title'] {
   margin: 40px 0 20px 0;
   letter-spacing:2px;
   color: #d4d4d4;
-  font: 40px Georgia, "Times New Roman", Times, serif;
+  font: 40px Arvo, Georgia, "Times New Roman", Times, serif;
 
 }
 
@@ -112,14 +115,6 @@ body#checkout div[role='content'] {
 body#checkout div[role='content'] p {
   font-size: 18px;
   color: #747474;
-}
-
-body#checkout div[role='content'] input.button {
-  border: 0px;
-  font: 18px Georgia, "Times New Roman", Times, serif;
-  padding: 10px 36px;
-  text-decoration: none;
-  border-radius: 5px;
 }
 
 body#checkout div[role='content'] div.submit {

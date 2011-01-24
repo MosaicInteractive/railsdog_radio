@@ -1,4 +1,4 @@
-/* @override 
+/* @override
 	http://localhost:3000/stylesheets/homepage.css?1295539030
 	http://localhost:3000/stylesheets/homepage.css
 */
@@ -11,6 +11,7 @@ body#homepage { background-image: url('../images/dogradio/homepage/bg.png') }
   position: relative;
   height: 340px;
   margin-bottom: 20px;
+  z-index: 2;
 }
 div#banner div.button {
   position: absolute;
@@ -29,18 +30,23 @@ header a, #banner nav ul li a {
   text-decoration: none;
 }
 
+
 #banner nav {
   width: 100%;
 }
 #banner nav ul {width:100%;}
 #banner nav ul li {
-  width: 210px;
+  width: 215px;
   list-style: none;
-  display: inline-block;
+  display: block;
+  float: left;
+  line-height: 1em;
   text-align: center;
+  padding-top: 3px;
 }
-#banner nav ul li.first, #banner nav ul li.last {width: 50px;}
-#banner nav li.last {
+#banner nav ul li.first, #banner nav ul li.last {
+  width: 50px;
+  font-weight: bold;
 }
 #banner nav ul li a {
   font: normal normal bold 1.2em/2.2em Helvetica,Arial,sans-serif;

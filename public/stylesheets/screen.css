@@ -10,12 +10,13 @@ header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
 header {
   position: relative;
+  z-index: 100;
   height: 58px;
   margin: 0 auto;
 }
 header form {
   position: absolute;
-  left: 350px;
+  left: 320px;
   top: 25px;
 }
 header form input[type='search'] {
@@ -27,7 +28,6 @@ header form input[type='search'] {
 header #logo {
   position: absolute;
   left:  0; top: 11px;
-  z-index: 99;
 }
 
 
@@ -58,18 +58,18 @@ footer {
   font-family: Trebuchet MS;
 }
 
-/* Push footer to bottom of page when there isn't much content */
+/*
+Push footer to bottom of page when there isn't much content
 html, body {
   height:100%
 }
 #container {
   position:relative;
   min-height:100%;
-  _height:100%; /* for IE6 as it doesnt understand min-height */
+  _height:100%;
 }
 #content {
-  padding-bottom:520px;/* (the height of footer) */
-}
+  padding-bottom:520px;}
 #main {
   padding-bottom:520px;
 }
@@ -77,7 +77,7 @@ footer {
   position: relative;
   margin-top:-520px!important;
 }
-
+*/
 
 footer .inner {
   height: 520px;
@@ -234,9 +234,12 @@ button:hover, a.button:hover {
 
 
 
-
-
-
+body#users h1, body#login #existing-customer h2  {
+  font: normal normal 2em Arvo;
+  text-transform: uppercase;
+  margin: 30px 0 10px 0;
+  padding-bottom: 10px;
+}
 
 
 

@@ -15,11 +15,15 @@
       <div class="product">
         <h2><%= link_to product.name, product_path(product) %></h2>
         <p class="image">
-          <img src="/images/dogradio/placeholders/product/small.png" alt="Boombox S1">
+          <%= link_to product_image(product), product %>
         </p>
         <div class="details">
-          <p class="stock">IN STOCK</p>
-          <p class="prices"><span class="price discounted">$99.99</span> <span class="price selling">$89.99</span></p>
+          <p class="stock"><%= product.has_stock? ? "IN STOCK" : "OUT OF STOCK" %></p>
+          <p class="prices">
+            <% if product.rrp.present? %>
+              <span class="price discounted"><%= number_to_currency product.rrp %></span>&nbsp;
+            <% end %>
+            <span class="price selling"><%= product_price(product) %></span></p>
           <p><%= link_to 'View More', product_path(product), :class => 'button' %></p>
         </div>
         <p class="description">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219201531) do
+ActiveRecord::Schema.define(:version => 20110125135821) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -292,7 +292,7 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
   add_index "product_scopes", ["product_group_id"], :name => "index_product_scopes_on_product_group_id"
 
   create_table "products", :force => true do |t|
-    t.string   "name",                 :default => "", :null => false
+    t.string   "name",                                                              :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -303,7 +303,8 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
     t.datetime "deleted_at"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.integer  "count_on_hand",        :default => 0,  :null => false
+    t.integer  "count_on_hand",                                      :default => 0, :null => false
+    t.decimal  "rrp",                  :precision => 8, :scale => 2
   end
 
   add_index "products", ["available_on"], :name => "index_products_on_available_on"
@@ -555,7 +556,7 @@ ActiveRecord::Schema.define(:version => 20101219201531) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                         :default => "",    :null => false
+    t.string   "sku",                                                            :null => false
     t.decimal  "price",         :precision => 8, :scale => 2,                    :null => false
     t.decimal  "weight",        :precision => 8, :scale => 2
     t.decimal  "height",        :precision => 8, :scale => 2

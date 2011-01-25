@@ -1,0 +1,27 @@
+package_assets:         on          # (on, off, always)
+embed_assets:           datauri     # (on, off, datauri)
+compress_assets:        on          # (on, off)
+gzip_assets:            on          # (on, off)
+template_function:      _.template  # (defaults to the built-in micro-templating)
+package_path:           assets      # (defaults to assets)
+javascript_compressor:  closure     # (yui, closure)
+
+javascripts:
+  rdr:
+    - public/javascripts/jquery-1.4.4.min.js
+    - public/fancybox/jquery.fancybox-1.3.4.pack.js
+    - public/javascripts/application.js
+    - public/javascripts/rails.js
+
+stylesheets:
+  rdr:
+    - public/stylesheets/reset.css
+    - public/stylesheets/typography.css
+    - public/stylesheets/misc.css
+    - public/stylesheets/screen.css
+    - public/stylesheets/homepage.css
+    - public/stylesheets/taxonomy.css
+    - public/stylesheets/product.css
+    - public/stylesheets/cart.css
+    - public/stylesheets/checkout.css
+    - public/fancybox/jquery.fancybox-1.3.4.css

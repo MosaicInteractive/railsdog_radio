@@ -2,19 +2,15 @@
 <%= hook :inside_product_cart_form do %>
 
   <% if product_price(@product) %>
-
-
- <%= text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
-      1, :class => "title", :size => 3 %>
-
+    <%= text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => "title", :size => 3 %>
 
     <dl class="part-numbers clearfix">
-      <dt>PART NUMBERS</dt>
-      <dd>XXXXXX</dd>
+      <dt>PART NUMBER</dt>
+      <dd><%= @product.sku %></dd>
     </dl>
     <dl class="prices clearfix">
       <dt>Price</dt>
-      <dd><span class="price discounted">$xx.99</span></dd>
+      <dd><span class="price discounted"><%= number_to_currency @product.rrp %></span></dd>
       <dt>Sale Price</dt>
       <dd><span class="price selling"><%= product_price(@product) %></span></dd>
       <dt>after $xx.00 rebate</dt>
@@ -32,16 +28,18 @@
 
   <% end %>
 
-  <div class="extras">
-    <% 3.times do %>
-    <p>
-      <input type="checkbox" name="" value="" />
-      <label for="">
-        Add this extra for $xx.99 (save $xx.99)
-      </label>
-    </p>
-    <% end %>
-  </div>
+  <% if @product.cross_sells.present? %>
+    <div class="extras">
+      <% @product.cross_sells.each do |cross_sell| %>
+      <p>
+        <%= check_box_tag "variants[#{cross_sell.master.id}]", 1 %>
+        <label for="">
+          Add <em>'<%= cross_sell.name %>'</em> for <%= product_price(cross_sell) %>
+        </label>
+      </p>
+      <% end %>
+    </div>
+  <% end %>
 
   <hr />
 

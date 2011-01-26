@@ -1,16 +1,18 @@
 <% @body_id = 'product-list' %>
 
 <% content_for :banner do %>
-  <h1>Products</h1>
+  <% if params.key? :product_group_name %>
+    <%- @product_group =  ProductGroup.find_by_permalink(params[:product_group_name]) %>
+    <h1><%= @product_group.name %></h1>
+    <%= image_tag "dogradio/taxon/#{@product_group.permalink}-bg.jpg" %>
+  <% else %>
+    <h1>Products</h1>
+  <% end %>
 <% end %>
 
 <% content_for :sidebar do %>
   <%= render 'shared/all_products' %>
 <% end %>
-
-
-
-
 
 <% if params[:keywords] %>
 

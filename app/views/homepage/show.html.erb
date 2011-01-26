@@ -47,13 +47,14 @@
 
 
 <div id="taxons" class="clearfix">
-  <% @taxons.each do |taxon| %>
+  <% @product_groups.each do |group| %>
+    <% url = pg_search_path(:product_group_name => group.permalink) %>
     <div class="taxon">
-      <h3><%= link_to taxon.name, seo_url(taxon) %></h3>
-      <%= link_to seo_url(taxon) do %>
-        <%= image_tag("dogradio/homepage/taxons/slingbox.jpg", :class => "image", :alt => taxon.name) %><br>
+      <h3><%= link_to group.name, url %></h3>
+      <%= link_to url do %>
+        <%= image_tag("dogradio/homepage/taxons/#{group.permalink}.jpg", :class => "image", :alt => group.name) %><br>
       <% end %>
-      <%= link_to 'View More', seo_url(taxon), :class => 'button' %>
+      <%= link_to 'View More', url, :class => 'button' %>
     </div>
   <% end %>
 </div>
@@ -62,26 +63,18 @@
   <h2>All Products</h2>
   <div class="left">
     <ul>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
+      <% @taxons.each_with_index do |taxon,i| %>
+        <% next if i % 2 == 0 %>
+        <li><%= link_to taxon.name, seo_url(taxon) %></li>
+      <% end %>
     </ul>
   </div>
   <div class="right">
     <ul>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
-      <li><a href="#">Holiday Sale Items</a></li>
+      <% @taxons.each_with_index do |taxon,i| %>
+        <% next if i % 2 == 1 %>
+        <li><%= link_to taxon.name, seo_url(taxon) %></li>
+      <% end %>
     </ul>
   </div>
 </div>

@@ -22,7 +22,7 @@
     </dl>
     <dl class="stock">
       <dt>In Stock</dt>
-      <dd><span class="stock">YES</span></dd>
+      <dd><span class="stock"><%= @product.has_stock? ? "YES" : "NO" %></span></dd>
     </dl>
     <hr />
 

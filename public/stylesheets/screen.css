@@ -4,7 +4,7 @@ body {
   background: #fff url(../images/dogradio/bg.png) repeat-x;
 }
 
-header nav, #banner, #container, footer .inner {width: 960px; margin: 0 auto;}
+#banner, #container, footer .inner {width: 960px; margin: 0 auto;}
 
 header, footer {background-color: #000;}
 header nav *, footer div#secondary * {display: inline-block;}
@@ -14,15 +14,25 @@ header {
   height: 58px;
   margin: 0 auto;
 }
+
 header form {
   position: absolute;
   left: 320px;
-  top: 25px;
+  top: 23px;
+  padding: 0;
 }
-header form input[type='search'] {
-  width: 180px;
-  vertical-align: middle;
+header form input {
+  background: #fff url(../images/dogradio/search_bg_s1.gif) no-repeat;
+  border: 0;
+  width: 146px;
+  height: 23px;
+  padding: 0 25px 0 10px;
+  color: #333;
+  line-height: 23px;
 }
+header form input.empty  {
+  color: #aaa;
+} 
 
 
 header #logo {

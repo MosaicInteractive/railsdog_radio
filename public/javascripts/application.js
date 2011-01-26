@@ -31,7 +31,6 @@
   		'transitionOut'	:	'elastic'
     });
 
-
     //wishlist
 
 
@@ -90,6 +89,23 @@
 
     };
 
+    if(!$.browser.webkit){
+      var $input = $('#s1');
+      var placeholder = $input.attr('placeholder');
+      $input.focus(function(){
+        if($input.val() == placeholder){
+          $input.val('');
+          $input.removeClass('empty');
+        }
+      });
+      $input.blur(function(){
+        if($.trim($input.val()) == ""){
+          $input.val(placeholder);
+          $input.addClass('empty');
+        }
+      });
+      $input.triggerHandler('blur');
+    }
 
   });
 })(jQuery);

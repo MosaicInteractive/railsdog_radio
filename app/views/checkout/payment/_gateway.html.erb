@@ -1,21 +1,25 @@
-<p>Enter Your Credit Card Information</p>
+<p>Your Credit Card Information</p>
 <% param_prefix = "payment_source[#{payment_method.id}]" %>
 
-<li class="credit_card">VISA IMAGES</li>
+<li>
+  <% ['mastercard', 'visa', 'american-express', 'discover'].each do |card| %>
+    <%= image_tag "dogradio/icons/#{card}-curved-32px.png", :alt => card.capitalize %>
+  <% end %>
+</li>
 
-<li class="short">
-  <%= t("card_number") %><br />
+<li class="three-quart">
+  <label>Credit card number</label>
   <% options_hash = Rails.env.production? ? {:autocomplete => "off"} : {} %>
   <%= text_field_tag "#{param_prefix}[number]", '', options_hash.merge(:class => 'required', :size => 19, :maxlength => 19) %>
 </li>
 
-<li class="clear">
-  <%= t("card_code") %><br />
+<li class="quart last">
+  <label>Security code</label>
   <%= text_field_tag "#{param_prefix}[verification_value]", '', options_hash.merge(:class => 'required', :size => 5) %>
 </li>
 
-<li class="short">
-  <%= t("expiration") %><br />
-  <%= select_month(Date.today, :prefix => param_prefix, :field_name => 'month', :use_month_numbers => true, :class => 'required') %>
-  <%= select_year(Date.today, :prefix => param_prefix, :field_name => 'year', :start_year => Date.today.year, :end_year => Date.today.year + 15, :class => 'required') %>
+<li>
+  <label>Expiration</label>
+  <%= select_month(Date.today, {:prefix => param_prefix, :field_name => 'month', :use_month_numbers => true}, :class => 'required half') %>
+  <%= select_year(Date.today, {:prefix => param_prefix, :field_name => 'year', :start_year => Date.today.year, :end_year => Date.today.year + 15}, :class => 'required half last') %>
 </li>

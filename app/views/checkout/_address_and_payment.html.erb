@@ -1,33 +1,91 @@
-<%# TODO: checkbox to use shipping address in billing %>
-<%# TODO: update states select based on chosen country %>
 <div id="content" role="content">
-  <p>Enter your Shipping Information</p>
+  <p>Your Shipping Information</p>
   <%= form.fields_for :ship_address do |ship_form| %>
   <ul class="fields">
-  	<li class="short">First name<br/><%= ship_form.text_field :firstname %></li>
-  	<li>Last name<br/><%= ship_form.text_field :lastname %></li>
-  	<li>Shipping address<br/><%= ship_form.text_field :address1 %></li>
-  	<li>Shipping address 2<br/><%= ship_form.text_field :address2 %></li>
-  	<li>City<br/><%= ship_form.text_field :city %></li>
-  	<li>State<br/><%= ship_form.collection_select :state_id, Country.first.states, :id, :name %></li>
-  	<li>Postal code<br/><%= ship_form.text_field :zipcode %></li>
-  	<li>Country<br/><%= ship_form.collection_select :country_id, Country.all, :id, :name %></li>
-  	<li>Phone<br/><%= ship_form.text_field :phone %><span><a href="#">Why ask?</a></span></li>
+  	<li class="half">
+      <%= ship_form.label :firstname, "First Name" %>
+      <%= ship_form.text_field :firstname %>
+    </li>
+  	<li class="half last">
+      <%= ship_form.label :lastname, "Last Name" %>
+      <%= ship_form.text_field :lastname %>
+    </li>
+  	<li>
+      <%= ship_form.label :address1, "Shipping address" %>
+      <%= ship_form.text_field :address1 %>
+    </li>
+  	<li>
+      <%= ship_form.label :address2, "Shipping address 2" %>
+      <%= ship_form.text_field :address2 %>
+    </li>
+  	<li>
+      <%= ship_form.label :city, "City" %>
+      <%= ship_form.text_field :city %>
+    </li>
+  	<li class="half">
+      <%= ship_form.label :state, "State" %>
+      <%= ship_form.collection_select :state_id, @order.ship_address.country.states, :id, :name %>
+    </li>
+  	<li class="half last">
+      <%= ship_form.label :zipcode, "Postal code" %>
+      <%= ship_form.text_field :zipcode %>
+    </li>
+  	<li>
+      <%= ship_form.label :country_id, "Country" %>
+      <%= ship_form.collection_select :country_id, Country.all, :id, :name %>
+    </li>
+  	<li>
+      <%= ship_form.label :phone, "Phone" %>
+      <%= ship_form.text_field :phone %>
+    </li>
   </ul>
   <% end %>
   <hr/>
-  <p>Enter your Billing Information</p>
+  <p>Your Billing Information</p>
   <%= form.fields_for :bill_address do |bill_form| %>
   <ul class="fields">
-  	<li class="short">First name<br/><%= bill_form.text_field :firstname %></li>
-  	<li>Last name<br/><%= bill_form.text_field :lastname %></li>
-  	<li>Shipping address<br/><%= bill_form.text_field :address1 %></li>
-  	<li>Shipping address 2<br/><%= bill_form.text_field :address2 %></li>
-  	<li>City<br/><%= bill_form.text_field :city %></li>
-  	<li>State<br/><%= bill_form.collection_select :state_id, Country.first.states, :id, :name %></li>
-  	<li>Postal code<br/><%= bill_form.text_field :zipcode %></li>
-  	<li>Country<br/><%= bill_form.collection_select :country_id, Country.all, :id, :name %></li>
-  	<li>Phone<br/><%= bill_form.text_field :phone %><span><a href="#">Why ask?</a></span></li>
+    <li>
+      <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.eql?(@order.ship_address)) %>
+      <label class="tick">Use my shipping address</label>
+    </li>
+    <li class="half">
+      <%= bill_form.label :firstname, "First Name" %>
+      <%= bill_form.text_field :firstname %>
+    </li>
+  	<li class="half last">
+      <%= bill_form.label :lastname, "Last Name" %>
+      <%= bill_form.text_field :lastname %>
+    </li>
+  	<li>
+      <%= bill_form.label :address1, "Shipping address" %>
+      <%= bill_form.text_field :address1 %>
+    </li>
+  	<li>
+      <%= bill_form.label :address2, "Shipping address 2" %>
+      <%= bill_form.text_field :address2 %>
+    </li>
+  	<li>
+      <%= bill_form.label :city, "City" %>
+      <%= bill_form.text_field :city %>
+    </li>
+  	<li class="half">
+      <%= bill_form.label :state, "State" %>
+      <%= bill_form.collection_select :state_id, @order.bill_address.country.states, :id, :name %>
+    </li>
+  	<li class="half last">
+      <%= bill_form.label :zipcode, "Postal code" %>
+      <%= bill_form.text_field :zipcode %>
+    </li>
+  	<li>
+      <%= bill_form.label :country_id, "Country" %>
+      <%= bill_form.collection_select :country_id, Country.all, :id, :name %>
+    </li>
+  	<li>
+      <%= bill_form.label :phone, "Phone" %>
+      <%= bill_form.text_field :phone %>
+    </li>
+
+    <hr />
 
     <%# assuming single payment method %>
     <%= hidden_field_tag "order[payments_attributes][][payment_method_id]", @order.available_payment_methods.first.try(:id) %>
@@ -40,5 +98,6 @@
 
   </ul>
   <% end %>
+  <br />
   <div class="submit"><button type="submit" class="blue">Review your order</button></div>
 </div>

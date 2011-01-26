@@ -26,7 +26,7 @@ body#checkout div[role='main-content'] {
 body#checkout div[role='checkout'] {
   vertical-align:top;
   padding: 0 0 100px 0;
-  width: 960px;
+  float: left;
 }
 
 body#checkout div[role='checkout'] div[role='title'] {
@@ -47,31 +47,22 @@ body#checkout div[role='checkout'] div#tabs {
 
 body#checkout div[role="checkout"] div#tabs ul {
   margin: 0;
-  font: 45px "Arial", sans-serif;
+  font: 45px "Arvo", sans-serif;
 }
 
 body#checkout div[role='checkout'] div#tabs li {
   display: inline;
   float: left;
   background-color: #eceded;
-  border-top: 5px solid #eceded;
-  border-right: 5px solid #eceded;
   border-bottom: 5px solid #b7cbe9;
-  border-left: 5px solid #eceded;
-
-  width: 210px;
-  height: 60px;
-
+  width: 216px;
+  height: 70px;
 }
 
 body#checkout div[role='checkout'] div#tabs li.active {
   background-color: #fff;
-  border-top: 5px solid #b7cbe9;
-  border-right: 5px solid #b7cbe9;
-  border-left: 5px solid #b7cbe9;
-  border-bottom: 5px solid #fff;
-
-
+  border: 5px solid #b7cbe9;
+  border-bottom: none;
 }
 
 body#checkout div[role='checkout'] div#tabs li.end {
@@ -84,6 +75,7 @@ body#checkout div[role='checkout'] div#tabs li span.number {
   font-size: 60px;
   padding: 0 0 0 30px;
   display: inline-block;
+  font-family: Arial;
 }
 
 body#checkout div[role='checkout'] div#tabs li.active span.number {
@@ -109,12 +101,13 @@ body#checkout div[role='content'] {
   color: #A0A0A0;
   width: 448px;
   padding: 100px 100px 50px 100px;
-
 }
 
 body#checkout div[role='content'] p {
-  font-size: 18px;
+  font: 28px Arvo;
   color: #747474;
+  margin: 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 body#checkout div[role='content'] div.submit {
@@ -122,30 +115,76 @@ body#checkout div[role='content'] div.submit {
   text-align: center;
 }
 
-body#checkout div[role='content'] p {
-  font-size: 28px;
-  padding: 40px 0px;
+body#checkout div[role='content'] hr {
+  margin: 40px -70px;
+  visibility: visible;
+  border: 1px solid #D4D4D4;
 }
 
-body#checkout div[role='content'] hr {
-  margin-top: 50px;
+body#checkout div[role='content'] ul.fields {
+  color: #747474;
+  margin: 0px;
 }
 
 body#checkout div[role='content'] ul.fields li {
-  padding: 0px 0 10px 0;
+  padding: 0px 0 16px 0;
   text-align: left;
+  clear: both;
 }
 
-body#checkout div[role='content'] ul.fields input {
-  margin-left:10px;
+body#checkout div[role='content'] ul.fields .quart {
+  width: 107px;
+  float: left;
+  clear: none;
+}
+
+body#checkout div[role='content'] ul.fields .half {
+  width: 214px;
+  float: left;
+  clear: none;
+}
+
+body#checkout div[role='content'] ul.fields .three-quart {
+  width: 321px;
+  float: left;
+  clear: none;
+}
+
+
+body#checkout div[role='content'] ul.fields .last {
+  margin-left: 20px;
+}
+
+body#checkout div[role='content'] ul.fields label {
+  font-size: 14px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+body#checkout div[role='content'] ul.fields label.tick {
+  display: inline; 
+}
+
+body#checkout div[role='content'] ul.fields input[type='text'] {
   border: 2px solid #A0A0A0;
   border-radius:2px;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+body#checkout div[role='content'] ul.fields input[type='checkbox'] {
+  vertical-align: middle;
+}
+
+body#checkout div[role='content'] ul.fields select {
+  width: 100%;
 }
 
 body#checkout div[role='aside'] {
   border: 3px solid #eceded;
   width: 250px;
-  float: right;
+  float: left;
+  margin: 100px 0px 0px 22px;
   padding: 10px;
   color: #7f7f7f;
   font-size: 14px;

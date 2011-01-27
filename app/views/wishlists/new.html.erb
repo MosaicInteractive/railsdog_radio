@@ -1,0 +1,8 @@
+<% @body_id = 'cart' %>
+<h1>New Wish List</h1>
+<% form_for @wishlist do |f| %>
+  <p><%= f.label :name, t(:name) %>:&nbsp;<%= f.text_field :name %></p>
+  <p><%= f.check_box :is_private %>&nbsp;<%= f.label :is_private, "Keep this list private, for my eyes only!" %></p>
+  <%= link_to "Create", '#', :onclick => "$(this).parent().submit(); return false;", :class => 'button' %>
+<% end -%>
+

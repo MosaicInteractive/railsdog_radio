@@ -15,9 +15,8 @@ gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced
 gem 'spree_email_to_friend'
 gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
 gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'
+gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => 'rails3'
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
  gem 'ruby-debug'

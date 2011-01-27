@@ -13,9 +13,7 @@
 
   <%= form_for(@order, :url => update_cart_path, :html=>{:id=>'updatecart'}) do |order_form| %>
 
-    <p id="cart-count">
-      You have <%= pluralize @order.line_items.length, 'item' %> in your cart
-    </p>
+    <h3>You have <%= pluralize @order.line_items.length, 'item' %> in your cart</h3>
 
     <%= hook :cart_items do %>
       <%= render :partial => 'form', :locals => {:order_form => order_form} %>

@@ -32,7 +32,7 @@
     });
 
 
-    $('#checkout_form_address').validate();
+    //$('#checkout_form_address').validate();
 
     var get_states = function(region){
       var country        = $('span#' + region + 'country :only-child').val();

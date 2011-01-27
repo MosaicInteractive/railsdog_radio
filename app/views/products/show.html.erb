@@ -9,6 +9,7 @@
 
 <% content_for :sidebar do %>
   <%= render 'shared/all_products' %>
+  <%= render 'shared/recently_viewed_products' %>
 <% end %>
 
 <p class="breadcrumbs"><%= link_to 'Products', products_path %> &raquo; <%= @product.name %></p>

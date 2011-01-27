@@ -159,7 +159,7 @@ footer #copyright {
 
 
 
-#sidebar #all-products {
+#sidebar .list-box {
   width: 230px;
   float: left;
   background-color: #F3F3F3;
@@ -171,31 +171,34 @@ footer #copyright {
   font-family: Trebuchet MS;
 }
 
-#all-products {
+.list-box {
   padding-top: 30px; /* match #contact  */
 }
-#all-products h2 {
+.list-box h2 {
   color: #364D8C;
 }
-#all-products h2, #homepage #contact h2 {
+.list-box h2, #homepage #contact h2 {
   font-family: Arvo;
-  font-size: 200%;
+  font-size: 170%;
   text-transform: uppercase;
   font-weight: normal;
   margin-bottom: 0.75em;
   border-bottom: 1px solid #A3A3A3;
   padding-bottom: 0.5em;
 }
-#all-products li {
+.list-box li {
   font-size: 1.25em;
   line-height: 1.5em;
 }
-#all-products a {
+.list-box a {
   color: #666;
   text-decoration: none;
 }
-#all-products a:hover {
+.list-box a:hover {
   text-decoration: underline;
+}
+#recent-products {
+  margin-top: 40px;
 }
 
 .breadcrumbs, .pagination {

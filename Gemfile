@@ -6,14 +6,15 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
-gem 'spree', '0.40.0'
+gem 'spree', :git => 'git://github.com/spree/spree.git'
 gem 'aws-s3'
 gem 'jammit', '0.6.0'
 
 gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
-
 gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced-reporting', :branch => 'rails3'
-
+gem 'spree_email_to_friend'
+gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
+gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -29,8 +30,6 @@ gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced
 #   gem 'webrat'
 # end
 
-gem 'spree_email_to_friend'
-gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
 
 group :development, :test do
   gem 'factory_girl_rails'

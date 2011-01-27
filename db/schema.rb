@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   add_index "assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
   add_index "assets", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
 
+  create_table "authentication_methods", :force => true do |t|
+    t.string   "environment"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "calculators", :force => true do |t|
     t.string   "type"
     t.integer  "calculable_id",   :null => false
@@ -165,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.string   "presentation", :limit => 100
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",                    :default => 0, :null => false
   end
 
   create_table "option_types_prototypes", :id => false, :force => true do |t|
@@ -488,10 +496,10 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   end
 
   create_table "taxons", :force => true do |t|
-    t.integer  "taxonomy_id",                      :null => false
+    t.integer  "taxonomy_id",                            :null => false
     t.integer  "parent_id"
-    t.integer  "position",          :default => 0
-    t.string   "name",                             :null => false
+    t.integer  "position",            :default => 0
+    t.string   "name",                                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
@@ -502,6 +510,15 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.text     "description"
+    t.boolean  "hidden",              :default => false
+    t.boolean  "disabled",            :default => false
+    t.string   "short_name"
+    t.boolean  "homepage",            :default => false
+    t.string   "display_style"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "taxons", ["parent_id"], :name => "index_taxons_on_parent_id"
@@ -522,6 +539,15 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.string   "environment"
     t.string   "analytics_id"
     t.boolean  "active",       :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "nickname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -566,6 +592,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.boolean  "is_master",                                   :default => false
     t.integer  "count_on_hand",                               :default => 0,     :null => false
     t.decimal  "cost_price",    :precision => 8, :scale => 2
+    t.integer  "position"
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"

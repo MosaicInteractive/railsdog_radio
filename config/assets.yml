@@ -25,3 +25,4 @@ stylesheets:
     - public/stylesheets/cart.css
     - public/stylesheets/checkout.css
     - public/fancybox/jquery.fancybox-1.3.4.css
+    - public/stylesheets/social.css

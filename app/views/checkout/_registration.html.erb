@@ -1,22 +1,7 @@
 <div id="content" role="content">
-<p>Create an Account</p>
-<%= form_for(:user, :url => registration_path(@user)) do |f| %>
-  <ul class="fields">
-    <li>Email <%= f.text_field :email, :class => 'title' %></li>
-    <li>Password <%= f.password_field :password, :class => 'title' %></li>
-    <li>Verify <%= f.password_field :password_confirmation, :class => 'title' %></li>
-  </ul>
-  <div class="submit">
-    <%= f.submit raw("CREATE ACCOUNT &#8227;"), :class => "button blue" %>
-  </div>
-<% end %>
-<hr/>
-<p>Or, checkout as a guest...</p>
-<%= form_for @order, :url => update_checkout_registration_path, :html => { :method => :put, :id => "checkout_form_registration"} do |f| %>
-  <ul class="fields">
-    <li>Email <%= f.text_field :email, :class => 'title'  %></li>
-  </ul>
-  <div class="submit">
-    <%= f.submit raw("GUEST CHECKOUT &#8227;"), :class => "button red" %>
-  </div>
-<% end %>
+
+<%= render 'shared/social_users' %>
+
+<hr>
+
+<%= render 'shared/local_users' %>

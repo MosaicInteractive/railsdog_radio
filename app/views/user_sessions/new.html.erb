@@ -1,0 +1,9 @@
+<% if flash[:alert] %>
+  <div class="flash errors"><%= flash[:alert] %></div>
+<% end %>
+
+<% @body_id = 'login' %>
+
+<%= render 'shared/social_users' %>
+
+<%= render 'shared/local_users' %>

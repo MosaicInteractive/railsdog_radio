@@ -19,6 +19,37 @@ input.red {
   background-color: #e41e1e;
 }
 
+select {
+  padding: 7px 5px 5px;
+  color: #333;
+}
+
+input[type='text'], input[type='password'] {
+  font-size: 18px;
+  padding: 7px 5px 5px;
+  border: 2px solid #A0A0A0;
+  border-radius:2px;
+  margin-bottom: 4px;
+  color: #333;
+
+}
+
+input[type='checkbox'] {
+  vertical-align: middle;
+}
+
+label {
+  color: #747474;
+  font-size: 14px;
+  margin-bottom: 2px;
+  display: block;
+}
+
+label.tick {
+  display: inline; 
+  vertical-align: -2px;
+}
+
 body#checkout div[role='main-content'] {
   float:left;
 }
@@ -103,7 +134,7 @@ body#checkout div[role='content'] {
   padding: 100px 100px 50px 100px;
 }
 
-body#checkout div[role='content'] p {
+body#checkout div[role='content'] h2 {
   font: 28px Arvo;
   color: #747474;
   margin: 0px;
@@ -155,25 +186,10 @@ body#checkout div[role='content'] ul.fields .last {
   margin-left: 20px;
 }
 
-body#checkout div[role='content'] ul.fields label {
-  font-size: 14px;
-  margin-bottom: 2px;
-  display: block;
-}
 
-body#checkout div[role='content'] ul.fields label.tick {
-  display: inline; 
-}
 
 body#checkout div[role='content'] ul.fields input[type='text'] {
-  border: 2px solid #A0A0A0;
-  border-radius:2px;
   width: 100%;
-  margin-bottom: 4px;
-}
-
-body#checkout div[role='content'] ul.fields input[type='checkbox'] {
-  vertical-align: middle;
 }
 
 body#checkout div[role='content'] ul.fields select {
@@ -238,6 +254,10 @@ body#checkout div[role='aside'] div[role='order'] tr td.price {
   width: 36px;
 }
 
+body#checkout .hidden{
+  display: none;
+  visibility: visible;
+}
 
 /* End Styles for Checkout page */
 

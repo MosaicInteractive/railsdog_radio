@@ -1,44 +1,38 @@
 <% content_for :banner do %>
   <section>
-    <img src="/images/dogradio/homepage/new-products.jpg" alt="New Arrivals">
-    <div class="button">
-      <img src="/images/dogradio/homepage/all-new.png" alt="All New. Get the latest Sirrus/XM products for your home and car"><br>
-      <a href="#"><img src="/images/dogradio/homepage/shop-new-products.png" alt="Shop new products"></a>
+    <div>
+      <ul>
+        <li id="b1">
+          <a href="/pg/new-arrivals">
+            <img src="/images/dogradio/homepage/slideshow/new-arrivals.jpg" width="960" height="303" alt="New Arrivals">
+          </a>
+        </li>
+        <li id="b2">
+          <a href="/pg/car-stereos">
+            <img src="/images/dogradio/homepage/slideshow/car-stereos.jpg"  width="960" height="303" alt="Car Stereos">
+          </a>
+        </li>
+        <li id="b3">
+          <a href="/pg/accessory-sale">
+            <img src="/images/dogradio/homepage/slideshow/accessories.jpg" width="960" height="303" alt="Accessory Sale">
+          </a>
+        </li>
+        <li id="b4">
+          <a href="/pg/clearance-event">
+            <img src="/images/dogradio/homepage/slideshow/clearance.jpg" width="960" height="303" alt="Clearance Event">
+          </a>
+        </li>
+      </ul>
     </div>
   </section>
-  <!-- WIP - Slides to be >>
-  <section role="car-stereos">
-    <div class="image">
 
-      </div>
-      <div class="button">
-
-      </div>
-    </section>
-    <section role="accessory-sale">
-      <div class="image">
-
-      </div>
-      <div class="button">
-
-      </div>
-    </section>
-    <section role="clearance-event">
-      <div class="image">
-
-      </div>
-      <div class="button">
-
-      </div>
-    </section>
-  << -->
   <nav id="banner-nav">
     <ul>
       <li class="first"><a href="#">&laquo;</a></li>
-      <li class="current"><a href="#">new arrivals</a></li>
-      <li><a href="#">car stereos</a></li>
-      <li><a href="#">accessory sale</a></li>
-      <li><a href="#">clearance event</a></li>
+      <li class="current" id="b1_handle" ><a href="#">new arrivals</a></li>
+      <li id="b2_handle"><a href="#">car stereos</a></li>
+      <li id="b3_handle"><a href="#">accessory sale</a></li>
+      <li id="b4_handle"><a href="#">clearance event</a></li>
       <li class="last"><a href="#">&raquo;</a></li>
     </ul>
   </nav>

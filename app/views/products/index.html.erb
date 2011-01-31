@@ -4,7 +4,9 @@
   <% if params.key? :product_group_name %>
     <%- @product_group =  ProductGroup.find_by_permalink(params[:product_group_name]) %>
     <h1><%= @product_group.name %></h1>
-    <%= image_tag "dogradio/taxon/#{@product_group.permalink}-bg.jpg" %>
+    <% if FileTest.exists?("#{Rails.root}/public/images/dogradio/taxon/#{@product_group.permalink}-bg.jpg") %>
+      <%= image_tag "dogradio/taxon/#{@product_group.permalink}-bg.jpg" %>
+    <% end %>
   <% else %>
     <h1>Products</h1>
   <% end %>

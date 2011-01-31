@@ -1,5 +1,23 @@
 (function($){
   $(document).ready(function(){
+    $('div#banner section div').jCarouselLite({
+        btnNext: "#banner-nav .last",
+        btnPrev: "#banner-nav .first",
+        visible: 1,
+        auto: 3000,
+        speed: 1000,
+        btnGo:
+          ["#b1_handle", "#b2_handle",
+          "#b3_handle", "#b4_handle"],
+        afterEnd: function(a) {
+          $('#banner-nav li.current').removeClass('current');
+
+          var handle = $('#' + a.attr('id') + '_handle');
+          handle.addClass('current');
+        }
+
+    });
+
 
     // Remove an item from the cart by setting its quantity to zero and posting the update form
     $('form#updatecart a.delete').show().click(function(){

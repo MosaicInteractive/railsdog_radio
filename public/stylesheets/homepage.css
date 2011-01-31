@@ -7,7 +7,6 @@ body#homepage { background-image: url('../images/dogradio/homepage/bg.png') }
 
 #homepage #banner {
   height: 340px;
-  background: url(../images/dogradio/homepage/homepage-banner-bg.jpg) no-repeat;
   position: relative;
   height: 340px;
   margin-bottom: 20px;

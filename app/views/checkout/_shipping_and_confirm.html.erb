@@ -1,14 +1,41 @@
-<%# TODO: update shipping and order totals in Order Summary when new Shipping Method is selected %>
-<%# TODO: move inline css to stylesheets %>
+<% content_for :javascripts do %>
+  <%= javascript_tag do %>
+    $('#order_shipping_method_id').change(function() {
+      var shipping_method_id = $(this).val();
+      var selected_shipping_method = $(this).find("option[value='" + shipping_method_id + "']").html();
+
+      $(this).find("option[value='" + shipping_method_id + "']").html("Updating...");
+      $(this).attr('disabled', 'disabled');
+
+      $.post("/checkout/update/set_shipping", { state: "address_and_payment",  "order[shipping_method_id]": shipping_method_id },
+        function(data){
+          var table = $('table.total tbody');
+          table.html('');
+          table.append('<tr><th>Subtotal</th><td>$' + parseFloat(data.order.item_total).toFixed(2) + '</td></tr>');
+
+          $.each(data.order.adjustments, function(index, adjustment) {
+            table.append('<tr><th>' + adjustment.label + '</th><td>$' + parseFloat(adjustment.amount).toFixed(2) + '</td></tr>');
+          });
+
+          table.append('<tr class="total"><th>Total</th><td>$' + parseFloat(data.order.total).toFixed(2) + '</td></tr>');
+
+          $('#order_shipping_method_id').find("option[value='" + shipping_method_id + "']").html(selected_shipping_method);
+          $('#order_shipping_method_id').removeAttr('disabled');
+
+        }
+      );
+
+    });
+  <% end %>
+<% end %>
 <div id="content" role="content">
-  <p>Choose A Shipping Method</p>
+  <h2>Choose A Shipping Method</h2>
   <ul class="fields">
-    <li><%= form.collection_select :shipping_method_id, @order.available_shipping_methods, :id, :name %></li>
+    <li><%= form.select :shipping_method_id, @order.rate_hash.collect {|sm| [ "#{sm[:name]} - #{number_to_currency(sm[:cost])}", sm[:shipping_method].id ] } %></li>
   </ul>
-  <p>Verify Order Details</p>
 
   <div id="order-items" style="padding:0 30px 30px 0">
-    <h3>Items In Your Order</h3>
+    <h2>Items In Your Order</h2>
     <ul>
     <% @order.line_items.each do |line_item| %>
       <li>
@@ -21,7 +48,8 @@
   </div>
 
   <div id="order-email" style="padding:30px 30px 30px 0">
-    <h4>Your email address</h4>
+    <h2>Order Contact Details</h2>
+    <h4>Email</h4>
     <%= @order.email %>
   </div>
 
@@ -29,19 +57,27 @@
     <% address = @order.send("#{addr_type}_address") %>
     <div id="order-#{addr_type}_address" style="float:left; padding:30px 30px 30px 0">
       <h4><%= addr_type.capitalize %> Address</h4>
-      <ul>
-        <li><%= address.firstname %></li>
-        <li><%= address.lastname %></li>
-        <li><%= address.address1 %></li>
-        <%= "<li>#{address.address2}</li>".html_safe if address.address2 %>
-        <%= "<li>#{address.city}, #{address.state.name} #{address.zipcode}</li>".html_safe %>
-      </ul>
+      <p>
+        <%= address.full_name %><br />
+        <%= address.address1 %><br />
+        <% unless address.address2.blank? %>
+          <%= address.address2 %><br />
+        <% end %>
+        <%= address.city %>&nbsp;
+        <% if address.state_id.blank? %>
+          <br /><%= address.state_name %><br />
+        <% else %>
+          <%= address.state.abbr %><br />
+        <% end %>
+        <%= address.country.try(:name) %> <%= address.zipcode %>
+      </p>
       <%= link_to "edit", checkout_state_path('address_and_payment') %>
     </div>
   <% end %>
 
     <div id="order-payment" style="padding:30px 30px 30px 0; clear:both">
-      <h4>Credit card info</h4>
+      <h2>Payment Details</h2>
+      <h4>Credit Card </h4>
       <%= @order.payment.source.name %><br />
       <%= @order.payment.source.display_number %>
       <%= link_to "edit", checkout_state_path('address_and_payment') %>
@@ -49,5 +85,7 @@
   <div>
 
   </div>
-  <div class="submit"><input type="submit" class="button blue" value="PLACE YOUR ORDER &#8227;"/></div>
+  <div class="submit">
+    <button class="blue" type="submit">Place your order</button>
+  </div>
 </div>

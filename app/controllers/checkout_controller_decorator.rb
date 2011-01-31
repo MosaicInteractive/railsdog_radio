@@ -12,12 +12,19 @@ CheckoutController.class_eval do
     end
   end
 
-  private
+  def set_shipping
+    if @order.update_attributes(object_params)
+      @order.create_shipment_without_default!
+    end
 
+    render :json => @order.reload.to_json(:include => :adjustments)
+  end
+
+  private
 
   def object_params
     # For payment step, filter order parameters to produce the expected nested attributes for a single payment and its source, discarding attributes for payment methods other than the one selected
-    if @order.address_and_payment?
+    if @order.address_and_payment? && params.key?(:payment_source)
       if params[:payment_source].present? && source_params = params.delete(:payment_source)[params[:order][:payments_attributes].first[:payment_method_id].underscore]
         params[:order][:payments_attributes].first[:source_attributes] = source_params
       end
@@ -28,6 +35,7 @@ CheckoutController.class_eval do
       params[:order][:payments_attributes].first[:source_attributes][:last_name] = params[:order][:bill_address_attributes][:lastname]
       params[:order]
     end
+    params[:order]
   end
 
   def body_id

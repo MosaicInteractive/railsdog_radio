@@ -50,10 +50,10 @@
 
     $('input#order_use_billing').click(function() {
       if($(this).is(':checked')) {
-        $('#shipping .inner input, #shipping .inner select, #shipping .inner label, #shipping .inner .req').hide();
+        $('#shipping .inner').hide();
         $('#shipping .inner input, #shipping .inner select').attr('disabled', 'disabled');
       } else {
-        $('#shipping .inner input, #shipping .inner select, #shipping .inner label, #shipping .inner .req').show();
+        $('#shipping .inner').show();
         $('#shipping .inner input, #shipping .inner select').removeAttr('disabled', 'disabled');
 
         //only want to enable relevant field

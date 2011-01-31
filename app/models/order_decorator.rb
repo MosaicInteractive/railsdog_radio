@@ -42,4 +42,13 @@ Order.class_eval do
 
   end
 
+  def create_shipment_with_default!
+    shipping_method ||= available_shipping_methods.first
+    save
+
+    create_shipment_without_default!
+  end
+
+  alias_method_chain :create_shipment!, :default
+
 end

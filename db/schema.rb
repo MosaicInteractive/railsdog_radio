@@ -465,6 +465,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.datetime "updated_at"
     t.string   "previous_state"
     t.string   "stateful_type"
+    t.string   "next_state"
   end
 
   create_table "states", :force => true do |t|

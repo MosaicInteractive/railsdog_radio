@@ -30,8 +30,10 @@
     <header>
       <%= link_to image_tag("dogradio/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
       <form action="#" >
-        <input type="search" id="s1" placeholder="Search Railsdog Radio">
       </form>
+      <%= form_tag products_url, :method => :get do %>
+        <input type="search" id="s1" name="keywords" placeholder="Search Railsdog Radio">
+      <% end %>
       <nav>
         <%= link_to "products", products_path %>
         <a href="#">help</a>

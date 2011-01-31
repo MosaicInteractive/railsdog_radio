@@ -2,7 +2,7 @@
 
 <% content_for :banner do %>
   <% if @product.taxons.any? %>
-    <h1><%= @product.taxons.first.name %></h1>
+    <h1><%= raw @product.taxons.first.name %></h1>
     <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
   <% end %>
 <% end %>

@@ -59,7 +59,7 @@
     <ul>
       <% @taxons.each_with_index do |taxon,i| %>
         <% next if i % 2 == 0 %>
-        <li><%= link_to taxon.name, seo_url(taxon) %></li>
+        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
   </div>
@@ -67,7 +67,7 @@
     <ul>
       <% @taxons.each_with_index do |taxon,i| %>
         <% next if i % 2 == 1 %>
-        <li><%= link_to taxon.name, seo_url(taxon) %></li>
+        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
   </div>

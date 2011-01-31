@@ -2,7 +2,7 @@
   <h2>All Products</h2>
   <ul>
     <% @taxons.each_with_index do |taxon,i| %>
-      <li><%= link_to taxon.name, seo_url(taxon) %></li>
+      <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
     <% end %>
   </ul>
 </div>

@@ -42,13 +42,16 @@ Order.class_eval do
 
   end
 
-  def create_shipment_with_default!
+  def create_shipment!
     shipping_method ||= available_shipping_methods.first
     save
 
-    create_shipment_without_default!
+    if shipment.present?
+      shipment.update_attributes(:shipping_method => shipping_method)
+    else
+      self.shipments << Shipment.create(:order => self, :shipping_method => shipping_method, :address => self.ship_address)
+    end
   end
 
-  alias_method_chain :create_shipment!, :default
 
 end

@@ -2,6 +2,7 @@
   <div id="title" role="title">CHECKOUT</div>
   <!-- START MAIN CONTENT -->
   <div id="main-content" role="main-content">
+    <%= render "shared/error_messages", :target => @order %>
     <%= render 'checkout_tabs' %>
     <%= render 'checkout_tab_content' %>
   </div>

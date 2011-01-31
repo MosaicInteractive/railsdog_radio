@@ -2,7 +2,7 @@
 <%= hook :inside_product_cart_form do %>
 
   <% if product_price(@product) %>
-    <%= text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => "title", :size => 3 %>
+    <%= hidden_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => "title", :size => 3 %>
 
     <dl class="part-numbers clearfix">
       <dt>PART NUMBER</dt>
@@ -34,7 +34,7 @@
       <p>
         <%= check_box_tag "variants[#{cross_sell.master.id}]", 1 %>
         <label for="">
-          Add <em>'<%= cross_sell.name %>'</em> for <%= product_price(cross_sell) %>
+          Add <em>'<%= link_to cross_sell.name, product_url(cross_sell) %>'</em> for <%= product_price(cross_sell) %>
         </label>
       </p>
       <% end %>

@@ -1,0 +1,11 @@
+<% if user.anonymous? %>
+  <h1>Select Email Address</h1>
+  <%= form_for(:user, :url => user_authentication_path(user), :html => { :method => :put }) do |f| %>
+    <%= f.label :email, t("email") %>
+    <%= f.text_field :email, :class => 'title', :value => (omniauth["extra"]["user_hash"]["email"] unless omniauth.nil? ) %></td>
+    <hr />
+    <div class="submit">
+      <button type="submit" class="blue">Link Account</button>
+    </div>
+  <% end %>
+<% end %>

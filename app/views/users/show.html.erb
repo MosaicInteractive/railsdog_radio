@@ -18,10 +18,10 @@
     <% @orders.each do |order| %>
       <tr class="<%= cycle('even', 'odd') %>">
         <td><%= link_to order.number, order_url(order) %></td>
-        <td><%=order.created_at.to_date%></td>
-        <td><%= t(order.state).titleize %></td>
-        <td><%= order.shipment_state.capitalize %></td>
-        <td><%= number_to_currency order.total %></td>
+        <td class="normal"><%=order.created_at.to_date%></td>
+        <td class="normal"><%= t(order.state).titleize %></td>
+        <td class="normal"><%= order.shipment_state.capitalize %></td>
+        <td class="normal"><%= number_to_currency order.total %></td>
       </tr>
     <% end %>
     </tbody>
@@ -39,3 +39,40 @@
   <% end %>
   <%= link_to "Create New Wish List", new_wishlist_url %>
 </h3>
+
+<hr />
+
+<% if @user.user_authentications.present? %>
+  <h3>My Logins</h3>
+  <table id="cart-detail">
+    <thead>
+      <tr>
+        <th>Provider</th>
+        <th>Nickname</th>
+        <th>Linked</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @user.user_authentications.each do |auth| %>
+      <tr class="<%= cycle('even', 'odd') %>">
+        <td class="normal">
+          <%= image_tag "social/#{auth.provider}_32.png", :size => "32x32" %>
+          <%= auth.provider.capitalize %>
+        </td>
+        <td class="normal"><%= auth.nickname %></td>
+        <td class="normal"><%= auth.created_at.to_date%></td>
+        <td class="normal"><%= link_to( "Unlink", auth, :confirm => 'Are you sure you want to remove unlink this account', :method => :delete, :class => "remove") %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <hr />
+<% end %>
+
+<h3>Link Accounts</h3>
+<p>You can link your RailsDog Radio account with an account you already have on any of the following sites:</p>
+<% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
+  <%= link_to(image_tag("social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => "Sign in with #{user.preferred_provider}") if user.active %>
+<% end %>

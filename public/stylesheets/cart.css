@@ -37,6 +37,15 @@ table#cart-detail tr.totals td, table#cart-detail td.actions {
 table#cart-detail td.image {
   width: 180px;
 }
+table#cart-detail td.normal {
+  font-weight: normal;
+  vertical-align: middle;
+}
+table#cart-detail td.normal img {
+  vertical-align: sub;
+
+}
+
 
 table#cart-detail td.image img {
   vertical-align: middle;

@@ -6,9 +6,9 @@
   <% if @wishlist.user == current_user %>
     <% form_for @wishlist do |f| %>
       <div>
-        <p><%= f.label :name, t(:name) %>:&nbsp;<%= f.text_field :name %></p>
-        <p><%= f.check_box :is_private %>&nbsp;<%= f.label :is_private, "Keep this list private, for my eyes only!" %></p>
-        <p><%= f.check_box :is_default %>&nbsp;<%= f.label :is_default, "Automatically add new wished items to this list." %></p>
+        <p><%= f.label :name, t(:name), :class => "inline" %>:&nbsp;<%= f.text_field :name %></p>
+        <p><%= f.check_box :is_private %>&nbsp;<%= f.label :is_private, "Keep this list private, for my eyes only!", :class => "inline" %></p>
+        <p><%= f.check_box :is_default %>&nbsp;<%= f.label :is_default, "Automatically add new wished items to this list.", :class => "inline" %></p>
       </div>
       <%= link_to "Update", '#', :onclick => "$(this).parent().submit(); return false;", :class => 'button' %>
     <% end %>
@@ -57,7 +57,7 @@
                 <%= link_to "Move", '#', :class => 'button' %>
 
                 <%= form_for wish do |f| %>
-                  <label>Move to:</label>
+                  <label class="inline">Move to:</label>
                   <%= f.select :wishlist_id, current_user.wishlists.map{|wl| [wl.name, wl.id] unless wl.id == @wishlist.id}.compact %>
                   <%= f.submit "Confirm" %>
                 <% end %>

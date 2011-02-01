@@ -1,30 +1,16 @@
-<h2><%= t("my_account") %></h2>
-<hr />
-<%= hook :account_summary do %>
+<h1><%= t("my_account") %><%= link_to "(edit)", edit_account_path, :id => "edit_account_link" %></h1>
 
-<table>
-  <tr>
-    <td><%= t("email") %>:</td>
-    <td>
-      <%= @user.email %>
-    </td>
-  </tr>
-</table>
-<p><%= link_to t('edit'), edit_account_path %></p>
 
-<% end %>
 
-<%= hook :account_my_orders do %>
-
-<h2><%= t("my_orders") %></h2>
+<h3><%= t("my_orders") %></h3>
 <% if @orders.present? %>
-  <table class="order-summary" width="545">
+  <table id="cart-detail">
     <thead>
       <tr>
         <th><%= t("order_number") %></th>
         <th><%= t("order_date") %></th>
         <th><%= t("status") %></th>
-        <th><%= t("customer") %></th>
+        <th><%= t("shipment_state") %></th>
         <th><%= t("total") %></th>
       </tr>
     </thead>
@@ -34,7 +20,7 @@
         <td><%= link_to order.number, order_url(order) %></td>
         <td><%=order.created_at.to_date%></td>
         <td><%= t(order.state).titleize %></td>
-        <td><%= order.user.email if order.user %></td>
+        <td><%= order.shipment_state.capitalize %></td>
         <td><%= number_to_currency order.total %></td>
       </tr>
     <% end %>
@@ -43,7 +29,13 @@
 <% else %>
   <p><%= t(:you_have_no_orders_yet) %></p>
 <% end %>
-<br />
 
-<% end %>
+<hr/>
 
+<h3>
+  My Wishlists:
+  <% if current_user.wishlists.present? %>
+    <%= raw current_user.wishlists.map { |wl| link_to(wl.name, wl) }.join(", ") %>,&nbsp;
+  <% end %>
+  <%= link_to "Create New Wish List", new_wishlist_url %>
+</h3>

@@ -28,3 +28,4 @@ stylesheets:
     - public/fancybox/jquery.fancybox-1.3.4.css
     - public/stylesheets/social.css
     - public/stylesheets/login.css
+    - public/stylesheets/errors.css

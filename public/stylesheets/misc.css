@@ -36,8 +36,7 @@ Updated to ensure no other style overrides the styles defined in this rule */
 /* Textual Styles */
 span.bold {font-weight: bold;}
 
-
-
+.inline { display: inline }
 
 
 

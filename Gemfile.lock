@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: 5e248eadb9f5b0e6ff6f2e522126687f56940f8d
+  revision: 835548aea8298099e3c71f686c4bcbb7525cbd87
   specs:
     spree (0.50.99)
       spree_api (= 0.50.99)
@@ -88,7 +88,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_wishlist.git
-  revision: c7a76c5f924f4f746d0dab601a2de5900a3f1942
+  revision: 568ff3be6ad9a5edbc9e1d571663fbb55b18ee8c
   branch: rails3
   specs:
     spree_wishlist (0.30.0.beta2)

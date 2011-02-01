@@ -220,6 +220,25 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
 
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "show_in_header",   :default => false, :null => false
+    t.boolean  "show_in_footer",   :default => false, :null => false
+    t.string   "foreign_link"
+    t.integer  "position",         :default => 1,     :null => false
+    t.boolean  "visible",          :default => true
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "layout"
+    t.boolean  "show_in_sidebar",  :default => false, :null => false
+  end
+
+  add_index "pages", ["slug"], :name => "index_pages_on_slug"
+
   create_table "payment_methods", :force => true do |t|
     t.string   "type"
     t.string   "name"

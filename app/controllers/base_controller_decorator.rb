@@ -3,7 +3,7 @@ Spree::BaseController.class_eval do
 
   private
     def load_root_taxons
-      @taxons = Taxonomy.where(:name => "Categories").first.root.children
+      @taxons ||= Taxonomy.where(:name => "Categories").first.root.children
     end
 
 end

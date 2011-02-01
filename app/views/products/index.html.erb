@@ -12,6 +12,8 @@
   <% end %>
 <% end %>
 
+<p class="breadcrumbs"><%= link_to 'Home', root_url %> &raquo; <%= @product_group.present? ? @product_group.name : "Products" %></p>
+
 <% content_for :sidebar do %>
   <%= render 'shared/all_products' %>
   <%= render 'shared/recently_viewed_products' %>

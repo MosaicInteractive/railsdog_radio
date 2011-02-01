@@ -36,7 +36,7 @@
       <% end %>
       <nav>
         <%= link_to "products", products_path %>
-        <a href="#">help</a>
+        <a href="/help">help</a>
         <% if current_user %>
           <%= link_to t('my_account'), account_path, :class => "cart" %>
           <%= link_to t('logout'), destroy_user_session_path, :class => "cart" %>
@@ -110,12 +110,12 @@
       <div id="menu">
         <h3>Menu</h3>
         <p>
-        <a href="#">About us</a><br />
-        <a href="#">Privacy policy</a>
+        <a href="/about">About us</a><br />
+        <a href="/privacy">Privacy policy</a>
         </p>
       </div>
 
-      <p id="copyright">&copy; Copyright 2010 Railsdog Radio. All rights reserved</p>
+      <p id="copyright">&copy; Copyright <%= Time.zone.now.year %> Railsdog Radio. All rights reserved</p>
 
     </div>
   </footer>

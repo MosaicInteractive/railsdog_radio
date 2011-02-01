@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/divineforest/spree_editor.git
+  revision: bf7153607e737348b3643f2911be18b4c6127cdd
+  specs:
+    spree_editor (1.0.0)
+      spree_core (>= 0.30.0)
+
+GIT
   remote: git://github.com/jzw/spree_recently_viewed.git
   revision: d64436670766b54da26b82b29c5cfd5766d985d1
   specs:
@@ -14,6 +21,14 @@ GIT
       ruport
       ruport-util
       spree_core (>= 0.30.1)
+
+GIT
+  remote: git://github.com/spree/spree-static-content.git
+  revision: f622601fb9d417347245fdb060f7dabf3b148faf
+  specs:
+    spree_static_content (0.40.0)
+      spree_core (>= 0.30.0)
+      spree_editor
 
 GIT
   remote: git://github.com/spree/spree.git
@@ -316,8 +331,10 @@ DEPENDENCIES
   rspec-rails (>= 2.0.1)
   ruby-debug
   spree!
+  spree_editor!
   spree_email_to_friend
   spree_recently_viewed!
   spree_related_products!
   spree_social!
+  spree_static_content!
   spree_wishlist!

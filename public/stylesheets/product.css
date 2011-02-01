@@ -22,6 +22,7 @@ body#product-details #product-description {
 #product-images #main-image {
   width: 350px;
   text-align: center;
+  min-height: 240px;
 }
 
 #product-images #thumbnails ul {

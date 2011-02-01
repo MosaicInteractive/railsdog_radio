@@ -41,6 +41,9 @@
       $(this).parent('li').addClass('selected');
     }).hover(
       function() {
+        $("a[rel='facebox']").attr('href', $(this).attr('href'));
+        $("a[rel='facebox']").fancybox();
+
         $('#main-image img').attr('src', $(this).attr('data-product-image'));
       },
       function() {
@@ -53,6 +56,11 @@
       'transitionIn'	:	'elastic',
   		'transitionOut'	:	'elastic'
     });
+
+
+
+    $("a[rel='facebox']").fancybox();
+
 
     //wishlist
 

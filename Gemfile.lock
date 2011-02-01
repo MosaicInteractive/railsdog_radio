@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: 219d1fbbeb4c1aaae2b60e353dabfdd69868b1f1
+  revision: 5e248eadb9f5b0e6ff6f2e522126687f56940f8d
   specs:
     spree (0.50.99)
       spree_api (= 0.50.99)

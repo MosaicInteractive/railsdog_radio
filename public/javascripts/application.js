@@ -1,5 +1,6 @@
 (function($){
   $(document).ready(function(){
+    //homepabe banner carousel
     $('div#banner section div').jCarouselLite({
         btnNext: "#banner-nav .last",
         btnPrev: "#banner-nav .first",
@@ -18,6 +19,10 @@
 
     });
 
+    //pause scrolling after click of controls
+    $('nav#banner-nav a').click(function(){
+      $('div#banner section div').trigger('pauseCarousel');
+    });
 
     // Remove an item from the cart by setting its quantity to zero and posting the update form
     $('form#updatecart a.delete').show().click(function(){

@@ -11,11 +11,11 @@
 <% end %>
 
 <div id="products" role="products">
-
+  <%= breadcrumbs(@taxon) if @taxon %>
   <% if @taxon.children.empty? || !params[:keywords].blank? %>
     <%= render :partial => "shared/products", :locals => {:products => @products, :taxon => @taxon } %>
   <% else %>
-    <p class="breadcrumbs"><%= link_to 'Products', products_path %> &raquo; <%= @taxon.name %></p>
+
     <%= render :partial => "shared/products", :locals => {:products => taxon_preview(@taxon), :taxon => @taxon} %>
   <% end %>
 

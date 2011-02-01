@@ -215,6 +215,13 @@ footer #copyright {
   font-size: 1.1em;
   padding: 0 0 20px 0;
 }
+.breadcrumbs ul {
+  margin-left: 0px !important;
+}
+.breadcrumbs li {
+  float: left;
+  list-style: none;
+}
 .pagination {
   text-align: right;
 }

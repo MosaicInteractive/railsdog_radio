@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: 835548aea8298099e3c71f686c4bcbb7525cbd87
+  revision: 85a25a4f3b4d68adc09f05e8101540e16413c297
   specs:
     spree (0.50.99)
       spree_api (= 0.50.99)
@@ -78,7 +78,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_social.git
-  revision: fd51182d1e1e245343285b3de5179e06333bccba
+  revision: 67a273be74631c6ef2c149c0a10782c36160230c
   specs:
     spree_social (1.0.1)
       devise (= 1.2.rc)
@@ -189,7 +189,7 @@ GEM
     gherkin (2.3.3)
       json (~> 1.4.6)
     highline (1.5.1)
-    hoe (2.8.0)
+    hoe (2.9.0)
       rake (>= 0.8.7)
     i18n (0.5.0)
     jammit (0.6.0)

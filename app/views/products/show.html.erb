@@ -1,7 +1,7 @@
 <% @body_id = 'product-details' %>
 
 <% content_for :banner do %>
-  <% if @product.taxons.any? %>
+  <% if @taxon.present? %>
     <h1><%= raw @product.taxons.first.name %></h1>
     <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
   <% end %>

@@ -45,13 +45,13 @@ body#product-list .product {
 
 body#product-list .product h2 {
   font-size: 1.5em;
-  margin-bottom: 20px;
+  margin: 10px 0 0;
 }
 
 body#product-list .product .image {
   width: 280px;
   float: left;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 body#product-list .product .details {

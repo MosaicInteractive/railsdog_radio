@@ -7,11 +7,8 @@
   <%= render 'shared/recently_viewed_products' %>
 <% end %>
 
-<% if @taxon.present? %>
-  <%= breadcrumbs(@taxon, @product) if @taxon %>
-<% else %>
-  <p class="breadcrumbs"><%= link_to 'Home', root_url %> &raquo; <%= @product.name %></p>
-<% end %>
+
+<%= breadcrumbs(:taxon => @taxon, :product => @product, :product_group => @product_group) %>
 
 <h2><%= @product.name %></h2>
 

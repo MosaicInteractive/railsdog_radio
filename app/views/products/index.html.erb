@@ -2,7 +2,7 @@
 
 <%= render 'shared/product_banner' %>
 
-<p class="breadcrumbs"><%= link_to 'Home', root_url %> &raquo; <%= @product_group.present? ? @product_group.name : "Products" %></p>
+<%= breadcrumbs(:taxon => @taxon, :product => @product, :product_group => @product_group) %>
 
 <% content_for :sidebar do %>
   <%= render 'shared/all_products' %>

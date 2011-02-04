@@ -3,6 +3,7 @@ body#product-list h1, body#product-details h1 {
 }
 body#product-details #product-images {
   width: 380px;
+  margin-bottom: 20px;
 }
 
 body#product-details #cart-form {

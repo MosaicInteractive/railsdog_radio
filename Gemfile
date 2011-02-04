@@ -6,8 +6,8 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
-#gem 'spree', :git => 'git://github.com/spree/spree.git'
-gem 'spree', :path => '../spree-r3'
+gem 'spree', :git => 'git://github.com/spree/spree.git'
+#gem 'spree', :path => '../spree-r3'
 gem 'aws-s3'
 gem 'jammit', '0.6.0'
 

@@ -1,0 +1,15 @@
+<% content_for :banner do %>
+  <% if @taxon.present? %>
+    <h1><%= raw @taxon.name %></h1>
+    <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
+  <% elsif @product_group.present? %>
+    <h1><%= @product_group.name %></h1>
+    <% if FileTest.exists?("#{Rails.root}/public/images/dogradio/taxon/#{@product_group.permalink}-bg.jpg") %>
+      <%= image_tag "dogradio/taxon/#{@product_group.permalink}-bg.jpg" %>
+    <% end %>
+  <% else %>
+    <h1>Products</h1>
+    <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
+  <% end %>
+
+<% end %>

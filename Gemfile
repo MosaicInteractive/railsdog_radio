@@ -6,8 +6,8 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
-gem 'spree', :git => 'git://github.com/spree/spree.git'
-#gem 'spree', :path => '../spree-r3'
+#gem 'spree', :git => 'git://github.com/spree/spree.git'
+gem 'spree', :path => '../spree-r3'
 gem 'aws-s3'
 gem 'jammit', '0.6.0'
 
@@ -19,6 +19,9 @@ gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'
 gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => 'rails3'
 gem 'spree_static_content', :git => 'git://github.com/spree/spree-static-content.git'
 gem 'spree_editor', :git => 'git://github.com/divineforest/spree_editor.git'
+
+gem 'hoe', '2.8.0' #prevents requirement of rubygem 1.4.0 - which is not supported by heroku
+
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
  gem 'ruby-debug'

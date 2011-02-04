@@ -1,9 +1,6 @@
 <% @body_id = 'product-list' %>
 
-<% content_for :banner do %>
-  <h1><%= @taxon.name %></h1>
-  <%= image_tag 'dogradio/taxon/satellite-radios-bg.jpg' %>
-<% end %>
+<%= render 'shared/product_banner' %>
 
 <% content_for :sidebar do %>
   <%= render 'shared/all_products' %>

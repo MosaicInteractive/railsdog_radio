@@ -1,16 +1,6 @@
 <% @body_id = 'product-list' %>
 
-<% content_for :banner do %>
-  <% if params.key? :product_group_name %>
-    <%- @product_group =  ProductGroup.find_by_permalink(params[:product_group_name]) %>
-    <h1><%= @product_group.name %></h1>
-    <% if FileTest.exists?("#{Rails.root}/public/images/dogradio/taxon/#{@product_group.permalink}-bg.jpg") %>
-      <%= image_tag "dogradio/taxon/#{@product_group.permalink}-bg.jpg" %>
-    <% end %>
-  <% else %>
-    <h1>Products</h1>
-  <% end %>
-<% end %>
+<%= render 'shared/product_banner' %>
 
 <p class="breadcrumbs"><%= link_to 'Home', root_url %> &raquo; <%= @product_group.present? ? @product_group.name : "Products" %></p>
 

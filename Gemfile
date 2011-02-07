@@ -19,6 +19,7 @@ gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'
 gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => 'rails3'
 gem 'spree_static_content', :git => 'git://github.com/spree/spree-static-content.git'
 gem 'spree_editor', :git => 'git://github.com/divineforest/spree_editor.git'
+gem 'spree_active_shipping', :git => 'git://github.com/spree/spree_active_shipping.git'
 
 gem 'hoe', '2.8.0' #prevents requirement of rubygem 1.4.0 - which is not supported by heroku
 

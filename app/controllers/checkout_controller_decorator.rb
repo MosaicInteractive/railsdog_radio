@@ -14,7 +14,7 @@ CheckoutController.class_eval do
 
   def set_shipping
     if @order.update_attributes(object_params)
-      @order.create_shipment_without_default!
+      @order.create_shipment!
     end
 
     render :json => @order.reload.to_json(:include => :adjustments)

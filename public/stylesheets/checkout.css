@@ -130,8 +130,8 @@ body#checkout div[role='content'] {
   border: 5px solid #b7cbe9;
   font-size: 18px;
   color: #A0A0A0;
-  width: 448px;
-  padding: 100px 100px 50px 100px;
+  width: 528px;
+  padding: 100px 60px 50px 60px;
 }
 
 body#checkout div[role='content'] h2 {
@@ -147,7 +147,7 @@ body#checkout div[role='content'] div.submit {
 }
 
 body#checkout div[role='content'] hr {
-  margin: 40px -70px;
+  margin: 40px -30px;
   visibility: visible;
   border: 1px solid #D4D4D4;
 }
@@ -163,20 +163,33 @@ body#checkout div[role='content'] ul.fields li {
   clear: both;
 }
 
+body#checkout div[role='content'] ul.fields li.options {
+  margin: 0px 50px;
+  padding: 0px;
+}
+
+body#checkout div[role='content'] ul.fields li.options label {
+  display: inline;
+  vertical-align: -5px;
+  font: 22px Arvo;
+  margin-left: 15px;
+}
+
+
 body#checkout div[role='content'] ul.fields .quart {
-  width: 107px;
+  width: 127px;
   float: left;
   clear: none;
 }
 
 body#checkout div[role='content'] ul.fields .half {
-  width: 214px;
+  width: 254px;
   float: left;
   clear: none;
 }
 
 body#checkout div[role='content'] ul.fields .three-quart {
-  width: 321px;
+  width: 381px;
   float: left;
   clear: none;
 }

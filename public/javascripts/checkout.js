@@ -37,16 +37,23 @@
 
     };
 
+    var show_payment_method = function(){
+      $('li.payment_method').hide();
+      var id = $("input[name='order[payments_attributes][][payment_method_id]']:checked").val()
+
+      $('li.payment_method.' + id).show();
+    }
+
     // Show fields for the selected payment method
-    $("input[type='radio'][name='order[payments_attributes][][payment_method_id]']").click(function(){
-      $('#payment-methods li').hide();
-      if(this.checked){ $('#payment_method_'+this.value).show(); }
-    }).triggerHandler('click');
+    $("input[type='radio'][name='order[payments_attributes][][payment_method_id]']").change(function(){
+      show_payment_method();
+    })
 
     $('span#bcountry select').change(function() { update_state('b'); });
     $('span#scountry select').change(function() { update_state('s'); });
     update_state('b');
     update_state('s');
+    show_payment_method()
 
     $('input#order_use_billing').click(function() {
       if($(this).is(':checked')) {
@@ -73,3 +80,4 @@
 
   });
 })(jQuery);
+

@@ -1,7 +1,7 @@
 module CheckoutHelper
 
   def checkout_progress
-    states = %w(address_and_payment delivery_and_confirm complete)
+    states = %w(payment confirm complete)
     items = states.map do |state|
       text = t("order_state.#{state}").titleize
 

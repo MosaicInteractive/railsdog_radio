@@ -5,9 +5,9 @@ Order.class_eval do
 
     # custom checkout steps
     event :next do
-      transition :from => 'cart', :to => 'address_and_payment'
-      transition :from => 'address_and_payment', :to => 'shipping_and_confirm'
-      transition :from => 'shipping_and_confirm', :to => 'complete'
+      transition :from => 'cart', :to => 'payment'
+      transition :from => 'payment', :to => 'confirm'
+      transition :from => 'confirm', :to => 'complete'
     end
 
     event :cancel do
@@ -36,22 +36,22 @@ Order.class_eval do
     end
 
     after_transition :to => 'complete', :do => :finalize!
-    after_transition :to => 'shipping_and_confirm', :do => :create_tax_charge!
-    after_transition :to => 'shipping_and_confirm', :do => :create_shipment!
+    after_transition :to => 'confirm', :do => :create_tax_charge!
+    after_transition :to => 'confirm', :do => :create_shipment!
     after_transition :to => 'canceled', :do => :after_cancel
 
   end
 
   def create_shipment!
-    shipping_method ||= available_shipping_methods.first
+    self.shipping_method ||= available_shipping_methods.first
     save
 
     if shipment.present?
-      shipment.update_attributes(:shipping_method => shipping_method)
+      shipment.shipping_method = shipping_method
+      shipment.save
     else
       self.shipments << Shipment.create(:order => self, :shipping_method => shipping_method, :address => self.ship_address)
     end
   end
-
 
 end

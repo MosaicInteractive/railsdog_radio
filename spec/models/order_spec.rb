@@ -11,23 +11,23 @@ describe Order do
 
       before { order.state = "cart" }
 
-      it "should transition to address_and_payment" do
+      it "should transition to payment" do
         order.next
-        order.state.should == "address_and_payment"
+        order.state.should == "payment"
       end
 
     end
 
-    context "in the address_and_payment state" do
+    context "in the payment state" do
 
       before do
          order.stub :create_shipment!
-         order.state = "address_and_payment"
+         order.state = "payment"
        end
 
-      it "should transition to the shipping_and_confirm state" do
+      it "should transition to the confirm state" do
         order.next
-        order.state.should == "shipping_and_confirm"
+        order.state.should == "confirm"
       end
 
       it "should receive create_and_tax_charge!" do
@@ -42,11 +42,11 @@ describe Order do
 
     end
 
-    context "in the shipping_and_confirm state" do
+    context "in the confirm state" do
 
-      before { order.state = "shipping_and_confirm" }
+      before { order.state = "confirm" }
 
-      it "should transition to address_and_payment" do
+      it "should transition to payment" do
         order.next
         order.state.should == "complete"
       end

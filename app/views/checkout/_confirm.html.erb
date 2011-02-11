@@ -7,7 +7,7 @@
       $(this).find("option[value='" + shipping_method_id + "']").html("Updating...");
       $(this).attr('disabled', 'disabled');
 
-      $.post("/checkout/update/set_shipping", { state: "address_and_payment",  "order[shipping_method_id]": shipping_method_id },
+      $.post("/checkout/update/set_shipping", { state: "payment",  "order[shipping_method_id]": shipping_method_id },
         function(data){
           var table = $('table.total tbody');
           table.html('');
@@ -71,21 +71,31 @@
         <% end %>
         <%= address.country.try(:name) %> <%= address.zipcode %>
       </p>
-      <%= link_to "edit", checkout_state_path('address_and_payment') %>
+      <%= link_to "edit", checkout_state_path('payment') %>
     </div>
   <% end %>
 
     <div id="order-payment" style="padding:30px 30px 30px 0; clear:both">
       <h2>Payment Details</h2>
-      <h4>Credit Card </h4>
-      <%= @order.payment.source.name %><br />
-      <%= @order.payment.source.display_number %>
-      <%= link_to "edit", checkout_state_path('address_and_payment') %>
+      <h4><%= @order.payment.payment_method.name %></h4>
+
+      <% if @order.payment.payment_method.is_a? BillingIntegration::PaypalExpress %>
+        <p>You will be redirected to PayPal to complete your order.</p>
+      <% else %>
+        <%= @order.payment.source.name %><br />
+        <%= @order.payment.source.display_number %>
+      <% end %>
+
+      <%= link_to "edit", checkout_state_path('payment') %>
     </div>
   <div>
 
   </div>
   <div class="submit">
-    <button class="blue" type="submit">Place your order</button>
+    <% if @order.payment.payment_method.is_a? BillingIntegration::PaypalExpress %>
+      <button class="blue" type="submit">Go To PayPal</button>
+    <% else %>
+      <button class="blue" type="submit">Place your order</button>
+    <% end %>
   </div>
 </div>

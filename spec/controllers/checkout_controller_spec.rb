@@ -15,23 +15,23 @@ describe CheckoutController do
   describe "#update_registration" do
     let(:user) { user = mock_model User }
 
-    it "should change the order state to address_and_payment" do
+    it "should change the order state to payment" do
       controller.stub :check_authorization
       order.stub :update_attributes => true
       put :update_registration
-      order.state.should == "address_and_payment"
+      order.state.should == "payment"
     end
 
   end
 
   describe "#edit" do
 
-    context "when in address_and_payment state" do
+    context "when in payment state" do
 
       it "should create a billing and shipping address" do
         controller.stub :check_authorization
-        controller.should_receive :before_address_and_payment
-        get :edit, { :state => 'address_and_payment' }
+
+        get :edit, { :state => 'payment' }
       end
 
     end

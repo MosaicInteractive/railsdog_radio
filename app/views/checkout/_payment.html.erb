@@ -1,18 +1,10 @@
 <% content_for :javascripts do %>
   <%= javascript_include_tag 'checkout', '/states' %>
-  <%= javascript_tag do %>
-    (function($){
-      $(document).ready(function(){
-          //$('#checkout_form_address').validate();
-          $('span#bcountry select').change(function() { update_state('b'); });
-          $('span#scountry select').change(function() { update_state('s'); });
 
-          update_state('b');
-          update_state('s');
-        });
-      })(jQuery);
-    <% end %>
 <% end %>
+
+<%# for now just assign the first available shipping method - can be changed on next step %>
+<%= hidden_field_tag "order[shipping_method_id]", @order.available_shipping_methods.first.try(:id) %>
 
 <div id="content" role="content">
   <h2>Your Billing Information</h2>
@@ -157,17 +149,33 @@
 
     <hr />
 
-  <ul id="payment" class="fields">
-    <%# assuming single payment method %>
-    <%= hidden_field_tag "order[payments_attributes][][payment_method_id]", @order.available_payment_methods.first.try(:id) %>
+    <ul id="payment" class="fields">
+      <h2>Your prefered payment option</h2>
+      <% @order.available_payment_methods.each do |method| %>
+        <li class="options">
+          <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.payment_method %>
+          <label><%= t(method.name, :scope => :payment_methods, :default => method.name) %></label>
+        </li>
+      <% end %>
 
-    <%# assuming creditcard payment method %>
-    <%= render "checkout/payment/gateway", :payment_method => @order.available_payment_methods.first %>
+      <hr />
 
-    <%# for now just assign the first available shipping method - can be changed on next step %>
-    <%= hidden_field_tag "order[shipping_method_id]", @order.available_shipping_methods.first.try(:id) %>
+      <% @order.available_payment_methods.each_with_index do |method, i| %>
+        <%= render "checkout/payment/#{method.method_type}", :payment_method => method, :checked => @order.try(:payment).try(:payment_method_id) %>
+      <% end %>
+    </ul>
 
-  </ul>
+    <hr />
+
+    <ul class="fields">
+      <h2>Coupon Code</h2>
+      <li>
+        <p>If you've got a coupon code, please enter it below.</p>
+        <%= hook :coupon_code_text_field do %>
+        <% end %>
+      </li>
+    </ul>
+
   <% end %>
   <br />
   <div class="submit"><button type="submit" class="blue">Review your order</button></div>

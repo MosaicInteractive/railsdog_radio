@@ -45,13 +45,27 @@
             <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
           </td>
         </tr>
-
-
       <% end %>
       <tr class="totals">
-        <td colspan="4">&nbsp;</td>
-        <td colspan="3" class="totals">
-          <%= "#{t("subtotal")}: #{order_price(@order)}" %>
+        <td colspan="6">Item Subtotal</td>
+        <td class="totals">
+          <%= order_price(@order) %>
+        </td>
+      </tr>
+      <% @order.adjustments.each do |adjustment| %>
+        <tr class="totals">
+          <td colspan="6">
+            <%= adjustment.label %>
+          </td>
+          <td class="totals">
+            <%= number_to_currency adjustment.amount %>
+          </td>
+        </tr>
+      <% end %>
+      <tr class="totals">
+        <td colspan="6">Total</td>
+        <td class="totals">
+          <%= number_to_currency @order.total %>
         </td>
       </tr>
     </tbody>

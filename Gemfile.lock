@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree.git
-  revision: 314e30439ee31b79b67cceea01898c51125534eb
+  revision: bd08981d439f62734045991b7cd58101ef380be2
   specs:
     spree (0.50.99)
       spree_api (= 0.50.99)
@@ -53,11 +53,11 @@ GIT
       faker (= 0.9.4)
       highline (= 1.5.1)
       jquery-rails (= 0.2.6)
+      meta_search (= 1.0.1)
       paperclip (= 2.3.8)
       rails (= 3.0.3)
       rd_awesome_nested_set (= 1.4.4)
       rd_resource_controller
-      rd_searchlogic (= 3.0.1)
       rd_unobtrusive_date_picker (= 0.1.0)
       state_machine (= 0.9.4)
       stringex (= 1.0.3)
@@ -71,12 +71,19 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_active_shipping.git
-  revision: 5f94a7644a5d0de2f9bd756bf496ae3d1055e1ce
+  revision: 322c61f474b7df313f9a563bf63066fd8c6198ca
   specs:
     spree_active_shipping (1.0.0)
       active_shipping (= 0.9.3)
       activemerchant (= 1.9.0)
       spree_core (>= 0.30.1)
+
+GIT
+  remote: git://github.com/spree/spree_paypal_express.git
+  revision: fbda454048067c50faebbe8f1b445d9d0563ba0e
+  specs:
+    spree_paypal_express (1.0.0)
+      spree_core (>= 0.40.3)
 
 GIT
   remote: git://github.com/spree/spree_related_products.git
@@ -141,7 +148,7 @@ GEM
     activesupport (3.0.3)
     acts_as_list (0.1.2)
     addressable (2.2.4)
-    arel (2.0.7)
+    arel (2.0.8)
     aws-s3 (0.6.2)
       builder
       mime-types
@@ -222,6 +229,11 @@ GEM
       treetop (~> 1.4.8)
     mailfactory (1.4.0)
       mime-types (>= 1.13.1)
+    meta_search (1.0.1)
+      actionpack (~> 3.0.2)
+      activerecord (~> 3.0.2)
+      activesupport (~> 3.0.2)
+      arel (~> 2.0.2)
     mime-types (1.16)
     multi_json (0.0.5)
     multipart-post (1.1.0)
@@ -269,8 +281,6 @@ GEM
     rd_awesome_nested_set (1.4.4)
       activerecord (>= 1.1)
     rd_resource_controller (1.0.1)
-    rd_searchlogic (3.0.1)
-      activerecord (>= 3.0.0)
     rd_unobtrusive_date_picker (0.1.0)
     recaptcha (0.3.1)
     rspec (2.4.0)
@@ -346,6 +356,7 @@ DEPENDENCIES
   spree_active_shipping!
   spree_editor!
   spree_email_to_friend
+  spree_paypal_express!
   spree_recently_viewed!
   spree_related_products!
   spree_social!

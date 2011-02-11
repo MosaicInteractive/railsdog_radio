@@ -12,7 +12,8 @@ gem 'aws-s3'
 gem 'jammit', '0.6.0'
 
 gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
-gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced-reporting', :branch => 'rails3'
+#disabling advanced_reporting as searchlogic is now removed
+#gem 'advanced_reporting', :git => 'git://github.com/neerajdotname/spree-advanced-reporting', :branch => 'rails3'
 gem 'spree_email_to_friend'
 gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git'
 gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'

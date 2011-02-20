@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'pg'
 gem 'mysql'
 gem 'spree', :git => 'git://github.com/spree/spree.git'
 #gem 'spree', :path => '../spree'

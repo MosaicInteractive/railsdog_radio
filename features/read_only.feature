@@ -2,8 +2,9 @@ Feature: Read Only
 
   Scenario: Read only user reviewing orders
     Given I have a read only account of "readonly@example.com/password"
-    And I go the sign in page
-    And I go the admin_orders page
+    When I go to the sign in page
+    And I sign in as "readonly@example.com/password"
+    And I go to admin orders page
     Then I should see "Listing Orders"
   #Scenario: Admin user account editing
     #Given I have an admin account of "admin@person.com/password"

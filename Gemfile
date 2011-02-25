@@ -43,8 +43,7 @@ gem 'ruby-debug'
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  #gem 'shoulda'
+  gem 'factory_girl', '= 1.3.3'
   gem "rspec-rails", ">= 2.0.1"
   gem "cucumber-rails", ">= 0.3.2"
   gem "capybara", "= 0.4.0"

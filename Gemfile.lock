@@ -13,14 +13,6 @@ GIT
       spree_core (>= 0.40.0)
 
 GIT
-  remote: git://github.com/spree/spree-static-content.git
-  revision: 009ca4d6cdd80faa36ae6a57ea297e540b64d37f
-  specs:
-    spree_static_content (0.40.0)
-      spree_core (>= 0.30.0)
-      spree_editor
-
-GIT
   remote: git://github.com/spree/spree.git
   revision: 6724c01fdd5d67cda8c491d4997ece0f3070ce9a
   specs:
@@ -91,6 +83,14 @@ GIT
       oa-oauth (>= 0.1.6)
       spree_auth (>= 0.40.0)
       spree_core (>= 0.40.0)
+
+GIT
+  remote: git://github.com/spree/spree_static_content.git
+  revision: 0ce2641277ca75476d1c8c8693f3c6eaf98a19c2
+  specs:
+    spree_static_content (0.40.0)
+      spree_core (>= 0.30.0)
+      spree_editor
 
 GIT
   remote: git://github.com/spree/spree_wishlist.git

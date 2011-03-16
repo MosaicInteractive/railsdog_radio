@@ -6,7 +6,6 @@ source 'http://rubygems.org'
 gem 'mysql'
 gem 'sqlite3'
 gem 'spree', :git => 'git://github.com/spree/spree.git'
-#gem 'spree', :path => '../spree'
 gem 'aws-s3'
 gem 'jammit', '0.6.0'
 
@@ -21,7 +20,6 @@ gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content
 gem 'spree_editor', :git => 'git://github.com/divineforest/spree_editor.git'
 gem 'spree_active_shipping', :git => 'git://github.com/spree/spree_active_shipping.git'
 gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git'
-#gem 'spree_paypal_express', :path => '../spree_paypal_express'
 
 gem 'hoe', '2.8.0' #prevents requirement of rubygem 1.4.0 - which is not supported by heroku
 

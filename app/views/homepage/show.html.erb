@@ -1,5 +1,5 @@
 <% content_for :banner do %>
-  <section>
+  <section data-hook="banner" data-layer="2">
     <div>
       <ul>
         <li id="b1">
@@ -26,7 +26,7 @@
     </div>
   </section>
 
-  <nav id="banner-nav">
+  <nav id="banner-nav" data-hook="banner-nav" data-layer="2">
     <ul>
       <li class="first"><a href="#">&laquo;</a></li>
       <li class="current" id="b1_handle" ><a href="#">new arrivals</a></li>
@@ -40,10 +40,10 @@
 <% end %>
 
 
-<div id="taxons" class="clearfix">
+<div id="taxons" class="clearfix" data-hook="taxons" data-layer="1">
   <% @product_groups.each do |group| %>
     <% url = pg_search_path(:product_group_name => group.permalink) %>
-    <div class="taxon">
+    <div class="taxon" data-hook="taxon" data-layer="2">
       <h3><%= link_to group.name, url %></h3>
       <%= link_to url do %>
         <%= image_tag("dogradio/homepage/taxons/#{group.permalink}.jpg", :class => "image", :alt => group.name) %><br>
@@ -53,27 +53,27 @@
   <% end %>
 </div>
 
-<div id="all-products" class="list-box">
+<div id="all-products" class="list-box" data-hook="all_products" data-layer="1">
   <h2>All Products</h2>
-  <div class="left">
+  <div class="left" data-hook="all_products_left" data-layer="2">
     <ul>
       <% @taxons.each_with_index do |taxon,i| %>
         <% next if i % 2 == 0 %>
-        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
+        <li data-hook="all_product_left_item" data-layer="3"><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
   </div>
-  <div class="right">
+  <div class="right" data-hook="all_products_right" data-layer="2">
     <ul>
       <% @taxons.each_with_index do |taxon,i| %>
         <% next if i % 2 == 1 %>
-        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
+        <li data-hook="all_product_right_item" data-layer="3"><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
   </div>
 </div>
 
-<div id="contact">
+<div id="contact" data-hook="contact" data-layer="1">
   <div>
     <h2>Contact Us</h2>
     <p class="phone">(301) 560-2000</p>

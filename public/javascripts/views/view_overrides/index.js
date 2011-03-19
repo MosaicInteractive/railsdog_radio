@@ -58,6 +58,7 @@ App.Views.ViewOverrides.Index = Backbone.View.extend({
 
     render: function() {
       var compiled = _.template(index);
+
       $(this.el).html(compiled({ collection : App.view_overrides }));
       $('#nav').html(this.el);
 

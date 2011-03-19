@@ -1,16 +1,16 @@
-<div id="all-products" class="list-box">
+<div id="all-products" class="list-box" data-hook="all_products" data-layer="2">
   <% if @taxon.present? && @taxon.children.present? %>
-    <h2>More Products</h2>
-    <ul>
+    <h2 data-hook="more_title" data-layer="3">More Products</h2>
+    <ul data-hook="more_list" data-layer="3">
       <% @taxon.children.each_with_index do |taxon,i| %>
-        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
+        <li data-hook="more_item" data-layer="4"><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
   <% else %>
-    <h2>All Products</h2>
-    <ul>
+    <h2 data-hook="all_title" data-layer="3">All Products</h2>
+    <ul data-hook="all_list" data-layer="3">
       <% @taxons.each_with_index do |taxon,i| %>
-        <li><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
+        <li data-hook="all_item" data-layer="4"><%= raw link_to(taxon.name, seo_url(taxon)) %></li>
       <% end %>
     </ul>
   <% end %>

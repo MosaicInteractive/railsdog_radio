@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.datetime "attachment_updated_at"
     t.integer  "attachment_width"
     t.integer  "attachment_height"
+    t.string   "name"
+    t.text     "description"
     t.text     "alt"
   end
 
@@ -326,7 +328,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   add_index "product_scopes", ["product_group_id"], :name => "index_product_scopes_on_product_group_id"
 
   create_table "products", :force => true do |t|
-    t.string   "name",                                                              :null => false
+    t.string   "name",                                               :default => "",    :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -337,12 +339,27 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.datetime "deleted_at"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.integer  "count_on_hand",                                      :default => 0, :null => false
+    t.integer  "count_on_hand",                                      :default => 0,     :null => false
+    t.boolean  "can_be_part",                                        :default => false, :null => false
+    t.boolean  "individual_sale",                                    :default => true,  :null => false
+    t.boolean  "discontinued",                                       :default => false
+    t.text     "specifications"
+    t.text     "warnings"
+    t.boolean  "has_rebate",                                         :default => false
+    t.date     "rebate_valid_from"
+    t.date     "rebate_valid_to"
+    t.decimal  "rebate_amount",        :precision => 8, :scale => 2, :default => 0.0
+    t.boolean  "hidden",                                             :default => false
+    t.decimal  "special_price",        :precision => 8, :scale => 2, :default => 0.0
+    t.boolean  "exclude_reporting",                                  :default => false
+    t.integer  "total_sales"
     t.decimal  "rrp",                  :precision => 8, :scale => 2
   end
 
   add_index "products", ["available_on"], :name => "index_products_on_available_on"
   add_index "products", ["deleted_at"], :name => "index_products_on_deleted_at"
+  add_index "products", ["description"], :name => "description"
+  add_index "products", ["meta_keywords"], :name => "meta_keywords"
   add_index "products", ["name"], :name => "index_products_on_name"
   add_index "products", ["permalink"], :name => "index_products_on_permalink"
 
@@ -357,6 +374,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   create_table "products_taxons", :id => false, :force => true do |t|
     t.integer "product_id"
     t.integer "taxon_id"
+    t.string  "name2"
   end
 
   add_index "products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
@@ -609,7 +627,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                                            :null => false
+    t.string   "sku",                                         :default => "",    :null => false
     t.decimal  "price",         :precision => 8, :scale => 2,                    :null => false
     t.decimal  "weight",        :precision => 8, :scale => 2
     t.decimal  "height",        :precision => 8, :scale => 2
@@ -623,6 +641,20 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
+  add_index "variants", ["sku"], :name => "sku"
+
+  create_table "view_overrides", :force => true do |t|
+    t.string   "virtual_path"
+    t.string   "name"
+    t.string   "replace_with"
+    t.string   "target"
+    t.string   "selector"
+    t.string   "closing_selector"
+    t.boolean  "disabled"
+    t.text     "replacement"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "wished_products", :force => true do |t|
     t.integer  "variant_id"

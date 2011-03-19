@@ -8,6 +8,9 @@ gem 'sqlite3'
 gem 'spree', :git => 'git://github.com/spree/spree.git'
 gem 'aws-s3'
 gem 'jammit', '0.6.0'
+gem 'deface', :git => 'git://github.com/BDQ/deface.git'
+#gem 'deface_editor', :git => 'git://github.com/BDQ/deface_editor.git'
+gem 'deface_editor', :path => '../deface_editor'
 
 gem 'spree_recently_viewed', :git => 'git://github.com/jzw/spree_recently_viewed.git'
 #disabling advanced_reporting as searchlogic is now removed

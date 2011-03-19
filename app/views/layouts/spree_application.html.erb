@@ -26,7 +26,7 @@
 <body id="<%= @body_id || controller.controller_name %>">
   <div id="container">
 
-    <header>
+    <header data-hook="header" data-layer="1">
       <%= link_to image_tag("dogradio/logo.png", :width => "300", :height => "58", :alt => "Rails Dog Radio", :id => "logo"), root_url %>
       <form action="#" >
       </form>
@@ -47,12 +47,12 @@
     </header>
 
     <% if content_for?(:banner) %>
-      <div id="banner" role="banner">
+      <div id="banner" role="banner" data-hook="banner" data-layer="1">
         <%= yield :banner %>
       </div>
     <% end %>
 
-    <div id="main" role="main">
+    <div id="main" role="main" data-layer="main" data-layer="1">
       <% if flash.notice %>
         <div class="flash notice"><%= flash.notice %></div>
       <% end %>
@@ -64,14 +64,14 @@
     </div>
 
     <% if content_for?(:sidebar) %>
-      <div id="sidebar" role="sidebar">
+      <div id="sidebar" role="sidebar" data-hook="sidebar" data-layer="1">
         <%= yield :sidebar %>
       </div>
     <% end %>
 
   </div>
 
-  <footer>
+  <footer data-hook="footer" data-layer="1">
     <div class="inner">
 
       <img src="/images/dogradio/kid.jpg" width="204" height="413" alt="Kid" id="kid">
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div id="contact-us">
+      <div id="contact-us" data-hook="contact-us" data-layer="2">
         <h3>Contact Us</h3>
         <p>
         (301)560-2000<br>
@@ -95,7 +95,7 @@
         </p>
       </div>
 
-      <div id="social">
+      <div id="social" data-hook="social" data-layer="2">
         <h3>Social</h3>
         <p>
         <a href="http://facebook.com/spreecommerce" id="facebook"><span>Facebook</span></a>
@@ -104,7 +104,7 @@
         </p>
       </div>
 
-      <div id="menu">
+      <div id="menu" data-hook="menu" data-layer="2">
         <h3>Menu</h3>
         <p>
         <a href="/about">About us</a><br />
@@ -124,4 +124,3 @@
   <%= yield :javascripts %>
 </body>
 </html>
-

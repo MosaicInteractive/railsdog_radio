@@ -12,14 +12,20 @@
 <% if params[:keywords] %>
 
   <% if @products.empty? %>
-    <%= t(:no_products_found) %>
+    <div data-hook="no-products" data-layer="1">
+      <%= t(:no_products_found) %>
+    </div>
   <% else %>
-    <%= render "shared/products", :products => @products, :taxon => @taxon %>
+    <div data-hook="search_products" data-layer="1">
+      <%= render "shared/products", :products => @products, :taxon => @taxon %>
+    </div>
   <% end %>
 
 <% else %>
 
-  <%= render "shared/products", :products => @products, :taxon => @taxon %>
+  <div data-hook="browse_products" data-layer="1">
+    <%= render "shared/products", :products => @products, :taxon => @taxon %>
+  </div>
 
 <% end %>
 

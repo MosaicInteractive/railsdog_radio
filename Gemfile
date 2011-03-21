@@ -5,7 +5,7 @@ source 'http://rubygems.org'
 
 gem 'mysql'
 gem 'sqlite3'
-gem 'spree', :git => 'git://github.com/spree/spree.git'
+gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => "0-50-stable"
 gem 'aws-s3'
 gem 'jammit', '0.6.0'
 
@@ -17,7 +17,7 @@ gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_prod
 gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'
 gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => 'rails3'
 gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content.git'
-gem 'spree_editor', :git => 'git://github.com/divineforest/spree_editor.git'
+gem 'spree_editor', :git => 'git://github.com/romul/spree_editor.git'
 gem 'spree_active_shipping', :git => 'git://github.com/spree/spree_active_shipping.git'
 gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git'
 

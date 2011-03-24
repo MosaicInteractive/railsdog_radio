@@ -1,13 +1,13 @@
 (function($){
   $(document).ready(function(){
 
-    //$('#checkout_form_address').validate();
+    $('#checkout_form_address').validate();
 
     var get_states = function(region){
-      var country        = $('span#' + region + 'country :only-child').val();
+      var country        = $('p#' + region + 'country' + ' span#' + region + 'country :only-child').val();
       return state_mapper[country];
     }
-
+    
     var update_state = function(region) {
       var states         = get_states(region);
 
@@ -37,30 +37,23 @@
 
     };
 
-    var show_payment_method = function(){
-      $('li.payment_method').hide();
-      var id = $("input[name='order[payments_attributes][][payment_method_id]']:checked").val()
-
-      $('li.payment_method.' + id).show();
-    }
-
     // Show fields for the selected payment method
-    $("input[type='radio'][name='order[payments_attributes][][payment_method_id]']").change(function(){
-      show_payment_method();
-    })
+    $("input[type='radio'][name='order[payments_attributes][][payment_method_id]']").click(function(){
+      $('#payment-methods li').hide();
+      if(this.checked){ $('#payment_method_'+this.value).show(); }
+    }).triggerHandler('click');
 
-    $('span#bcountry select').change(function() { update_state('b'); });
-    $('span#scountry select').change(function() { update_state('s'); });
+    $('p#bcountry span#bcountry select').change(function() { update_state('b'); });
+    $('p#scountry span#scountry select').change(function() { update_state('s'); });
     update_state('b');
     update_state('s');
-    show_payment_method()
 
     $('input#order_use_billing').click(function() {
       if($(this).is(':checked')) {
-        $('#shipping .inner').hide();
+        $('#shipping .inner input, #shipping .inner select, #shipping .inner label, #shipping .inner .req').hide();
         $('#shipping .inner input, #shipping .inner select').attr('disabled', 'disabled');
       } else {
-        $('#shipping .inner').show();
+        $('#shipping .inner input, #shipping .inner select, #shipping .inner label, #shipping .inner .req').show();
         $('#shipping .inner input, #shipping .inner select').removeAttr('disabled', 'disabled');
 
         //only want to enable relevant field
@@ -80,4 +73,3 @@
 
   });
 })(jQuery);
-

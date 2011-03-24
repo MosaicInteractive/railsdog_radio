@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125135821) do
+ActiveRecord::Schema.define(:version => 20110314192118) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -326,7 +326,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   add_index "product_scopes", ["product_group_id"], :name => "index_product_scopes_on_product_group_id"
 
   create_table "products", :force => true do |t|
-    t.string   "name",                                                              :null => false
+    t.string   "name",                                               :default => "", :null => false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -337,7 +337,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.datetime "deleted_at"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.integer  "count_on_hand",                                      :default => 0, :null => false
+    t.integer  "count_on_hand",                                      :default => 0,  :null => false
     t.decimal  "rrp",                  :precision => 8, :scale => 2
   end
 
@@ -523,10 +523,10 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
   end
 
   create_table "taxons", :force => true do |t|
-    t.integer  "taxonomy_id",                            :null => false
+    t.integer  "taxonomy_id",                      :null => false
     t.integer  "parent_id"
-    t.integer  "position",            :default => 0
-    t.string   "name",                                   :null => false
+    t.integer  "position",          :default => 0
+    t.string   "name",                             :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
@@ -537,15 +537,6 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.text     "description"
-    t.boolean  "hidden",              :default => false
-    t.boolean  "disabled",            :default => false
-    t.string   "short_name"
-    t.boolean  "homepage",            :default => false
-    t.string   "display_style"
-    t.string   "banner_file_name"
-    t.string   "banner_content_type"
-    t.integer  "banner_file_size"
-    t.datetime "banner_updated_at"
   end
 
   add_index "taxons", ["parent_id"], :name => "index_taxons_on_parent_id"
@@ -609,7 +600,7 @@ ActiveRecord::Schema.define(:version => 20110125135821) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                                            :null => false
+    t.string   "sku",                                         :default => "",    :null => false
     t.decimal  "price",         :precision => 8, :scale => 2,                    :null => false
     t.decimal  "weight",        :precision => 8, :scale => 2
     t.decimal  "height",        :precision => 8, :scale => 2
